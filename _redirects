@@ -1,0 +1,3 @@
+# Cloudflare Pages
+/daily-digest/* /daily-digest/:splat 200
+/ /daily-digest/latest.html 302
