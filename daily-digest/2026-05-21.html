@@ -3,66 +3,56 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily AI Digest - 2026-05-21</title>
+<title>Daily AI Digest</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f0f2f5; color: #1a1a2e; line-height: 1.6; }
-  .header { background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); padding: 40px 20px; text-align: center; color: white; }
-  .header h1 { font-size: 2.2em; margin-bottom: 8px; }
-  .header .subtitle { font-size: 1em; opacity: 0.85; }
-  .header .date { font-size: 0.9em; opacity: 0.7; margin-top: 4px; }
-  .container { max-width: 860px; margin: 0 auto; padding: 20px 16px; }
-  .section { background: white; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
-  .section h2 { font-size: 1.4em; margin-bottom: 16px; color: #1a1a2e; border-bottom: 2px solid #e8e8ef; padding-bottom: 10px; }
-  .section h3 { font-size: 1.1em; margin: 14px 0 8px; color: #302b63; }
-  .promo-box { background: #fff9e6; border: 1px solid #ffe066; border-radius: 8px; padding: 12px 16px; margin: 12px 0; font-size: 0.9em; }
-  .promo-box strong { color: #b8860b; }
-  table { width: 100%; border-collapse: collapse; margin: 8px 0 14px; font-size: 0.88em; }
-  th, td { padding: 8px 10px; text-align: left; border-bottom: 1px solid #e8e8ef; }
-  th { background: #f8f9fa; font-weight: 600; color: #555; }
-  tr:hover { background: #f5f5ff; }
-  .story { padding: 10px 0; border-bottom: 1px solid #f0f0f5; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f4f6f9; color: #1a1a2e; line-height: 1.6; }
+  .header { background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); color: white; padding: 40px 20px; text-align: center; }
+  .header h1 { font-size: 2.2em; margin-bottom: 6px; }
+  .header .date { font-size: 1em; opacity: 0.85; }
+  .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+  .section { background: white; border-radius: 12px; padding: 28px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .section h2 { font-size: 1.5em; margin-bottom: 18px; color: #302b63; border-bottom: 2px solid #e8e8f0; padding-bottom: 10px; }
+  .promo-box { background: #fffde7; border: 1px solid #ffe082; border-radius: 8px; padding: 14px 18px; margin: 14px 0; font-size: 0.92em; }
+  .promo-box strong { color: #e65100; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.9em; }
+  th { background: #f0f0f8; text-align: left; padding: 10px 12px; font-weight: 600; color: #302b63; border-bottom: 2px solid #ddd; }
+  td { padding: 10px 12px; border-bottom: 1px solid #eee; }
+  tr:hover td { background: #fafaff; }
+  .story { padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
   .story:last-child { border-bottom: none; }
-  .story .title { font-weight: 600; font-size: 1em; }
-  .story .desc { font-size: 0.88em; color: #555; margin: 3px 0; }
-  .story .source { font-size: 0.8em; color: #888; }
-  .story .source a { color: #302b63; text-decoration: none; }
-  .story .source a:hover { text-decoration: underline; }
-  .tag { display: inline-block; background: #e8e8ff; color: #302b63; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; margin-right: 4px; }
-  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .stat-card { background: #f8f9fa; border-radius: 8px; padding: 14px; }
-  .stat-card .label { font-size: 0.8em; color: #888; text-transform: uppercase; letter-spacing: 0.5px; }
-  .stat-card .value { font-size: 1.2em; font-weight: 700; color: #1a1a2e; margin-top: 2px; }
-  .stat-card .change { font-size: 0.85em; margin-top: 2px; }
-  .up { color: #2e7d32; }
-  .down { color: #c62828; }
-  .neutral { color: #f57f17; }
-  .footer { text-align: center; padding: 24px; font-size: 0.8em; color: #888; }
+  .story .title { font-weight: 600; font-size: 1.02em; margin-bottom: 3px; }
+  .story .title a { color: #1a56db; text-decoration: none; }
+  .story .title a:hover { text-decoration: underline; }
+  .story .meta { color: #666; font-size: 0.85em; }
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .stat-card { background: #f8f9ff; border-radius: 8px; padding: 12px 16px; border-left: 3px solid #302b63; }
+  .stat-card .stat-label { font-size: 0.82em; color: #666; }
+  .stat-card .stat-value { font-weight: 600; font-size: 1em; margin-top: 2px; }
+  .footer { text-align: center; padding: 30px 20px; color: #888; font-size: 0.85em; }
   .footer a { color: #302b63; text-decoration: none; }
-  .model-group { margin-bottom: 12px; }
-  .model-group table { margin: 4px 0 0; }
-  @media (max-width: 600px) { .header h1 { font-size: 1.6em; } .container { padding: 12px 8px; } .section { padding: 16px; } .stats-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 600px) {
+    .header h1 { font-size: 1.6em; }
+    .section { padding: 18px; }
+    .stats-grid { grid-template-columns: 1fr; }
+    table { font-size: 0.8em; }
+  }
 </style>
 </head>
 <body>
 
 <div class="header">
   <h1>🧠 Daily AI Digest</h1>
-  <div class="subtitle">Your daily briefing on the AI landscape</div>
   <div class="date">Thursday, May 21, 2026</div>
 </div>
 
 <div class="container">
 
-  <!-- SECTION 1: LLM Model Pricing -->
+  <!-- Section 1: LLM Model Pricing -->
   <div class="section">
     <h2>💰 LLM Model Pricing</h2>
 
-    <div class="promo-box">
-      <strong>🔥 DeepSeek Flash Sale:</strong> DeepSeek-V4-Pro is at <strong>75% off</strong> until May 31, 2026 — input from $0.435/MTok and output from $0.87/MTok.
-    </div>
-
-    <h3>OpenAI</h3>
+    <h3 style="margin:16px 0 6px;color:#302b63;">OpenAI</h3>
     <table>
       <tr><th>Model</th><th>Input</th><th>Output</th><th>Context</th></tr>
       <tr><td>GPT-4o</td><td>$2.50/MTok</td><td>$10.00/MTok</td><td>128K</td></tr>
@@ -72,190 +62,156 @@
       <tr><td>o3 (reasoning)</td><td>$2.00/MTok</td><td>$8.00/MTok</td><td>200K</td></tr>
       <tr><td>o4-mini (reasoning)</td><td>$1.10/MTok</td><td>$4.40/MTok</td><td>200K</td></tr>
     </table>
+    <div class="promo-box">🔥 <strong>OpenAI IPO</strong> — Preparing to file for IPO soon, potentially September 2026 (WSJ).</div>
 
-    <h3>Anthropic</h3>
+    <h3 style="margin:16px 0 6px;color:#302b63;">Anthropic</h3>
     <table>
       <tr><th>Model</th><th>Input</th><th>Output</th><th>Context</th></tr>
       <tr><td>Claude Opus 4.7</td><td>$5.00/MTok</td><td>$25.00/MTok</td><td>1M</td></tr>
       <tr><td>Claude Sonnet 4.6</td><td>$3.00/MTok</td><td>$15.00/MTok</td><td>1M</td></tr>
       <tr><td>Claude Haiku 4.5</td><td>$1.00/MTok</td><td>$5.00/MTok</td><td>200K</td></tr>
     </table>
-    <div class="promo-box">
-      <strong>📈 Anthropic on the rise:</strong> Company is about to have its first profitable quarter. Claude Opus 4.7 introduces adaptive thinking and 128K max output.
-    </div>
+    <div class="promo-box">🏗️ <strong>Anthropic expanding to Colossus2</strong> — Will use NVIDIA GB200 for next-gen AI training infrastructure. Also expanding Project Glasswing cybersecurity initiative.</div>
 
-    <h3>Google Gemini</h3>
+    <h3 style="margin:16px 0 6px;color:#302b63;">Google Gemini</h3>
     <table>
       <tr><th>Model</th><th>Input</th><th>Output</th><th>Context</th></tr>
-      <tr><td>Gemini 2.5 Pro</td><td>$1.25/MTok</td><td>$10.00/MTok</td><td>1M</td></tr>
+      <tr><td>Gemini 3.5 Pro</td><td>$1.50/MTok</td><td>$9.00/MTok</td><td>1M</td></tr>
+      <tr><td>Gemini 3.5 Flash</td><td>$0.75/MTok</td><td>$4.50/MTok</td><td>1M</td></tr>
       <tr><td>Gemini 2.5 Flash</td><td>$0.30/MTok</td><td>$2.50/MTok</td><td>1M</td></tr>
       <tr><td>Gemini 2.0 Flash</td><td>$0.10/MTok</td><td>$0.40/MTok</td><td>1M</td></tr>
     </table>
-    <div class="promo-box">
-      <strong>🚀 Google IO 2026:</strong> Gemini 3.x preview models now available (3.1 Flash, 3 Pro). New "Antigravity" model in preview. Google pitching AI agent ecosystem aggressively at IO.
-    </div>
+    <div class="promo-box">🌟 <strong>Gemini 3.5 released at Google I/O</strong> — "Frontier intelligence with action." New agentic capabilities, improved reasoning, and tighter integration with Google services. <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/" style="color:#1a56db;">Read more →</a></div>
 
-    <h3>DeepSeek</h3>
+    <h3 style="margin:16px 0 6px;color:#302b63;">DeepSeek</h3>
     <table>
       <tr><th>Model</th><th>Input (Cache Miss)</th><th>Input (Cache Hit)</th><th>Output</th><th>Context</th></tr>
       <tr><td>DeepSeek-V4-Flash</td><td>$0.14/MTok</td><td>$0.0028/MTok</td><td>$0.28/MTok</td><td>1M</td></tr>
       <tr><td>DeepSeek-V4-Pro</td><td>$0.435/MTok*</td><td>$0.0036/MTok*</td><td>$0.87/MTok*</td><td>1M</td></tr>
     </table>
-    <div style="font-size:0.8em; color:#666; margin-top:-6px;">* 75% off promotional pricing (ends May 31). Regular: $1.74/$3.48. Also supports Anthropic API format.</div>
+    <div class="promo-box">💥 <strong>V4-Pro 75% off promotional pricing</strong> — Extended until May 31, 2026. Regular prices: $1.74/MTok input, $3.48/MTok output. Cache hit prices reduced to 1/10th of launch prices since April 26.</div>
 
-    <h3>Kimi / Moonshot AI</h3>
+    <h3 style="margin:16px 0 6px;color:#302b63;">Kimi / Moonshot AI & Others</h3>
     <table>
-      <tr><th>Model</th><th>Capabilities</th><th>Context</th><th>Notes</th></tr>
-      <tr><td>Kimi K2.5</td><td>Text + Vision, Tool Calling, Code Gen</td><td>256K</td><td>Trillion-parameter model. Strong in Chinese market, expanding globally.</td></tr>
+      <tr><th>Model</th><th>Description</th><th>Context</th></tr>
+      <tr><td>Kimi K2.5</td><td>Trillion-parameter model, text + vision + tool calling</td><td>256K</td></tr>
+      <tr><td>Qwen3.7-Max</td><td>Alibaba's new agent-optimized frontier model ("The Agent Frontier")</td><td>128K+</td></tr>
     </table>
   </div>
 
-  <!-- SECTION 2: Model News -->
+  <!-- Section 2: Model News -->
   <div class="section">
     <h2>📰 Model News</h2>
 
     <div class="story">
-      <div class="title">🧮 OpenAI Model Disproves 80-Year-Old Discrete Geometry Conjecture</div>
-      <div class="desc">An OpenAI model has disproved a central conjecture in discrete geometry — a genuine mathematical breakthrough that has been unsolved for 80 years. This is being hailed as a landmark moment for AI-driven scientific discovery, similar to AlphaFold but in pure mathematics.</div>
-      <div class="source"><span class="tag">BREAKING</span> Source: <a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture/">OpenAI Blog</a> | HN: 1,337 points</div>
+      <div class="title">🧮 <a href="https://openai.com/index/model-disproves-discrete-geometry-conjecture/">OpenAI Model Disproves 80-Year-Old Discrete Geometry Conjecture</a></div>
+      <div class="meta">HN: 1,355 points • Landmark AI-driven mathematical breakthrough — an OpenAI model solved a problem that had eluded mathematicians since the 1940s.</div>
     </div>
 
     <div class="story">
-      <div class="title">📊 OpenAI Barrels Toward IPO — Potentially as Soon as September 2026</div>
-      <div class="desc">OpenAI is accelerating plans for an initial public offering that may happen in September, signaling confidence in its commercial trajectory and valuation growth.</div>
-      <div class="source">Source: <a href="https://techcrunch.com/">TechCrunch</a></div>
+      <div class="title">📊 <a href="https://www.wsj.com/tech/ai/openai-is-preparing-to-file-for-an-ipo-very-soon-0ec95af5">OpenAI Barrels Toward IPO — Filing Expected Soon</a></div>
+      <div class="meta">WSJ • OpenAI is preparing to file for an IPO, potentially targeting September 2026. Strong revenue growth from API and ChatGPT subscriptions driving valuation confidence.</div>
     </div>
 
     <div class="story">
-      <div class="title">🏦 Anthropic About to Have First Profitable Quarter</div>
-      <div class="desc">Anthropic says it's on track for its first profitable quarter, driven by strong Claude API adoption and enterprise deals. Meanwhile, the company is paying xAI $1.25B per month for compute infrastructure.</div>
-      <div class="source">Source: <a href="https://techcrunch.com/">TechCrunch</a></div>
+      <div class="title">🏗️ <a href="https://twitter.com/nottombrown/status/2057194829986300375">Anthropic Expanding to Colossus2, Will Use NVIDIA GB200</a></div>
+      <div class="meta">HN: 274 points • Anthropic scaling compute infrastructure with massive new clusters. Reports suggest nearing profitability on strong Claude API adoption.</div>
     </div>
 
     <div class="story">
-      <div class="title">🔥 xAI Burned $6.4B Last Year — SpaceX IPO Filing Shows Spending Far From Over</div>
-      <div class="desc">Elon Musk's xAI spent $6.4B in the past year, revealed in SpaceX's IPO filing. The company is now buying $2.8B more data center generators and facing lawsuits over environmental concerns.</div>
-      <div class="source">Source: <a href="https://techcrunch.com/">TechCrunch</a></div>
+      <div class="title">🌊 <a href="https://qwen.ai/blog?id=qwen3.7">Alibaba Releases Qwen3.7-Max: "The Agent Frontier"</a></div>
+      <div class="meta">HN: 685 points • New frontier model optimized for agentic workflows. Strong performance on tool use, planning, and multi-step reasoning benchmarks.</div>
     </div>
 
     <div class="story">
-      <div class="title">🎵 Stability AI Releases New Audio Model Capable of 6-Minute Songs</div>
-      <div class="desc">Stability AI has released a new audio generation model that can create full 6-minute musical compositions, expanding beyond its image generation roots.</div>
-      <div class="source">Source: <a href="https://techcrunch.com/">TechCrunch</a></div>
+      <div class="title">💼 <a href="https://techcrunch.com/2026/05/20/intuit-to-lay-off-over-3000-employees-to-refocus-on-ai/">Intuit Laying Off 3,000+ Employees to Refocus on AI</a></div>
+      <div class="meta">TechCrunch • Major workforce restructuring as the company pivots toward AI-powered financial automation. TurboTax and QuickBooks to get AI-native redesigns.</div>
     </div>
 
     <div class="story">
-      <div class="title">🚗 Waymo Pauses Atlanta Service — Robotaxis Keep Driving into Floods</div>
-      <div class="desc">Waymo has paused its autonomous taxi service in Atlanta after its vehicles repeatedly drove into floodwaters, highlighting ongoing challenges with edge-case weather scenarios.</div>
-      <div class="source">Source: <a href="https://techcrunch.com/2026/05/21/waymo-pauses-atlanta-service-as-its-robotaxis-keep-driving-into-floods/">TechCrunch</a></div>
+      <div class="title">🚗 <a href="https://techcrunch.com/2026/05/21/waymo-pauses-atlanta-service-as-its-robotaxis-keep-driving-into-floods/">Waymo Pauses Atlanta Service After Robotaxis Drive Into Floodwaters</a></div>
+      <div class="meta">TechCrunch • Waymo temporarily halts Atlanta operations after repeated incidents of autonomous vehicles driving into standing water. Safety review underway.</div>
     </div>
   </div>
 
-  <!-- SECTION 3: AI Agent Ecosystem -->
+  <!-- Section 3: AI Agent Ecosystem -->
   <div class="section">
     <h2>🤖 AI Agent Ecosystem</h2>
 
     <div class="story">
-      <div class="title">🏗️ Runtime (YC P26) Launches — Sandboxed Coding Agents for Teams</div>
-      <div class="desc">A new YC-backed startup, Runtime, is launching sandboxed coding agents designed for team collaboration. Each agent runs in an isolated environment, making it safe for enterprises to deploy AI coding assistants.</div>
-      <div class="source"><span class="tag">LAUNCH</span> Source: <a href="https://www.runtm.com/">Runtime</a> | <a href="https://news.ycombinator.com/item?id=48225040">HN Discussion</a></div>
+      <div class="title">🏗️ <a href="https://www.runtm.com/">Runtime (YC P26) — Sandboxed Coding Agents for Teams</a></div>
+      <div class="meta">Launch HN: Runtime provides sandboxed coding agents that developers can use safely within team environments. Isolated execution with full access controls.</div>
     </div>
 
     <div class="story">
-      <div class="title">🔮 Google Pitches AI Agent Ecosystem to Consumers at IO 2026</div>
-      <div class="desc">Google is aggressively marketing an AI agent ecosystem to consumers, but analysts question whether mainstream users are ready. New features include talking to your Gmail inbox and AI agents that go beyond standard searches.</div>
-      <div class="source">Source: <a href="https://techcrunch.com/">TechCrunch</a></div>
+      <div class="title">🔬 <a href="https://reubenbrooks.dev/blog/structural-backpressure-beats-smarter-agents/">Formal Verification Gates for AI Coding Loops</a></div>
+      <div class="meta">HN: 135 points • New approach using structural backpressure and formal verification to prevent AI coding agents from introducing bugs, outperforming "smarter" agents.</div>
     </div>
 
     <div class="story">
-      <div class="title">💰 Hark Raises $700M Series A for "Universal" AI Interface</div>
-      <div class="desc">Secretive AI startup Hark has raised a massive $700M Series A for what it calls a "universal" AI interface — one of the largest Series A rounds in AI history.</div>
-      <div class="source"><span class="tag">FUNDING</span> Source: <a href="https://techcrunch.com/">TechCrunch</a></div>
+      <div class="title">📝 <a href="https://github.com/NousResearch/hermes-agent">Hermes Agent Surpasses 161K Stars on GitHub</a></div>
+      <div class="meta">The open-source agent framework continues rapid growth. New autonomous agent capabilities and expanded tool ecosystem.</div>
     </div>
 
     <div class="story">
-      <div class="title">🎨 Figma Adds AI Assistant to Collaborative Canvas</div>
-      <div class="desc">Figma has integrated an AI assistant into its design platform, enabling natural language commands for UI design, component creation, and layout suggestions directly on the canvas.</div>
-      <div class="source">Source: <a href="https://techcrunch.com/">TechCrunch</a></div>
+      <div class="title">🛡️ <a href="https://www.anthropic.com/glasswing">Project Glasswing — Anthropic's Cybersecurity Research Model</a></div>
+      <div class="meta">Anthropic's invitation-only Claude variant focused on securing critical software infrastructure. Part of a broader push into agentic security tooling.</div>
     </div>
 
     <div class="story">
-      <div class="title">🛡️ Claude Mythos Preview — Anthropic's Cybersecurity Research Model</div>
-      <div class="desc">Anthropic is offering "Claude Mythos Preview" as an invitation-only research model for defensive cybersecurity workflows under Project Glasswing. Access is limited with no self-serve sign-up.</div>
-      <div class="source">Source: <a href="https://anthropic.com/glasswing">Anthropic</a></div>
+      <div class="title">🛠️ <a href="https://github.com/langgenius/dify">Dify and LangChain Lead Agent Platform Growth</a></div>
+      <div class="meta">Dify (142K★) and LangChain (137K★) continue dominating the agent engineering platform space. Dify positions as production-ready agentic workflow development platform.</div>
     </div>
   </div>
 
-  <!-- SECTION 4: Notable AI Applications -->
+  <!-- Section 4: Notable AI Applications -->
   <div class="section">
     <h2>⚡ Notable AI Applications</h2>
 
     <div class="story">
-      <div class="title">🎧 Spotify Takes on Google's NotebookLM with AI-Powered Podcast Features</div>
-      <div class="desc">Spotify is launching AI-powered Q&A and briefing generation for podcasts, positioning itself as a competitor to Google's NotebookLM in the audio-AI space. Users can ask questions about podcast content and get AI-generated summaries.</div>
-      <div class="source">Source: <a href="https://techcrunch.com/">TechCrunch</a></div>
+      <div class="title">💻 <a href="https://blog.simbastack.com/indexed-a-year-of-video-locally/">Indexing a Year of Video on a 2021 MacBook with Gemma4-31B</a></div>
+      <div class="meta">HN: 169 points • Developer runs Gemma4-31B locally with 50GB swap and indexes an entire year of personal video footage. Demonstrates viability of local multimodal AI on consumer hardware.</div>
     </div>
 
     <div class="story">
-      <div class="title">💻 Running Gemma4-31B Locally on a 2021 MacBook — 50GB Swap Video Indexing</div>
-      <div class="desc">A developer successfully indexed a year's worth of personal video footage locally on a 2021 MacBook using Google's Gemma4-31B model with 50GB of swap memory — demonstrating that capable local AI is now feasible on consumer hardware.</div>
-      <div class="source">Source: <a href="https://blog.simbastack.com/indexed-a-year-of-video-locally/">Simbastack Blog</a> | <a href="https://news.ycombinator.com/item?id=48222733">HN: 112 points</a></div>
+      <div class="title">🔐 <a href="https://www.bleepingcomputer.com/news/security/github-confirms-breach-of-3-800-repos-via-malicious-vscode-extension/">GitHub Breach: Malicious VSCode Extension Compromises 3,800 Repos</a></div>
+      <div class="meta">HN: 996 points • Significant supply-chain attack through a malicious VSCode extension. GitHub confirming breach scope and working with affected developers.</div>
     </div>
 
     <div class="story">
-      <div class="title">🧠 AI Search Startups Are "Blowing Up"</div>
-      <div class="desc">AI-powered search startups are experiencing explosive growth, with metrics described as "blowing up" — suggesting a significant shift in how users discover and consume information online.</div>
-      <div class="source">Source: <a href="https://techcrunch.com/">TechCrunch</a></div>
+      <div class="title">📝 <a href="https://zfhuang99.github.io/rust/claude%20code/codex/contracts/spec-driven%20development/2025/12/01/rust-with-ai.html">Learnings from 100K Lines of Rust Written with AI Assistance</a></div>
+      <div class="meta">HN: 167 points • Developer shares practical insights from using Claude Code and Codex to write 100K lines of production Rust. Topics: spec-driven development, contracts, and when AI helps vs. hinders.</div>
     </div>
 
     <div class="story">
-      <div class="title">🦀 NanoClaw Creator Turns Down $20M Buyout, Raises $12M Seed Instead</div>
-      <div class="desc">The creator of NanoClaw, a popular AI tool, rejected a $20M acquisition offer and instead raised a $12M seed round — a bet on independence and long-term growth.</div>
-      <div class="source">Source: <a href="https://techcrunch.com/">TechCrunch</a></div>
+      <div class="title">🌐 <a href="https://www.bbc.com/future/article/20260519-google-tackles-attempts-to-hack-its-ai-results">Google Quietly Fighting AI Manipulation of Search Results</a></div>
+      <div class="meta">HN: 329 points • BBC investigation reveals Google is combating sophisticated attempts to manipulate its AI-generated search results. Cat-and-mouse game intensifies.</div>
     </div>
   </div>
 
-  <!-- SECTION 5: Quick Stats -->
+  <!-- Section 5: Quick Stats -->
   <div class="section">
     <h2>📊 Quick Stats</h2>
     <div class="stats-grid">
-      <div class="stat-card">
-        <div class="label">Anthropic Profitability</div>
-        <div class="value up">First Profitable Quarter</div>
-        <div class="change up">↑ Revenue surge from Claude API adoption</div>
-      </div>
-      <div class="stat-card">
-        <div class="label">xAI Annual Burn</div>
-        <div class="value down">$6.4B</div>
-        <div class="change down">↑ $2.8B more in infrastructure spend</div>
-      </div>
-      <div class="stat-card">
-        <div class="label">Hark Series A</div>
-        <div class="value up">$700M</div>
-        <div class="change up">Massive round for "universal AI interface"</div>
-      </div>
-      <div class="stat-card">
-        <div class="label">DeepSeek V4-Pro Sale</div>
-        <div class="value neutral">75% OFF</div>
-        <div class="change neutral">Ends May 31 — $0.435/$0.87 per MTok</div>
-      </div>
-      <div class="stat-card">
-        <div class="label">OpenAI IPO Timeline</div>
-        <div class="value neutral">September 2026</div>
-        <div class="change neutral">Barreling toward public offering</div>
-      </div>
-      <div class="stat-card">
-        <div class="label">Google Gemini 3.x</div>
-        <div class="value up">Preview Available</div>
-        <div class="change up">3.1 Flash, 3 Pro, Antigravity in preview</div>
-      </div>
+      <div class="stat-card"><div class="stat-label">🔬 OpenAI Math Breakthrough</div><div class="stat-value">Disproves 80-year-old conjecture</div></div>
+      <div class="stat-card"><div class="stat-label">💰 OpenAI IPO</div><div class="stat-value">Filing imminent (target: Sep 2026)</div></div>
+      <div class="stat-card"><div class="stat-label">🤖 Gemini 3.5 Launch</div><div class="stat-value">Released at Google I/O (May 19)</div></div>
+      <div class="stat-card"><div class="stat-label">🏗️ Qwen3.7-Max</div><div class="stat-value">"The Agent Frontier" released</div></div>
+      <div class="stat-card"><div class="stat-label">💼 Intuit Layoffs</div><div class="stat-value">3,000+ jobs cut for AI pivot</div></div>
+      <div class="stat-card"><div class="stat-label">🔐 GitHub Breach</div><div class="stat-value">3,800 repos via VSCode ext.</div></div>
+      <div class="stat-card"><div class="stat-label">🏗️ Anthropic Infra</div><div class="stat-value">Expanding to Colossus2 + GB200</div></div>
+      <div class="stat-card"><div class="stat-label">🚗 Waymo Pause</div><div class="stat-value">Atlanta service halted for flood</div></div>
+      <div class="stat-card"><div class="stat-label">💵 DeepSeek Promo</div><div class="stat-value">V4-Pro 75% off until May 31</div></div>
+      <div class="stat-card"><div class="stat-label">⭐ Hermes Agent</div><div class="stat-value">161K★ on GitHub</div></div>
     </div>
   </div>
 
-  <div class="footer">
-    Daily AI Digest • <a href="https://pradykar.com/daily-digest/2026-05-21.html">pradykar.com/daily-digest/2026-05-21.html</a>
-  </div>
-
 </div>
+
+<div class="footer">
+  <p>🧠 Daily AI Digest • <a href="https://pradykar.com/daily-digest/2026-05-21.html">pradykar.com/daily-digest/2026-05-21.html</a></p>
+  <p style="margin-top:4px;font-size:0.8em;">Compiled Thursday, May 21, 2026 • Sources include Hacker News, TechCrunch, WSJ, company blogs</p>
+</div>
+
 </body>
 </html>
