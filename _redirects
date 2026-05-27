@@ -1,5 +1,4 @@
 # Cloudflare Pages
 /daily-digest/* /daily-digest/:splat 200
-/ /daily-digest/latest.html 302
 /marketpulse /marketpulse/latest 302
 /marketpulse/latest  /marketpulse/latest 200
