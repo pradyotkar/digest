@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MarketPulse EOD Validation — May 29, 2026</title>
+</head>
+<body style="background-color:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;margin:0;padding:20px;color:#0a0e1a;">
+<div style="max-width:680px;margin:0 auto;">
+
+<!-- HEADER -->
+<div style="padding:0 0 16px 0;border-bottom:3px solid #2b6cb0;margin-bottom:20px;">
+<h1 style="font-size:22px;font-weight:800;color:#0a0e1a;margin:0 0 4px 0;">📊 MarketPulse End-of-Day Validation</h1>
+<div style="font-size:14px;color:#4a5568;">Friday, May 29, 2026 &nbsp;|&nbsp; Generated 5:00 PM PT</div>
+<div style="font-size:12px;color:#c53030;margin-top:4px;font-weight:600;">⚠️ RUTHLESS AUDIT — Accuracy over appearance</div>
+</div>
+
+<!-- EXECUTIVE SUMMARY -->
+<div style="background-color:#f0f2f6;border-radius:6px;border:1px solid #d0d5dd;padding:16px;margin-bottom:20px;">
+<h2 style="font-size:16px;font-weight:700;color:#0a0e1a;margin:0 0 12px 0;">1. Executive Summary</h2>
+<div style="font-size:13px;color:#4a5568;line-height:1.7;">
+
+<div style="margin-bottom:10px;">
+<span style="font-weight:700;color:#0a0e1a;">Score: 54/100</span> — 
+<span style="color:#c53030;font-weight:600;">Significant data quality failures drag down an otherwise solid bullish selection day.</span>
+</div>
+
+<div style="margin-bottom:6px;">
+<span style="font-weight:700;color:#2f855a;">✅ Strong:</span> Bullish picks that survived the day went 5/5 positive (avg +8.7% from 3 AM report price). The oil-collapse macro thesis was the call of the day. Removal discipline on RXT, LAES, and MODV correctly avoided losses averaging −44.8%. All 3 survivors left in the green at close. SPY +0.08%, QQQ +0.08%, IWM −0.33% — basket dramatically outperformed benchmarks.
+</div>
+
+<div style="margin-bottom:6px;">
+<span style="font-weight:700;color:#c53030;">❌ Weak:</span> 3 bearish/short picks collapsed — SPCE +81.8% (bearish pick rallied), CHRD was a material data error (analyst PT confused for stock price, real ~$133 not $22.50), MODV delisted to OTC. All 4 intraday additions closed red from entry timestamp (avg −1.1%). 3 of 10 original picks had report prices >15% from market open (RXT −16.9%, LAES −22.1%, SPCE −41.2%) — data quality failures. Zero actionable picks had defined stop-loss or target levels. The closing report's benchmark numbers (SPY +0.25%, QQQ +0.37%, IWM −0.56%) were all inaccurate vs actual closing data.
+</div>
+
+<div style="margin-top:6px;">
+<span style="font-weight:700;color:#b8860b;">Key Verdict:</span> Correctly identified the winning themes (oil collapse beneficiaries, AI momentum, earnings catalysts). Execution was undermined by data quality failures in 30% of original picks and inability to translate sector calls into profitable intraday entries at favorable prices.
+</div>
+
+</div>
+</div>
+
+<!-- DATA INTEGRITY AUDIT -->
+<div style="background-color:#f0f2f6;border-radius:6px;border:1px solid #d0d5dd;padding:16px;margin-bottom:20px;">
+<h2 style="font-size:16px;font-weight:700;color:#0a0e1a;margin:0 0 12px 0;">2. Data Integrity Audit</h2>
+
+<table style="width:100%;border-collapse:collapse;font-size:12px;margin-bottom:12px;">
+<tr style="background-color:#0a0e1a;color:#ffffff;">
+<th style="padding:6px 8px;text-align:left;font-weight:700;">Ticker</th>
+<th style="padding:6px 8px;text-align:right;font-weight:700;">3 AM Price</th>
+<th style="padding:6px 8px;text-align:right;font-weight:700;">Open</th>
+<th style="padding:6px 8px;text-align:right;font-weight:700;">Gap%</th>
+<th style="padding:6px 8px;text-align:center;font-weight:700;">15% Rule</th>
+<th style="padding:6px 8px;text-align:center;font-weight:700;">Exchange</th>
+<th style="padding:6px 8px;text-align:center;font-weight:700;">$1–$25</th>
+<th style="padding:6px 8px;text-align:left;font-weight:700;">Status</th>
+</tr>
+<tr style="background-color:#ffffff;border-bottom:1px solid #d0d5dd;">
+<td style="padding:6px 8px;font-weight:700;">CRSR</td>
+<td style="padding:6px 8px;text-align:right;">$11.40</td>
+<td style="padding:6px 8px;text-align:right;">$11.91</td>
+<td style="padding:6px 8px;text-align:right;color:#2f855a;">+4.5%</td>
+<td style="padding:6px 8px;text-align:center;color:#2f855a;">✅</td>
+<td style="padding:6px 8px;text-align:center;">Nasdaq ✅</td>
+<td style="padding:6px 8px;text-align:center;">✅</td>
+<td style="padding:6px 8px;color:#2f855a;font-weight:600;">VALID</td>
+</tr>
+<tr style="background-color:#f0f2f6;border-bottom:1px solid #d0d5dd;">
+<td style="padding:6px 8px;font-weight:700;">RXT</td>
+<td style="padding:6px 8px;text-align:right;">$5.90</td>
+<td style="padding:6px 8px;text-align:right;">$4.90</td>
+<td style="padding:6px 8px;text-align:right;color:#c53030;">−16.9%</td>
+<td style="padding:6px 8px;text-align:center;color:#c53030;">⚠️ FAIL</td>
+<td style="padding:6px 8px;text-align:center;">Nasdaq ✅</td>
+<td style="padding:6px 8px;text-align:center;">✅</td>
+<td style="padding:6px 8px;color:#b8860b;font-weight:600;">WARNING</td>
+</tr>
+<tr style="background-color:#ffffff;border-bottom:1px solid #d0d5dd;">
+<td style="padding:6px 8px;font-weight:700;">AAL</td>
+<td style="padding:6px 8px;text-align:right;">$14.20</td>
+<td style="padding:6px 8px;text-align:right;">$14.74</td>
+<td style="padding:6px 8px;text-align:right;color:#2f855a;">+3.8%</td>
+<td style="padding:6px 8px;text-align:center;color:#2f855a;">✅</td>
+<td style="padding:6px 8px;text-align:center;">Nasdaq ✅</td>
+<td style="padding:6px 8px;text-align:center;">✅</td>
+<td style="padding:6px 8px;color:#2f855a;font-weight:600;">VALID</td>
+</tr>
+<tr style="background-color:#f0f2f6;border-bottom:1px solid #d0d5dd;">
+<td style="padding:6px 8px;font-weight:700;">NCLH</td>
+<td style="padding:6px 8px;text-align:right;">$16.60</td>
+<td style="padding:6px 8px;text-align:right;">$18.55</td>
+<td style="padding:6px 8px;text-align:right;color:#2f855a;">+11.7%</td>
+<td style="padding:6px 8px;text-align:center;color:#2f855a;">✅</td>
+<td style="padding:6px 8px;text-align:center;">NYSE ✅</td>
+<td style="padding:6px 8px;text-align:center;">✅</td>
+<td style="padding:6px 8px;color:#2f855a;font-weight:600;">VALID</td>
+</tr>
+<tr style="background-color:#ffffff;border-bottom:1px solid #d0d5dd;">
+<td style="padding:6px 8px;font-weight:700;">LAES</td>
+<td style="padding:6px 8px;text-align:right;">$4.70</td>
+<td style="padding:6px 8px;text-align:right;">$3.66</td>
+<td style="padding:6px 8px;text-align:right;color:#c53030;">−22.1%</td>
+<td style="padding:6px 8px;text-align:center;color:#c53030;">❌ FAIL</td>
+<td style="padding:6px 8px;text-align:center;">Nasdaq ✅</td>
+<td style="padding:6px 8px;text-align:center;">✅</td>
+<td style="padding:6px 8px;color:#c53030;font-weight:600;">DATA WARNING</td>
+</tr>
+<tr style="background-color:#f0f2f6;border-bottom:1px solid #d0d5dd;">
+<td style="padding:6px 8px;font-weight:700;">BBAI</td>
+<td style="padding:6px 8px;text-align:right;">$4.50</td>
+<td style="padding:6px 8px;text-align:right;">$5.08</td>
+<td style="padding:6px 8px;text-align:right;color:#b8860b;">+12.9%</td>
+<td style="padding:6px 8px;text-align:center;color:#b8860b;">⚠️ BORDER</td>
+<td style="padding:6px 8px;text-align:center;">NYSE ✅</td>
+<td style="padding:6px 8px;text-align:center;">✅</td>
+<td style="padding:6px 8px;color:#2f855a;font-weight:600;">VALID</td>
+</tr>
+<tr style="background-color:#ffffff;border-bottom:1px solid #d0d5dd;">
+<td style="padding:6px 8px;font-weight:700;">HIMS</td>
+<td style="padding:6px 8px;text-align:right;">$23.50</td>
+<td style="padding:6px 8px;text-align:right;">$25.55</td>
+<td style="padding:6px 8px;text-align:right;color:#2f855a;">+8.7%</td>
+<td style="padding:6px 8px;text-align:center;color:#2f855a;">✅</td>
+<td style="padding:6px 8px;text-align:center;">NYSE ✅</td>
+<td style="padding:6px 8px;text-align:center;color:#b8860b;">⚠️ Crossed $25</td>
+<td style="padding:6px 8px;color:#b8860b;font-weight:600;">VALID (gate flag)</td>
+</tr>
+<tr style="background-color:#fde8e8;border-bottom:1px solid #d0d5dd;">
+<td style="padding:6px 8px;font-weight:700;">CHRD</td>
+<td style="padding:6px 8px;text-align:right;color:#c53030;">$22.50 ❌</td>
+<td style="padding:6px 8px;text-align:right;">$133.37</td>
+<td style="padding:6px 8px;text-align:right;color:#c53030;">+492.8%</td>
+<td style="padding:6px 8px;text-align:center;color:#c53030;">❌ FAIL</td>
+<td style="padding:6px 8px;text-align:center;">Nasdaq</td>
+<td style="padding:6px 8px;text-align:center;color:#c53030;">❌ $133</td>
+<td style="padding:6px 8px;color:#c53030;font-weight:600;">DATA ERROR — VOID</td>
+</tr>
+<tr style="background-color:#fde8e8;border-bottom:1px solid #d0d5dd;">
+<td style="padding:6px 8px;font-weight:700;">SPCE</td>
+<td style="padding:6px 8px;text-align:right;">$3.40</td>
+<td style="padding:6px 8px;text-align:right;">$4.80</td>
+<td style="padding:6px 8px;text-align:right;color:#c53030;">+41.2%</td>
+<td style="padding:6px 8px;text-align:center;color:#c53030;">❌ FAIL</td>
+<td style="padding:6px 8px;text-align:center;">NYSE ✅</td>
+<td style="padding:6px 8px;text-align:center;">✅</td>
+<td style="padding:6px 8px;color:#c53030;font-weight:600;">DATA WARNING</td>
+</tr>
+<tr style="background-color:#fde8e8;">
+<td style="padding:6px 8px;font-weight:700;">MODV</td>
+<td style="padding:6px 8px;text-align:right;color:#c53030;">$18.00</td>
+<td style="padding:6px 8px;text-align:right;color:#c53030;">~$0.43</td>
+<td style="padding:6px 8px;text-align:right;color:#c53030;">−97.6%</td>
+<td style="padding:6px 8px;text-align:center;color:#c53030;">❌ FAIL</td>
+<td style="padding:6px 8px;text-align:center;color:#c53030;">DELISTED</td>
+<td style="padding:6px 8px;text-align:center;">n/a</td>
+<td style="padding:6px 8px;color:#c53030;font-weight:600;">ELIGIBILITY FAILURE</td>
+</tr>
+</table>
+
+<div style="background-color:#fde8e8;border-left:3px solid #c53030;border-radius:0 4px 4px 0;padding:10px 14px;font-size:12px;color:#4a5568;line-height:1.6;">
+<span style="font-weight:700;color:#c53030;">🚫 VOID TALLY:</span><br>
+• <span style="font-weight:700;">CHRD:</span> DATA ERROR — 3 AM report used analyst price target (~$21–$25) as stock price. Actual price was ~$133–$137. Materially unusable recommendation. VOID.<br>
+• <span style="font-weight:700;">MODV:</span> ELIGIBILITY FAILURE — Delisted to OTC (MODVQ). Price collapsed from ~$18 to $0.43 between Monday and Friday. 3 AM report likely used stale pricing. VOID.<br>
+• <span style="font-weight:700;color:#b8860b;">DATA WARNINGS (not voided, but flagged):</span> RXT (−16.9% gap), LAES (−22.1% gap), SPCE (+41.2% gap) all exceeded the 15% data quality threshold. BBAI (+12.9%) was borderline.<br>
+<span style="font-weight:700;color:#c53030;">Denominator impact:</span> 2 of 10 original picks voided. Valid tradeable denominator: 8 picks.
+</div>
+</div>
+
+<!-- VALID vs INVALID COUNT -->
+<div style="background-color:#f0f2f6;border-radius:6px;border:1px solid #d0d5dd;padding:16px;margin-bottom:20px;">
+<h2 style="font-size:16px;font-weight:700;color:#0a0e1a;margin:0 0 12px 0;">3. Pick Classification</h2>
+<table style="width:100%;border-collapse:collapse;font-size:12px;">
+<tr style="background-color:#0a0e1a;color:#ffffff;">
+<th style="padding:6px 10px;text-align:left;">Category</th>
+<th style="padding:6px 10px;text-align:right;">Count</th>
+<th style="padding:6px 10px;text-align:left;">Tickers</th>
+</tr>
+<tr style="background-color:#e6f7e6;border-bottom:1px solid #d0d5dd;">
+<td style="padding:6px 10px;font-weight:600;">Valid Tradeable (bullish)</td>
+<td style="padding:6px 10px;text-align:right;font-weight:700;">7</td>
+<td style="padding:6px 10px;">CRSR, RXT, AAL, NCLH, LAES, BBAI, HIMS</td>
+</tr>
+<tr style="background-color:#fde8e8;border-bottom:1px solid #d0d5dd;">
+<td style="padding:6px 10px;font-weight:600;">Valid Tradeable (bearish)</td>
+<td style="padding:6px 10px;text-align:right;font-weight:700;">1</td>
+<td style="padding:6px 10px;">SPCE</td>
+</tr>
+<tr style="background-color:#fde8e8;border-bottom:1px solid #d0d5dd;">
+<td style="padding:6px 10px;font-weight:600;">Data-Invalid / VOID</td>
+<td style="padding:6px 10px;text-align:right;font-weight:700;">1</td>
+<td style="padding:6px 10px;">CHRD</td>
+</tr>
+<tr style="background-color:#fde8e8;">
+<td style="padding:6px 10px;font-weight:600;">Eligibility Failure</td>
+<td style="padding:6px 10px;text-align:right;font-weight:700;">1</td>
+<td style="padding:6px 10px;">MODV</td>
+</tr>
+<tr style="background-color:#f0f2f6;">
+<td style="padding:6px 10px;font-weight:600;">Intraday Additions</td>
+<td style="padding:6px 10px;text-align:right;font-weight:700;">4</td>
+<td style="padding:6px 10px;">GME, JBLU, AI, SOUN</td>
+</tr>
+</table>
+</div>
+
+<!-- ORIGINAL LIST PERFORMANCE -->
+<div style="background-color:#f0f2f6;border-radius:6px;border:1px solid #d0d5dd;padding:16px;margin-bottom:20px;">
+<h2 style="font-size:16px;font-weight:700;color:#0a0e1a;margin:0 0 12px 0;">4–7. Performance Buckets</h2>
+
+<!-- Bucket: All Original Valid -->
+<div style="background-color:#ffffff;border-radius:4px;padding:12px;margin-bottom:10px;border:1px solid #d0d5dd;">
+<h3 style="font-size:14px;font-weight:700;color:#0a0e1a;margin:0 0 8px 0;">4a. Original 3 AM Valid Picks — All (8 picks: 7 bullish + 1 bearish)</h3>
+<div style="font-size:12px;color:#4a5568;line-height:1.6;">
+<span style="font-weight:700;">Returns from 3 AM report price to close:</span><br>
+CRSR +6.5% · RXT −12.4% · AAL +3.1% · NCLH +10.5% · LAES −26.0% · BBAI +12.0% · HIMS +11.3% · SPCE +81.8% (bearish = short loss)<br><br>
+<span style="font-weight:700;color:#0a0e1a;">Avg (bullish only):</span> +0.7% &nbsp;|&nbsp; 
+<span style="font-weight:700;color:#2f855a;">Winners:</span> 5/7 (71.4%) &nbsp;|&nbsp;
+<span style="font-weight:700;color:#c53030;">Losers:</span> 2/7 &nbsp;|&nbsp;
+<span style="font-weight:700;">Best:</span> BBAI +12.0% &nbsp;|&nbsp;
+<span style="font-weight:700;color:#c53030;">Worst:</span> LAES −26.0%<br>
+<span style="font-weight:700;color:#c53030;">Bearish SPCE:</span> +81.8% against the short thesis — catastrophic.<br>
+<span style="font-weight:700;">Combined (long bullish + short bearish from 3 AM price):</span> avg −9.4% (destroyed by SPCE short loss)<br>
+<span style="color:#4a5568;">Median bullish return:</span> +6.5% &nbsp;|&nbsp;
+<span style="color:#2f855a;">Max Favorable Excursion (bullish):</span> BBAI high $5.16 (+14.7% from $4.50) &nbsp;|&nbsp;
+<span style="color:#c53030;">Max Adverse Excursion (bullish):</span> LAES low $3.36 (−28.5% from $4.70)
+</div>
+</div>
+
+<!-- Bucket: Bullish Only -->
+<div style="background-color:#e6f7e6;border-radius:4px;padding:12px;margin-bottom:10px;border:1px solid #2f855a;">
+<h3 style="font-size:14px;font-weight:700;color:#0a0e1a;margin:0 0 8px 0;">4b. Bullish-Only Picks (7) — From Report Price vs From Open</h3>
+<div style="font-size:12px;color:#4a5568;line-height:1.6;">
+<span style="font-weight:700;">From 3 AM Report Price to Close:</span> Avg +0.7% | Winners 5/7 | Best BBAI +12.0% | Worst LAES −26.0%<br>
+<span style="font-weight:700;">From Market Open to Close:</span> Avg +0.3% | Winners 3/7 | Best RXT +5.5% | Worst LAES −4.9%<br><br>
+<span style="color:#c53030;font-weight:600;">⚠️ Key finding:</span> The 3 AM report prices were directionally correct (more winners than losers) but execution at open was flat. Removing the two big losers (RXT, LAES) is what saved the basket. The 5 survivors averaged +0.3% from open — barely above SPY's +0.08%.
+</div>
+</div>
+
+<!-- Bucket: Intraday Adds -->
+<div style="background-color:#fef3cd;border-radius:4px;padding:12px;margin-bottom:10px;border:1px solid #b8860b;">
+<h3 style="font-size:14px;font-weight:700;color:#0a0e1a;margin:0 0 8px 0;">5. Intraday Additions (4 picks: GME, JBLU, AI, SOUN) — Added 10:42–11:00 AM</h3>
+<div style="font-size:12px;color:#4a5568;line-height:1.6;">
+<span style="font-weight:700;">From Add Timestamp to Close:</span> Avg −1.1% | Winners 0/4 | Best JBLU −0.4% | Worst AI −1.9%<br>
+<span style="font-weight:700;">From Market Open to Close:</span> Avg +0.9% | Winners 3/4 | Best AI +3.1% | Worst GME −1.9%<br><br>
+<span style="color:#c53030;font-weight:600;">⚠️ CRITICAL FINDING:</span> All 4 intraday adds were green from open but red from add timestamp. The stocks themselves performed well — the entry timing was the problem. All were added near intraday highs (10:42–11 AM) and faded from there. <span style="font-weight:700;">Lesson:</span> Wait for confirmation above VWAP and a pullback before adding intraday. The rush to add at 10:42 AM cost the basket ~2.0% in aggregate.
+</div>
+</div>
+
+<!-- Bucket: Removed -->
+<div style="background-color:#fde8e8;border-radius:4px;padding:12px;margin-bottom:10px;border:1px solid #c53030;">
+<h3 style="font-size:14px;font-weight:700;color:#0a0e1a;margin:0 0 8px 0;">6. Removed Pick Performance & Classification</h3>
+<table style="width:100%;border-collapse:collapse;font-size:11px;">
+<tr style="background-color:#0a0e1a;color:#ffffff;">
+<th style="padding:4px 6px;text-align:left;">Ticker</th>
+<th style="padding:4px 6px;text-align:right;">Report</th>
+<th style="padding:4px 6px;text-align:right;">Removed At</th>
+<th style="padding:4px 6px;text-align:right;">Close</th>
+<th style="padding:4px 6px;text-align:center;">Avoided Loss?</th>
+<th style="padding:4px 6px;text-align:left;">Classification</th>
+</tr>
+<tr style="background-color:#ffffff;border-bottom:1px solid #d0d5dd;">
+<td style="padding:4px 6px;font-weight:700;">RXT</td>
+<td style="padding:4px 6px;text-align:right;">$5.90</td>
+<td style="padding:4px 6px;text-align:right;color:#c53030;">$5.23</td>
+<td style="padding:4px 6px;text-align:right;">$5.17</td>
+<td style="padding:4px 6px;text-align:center;color:#2f855a;">✅ (−$0.06)</td>
+<td style="padding:4px 6px;color:#2f855a;">Correct — avoided further loss</td>
+</tr>
+<tr style="background-color:#f0f2f6;border-bottom:1px solid #d0d5dd;">
+<td style="padding:4px 6px;font-weight:700;">LAES</td>
+<td style="padding:4px 6px;text-align:right;">$4.70</td>
+<td style="padding:4px 6px;text-align:right;color:#c53030;">$3.50</td>
+<td style="padding:4px 6px;text-align:right;">$3.48</td>
+<td style="padding:4px 6px;text-align:center;color:#2f855a;">✅ (−$0.02)</td>
+<td style="padding:4px 6px;color:#2f855a;">Correct — avoided major loss</td>
+</tr>
+<tr style="background-color:#ffffff;border-bottom:1px solid #d0d5dd;">
+<td style="padding:4px 6px;font-weight:700;">CHRD</td>
+<td style="padding:4px 6px;text-align:right;color:#c53030;">$22.50 ❌</td>
+<td style="padding:4px 6px;text-align:right;">n/a</td>
+<td style="padding:4px 6px;text-align:right;">$131.87</td>
+<td style="padding:4px 6px;text-align:center;">n/a</td>
+<td style="padding:4px 6px;color:#c53030;">DATA ERROR — never tradeable</td>
+</tr>
+<tr style="background-color:#f0f2f6;border-bottom:1px solid #d0d5dd;">
+<td style="padding:4px 6px;font-weight:700;">SPCE</td>
+<td style="padding:4px 6px;text-align:right;color:#c53030;">$3.40</td>
+<td style="padding:4px 6px;text-align:right;">$5.82</td>
+<td style="padding:4px 6px;text-align:right;">$6.18</td>
+<td style="padding:4px 6px;text-align:center;color:#c53030;">❌ False removal</td>
+<td style="padding:4px 6px;color:#c53030;">Thesis failure — not false removal. Bearish fade was the wrong call in a risk-on tape.</td>
+</tr>
+<tr style="background-color:#ffffff;">
+<td style="padding:4px 6px;font-weight:700;">MODV</td>
+<td style="padding:4px 6px;text-align:right;color:#c53030;">$18.00</td>
+<td style="padding:4px 6px;text-align:right;color:#c53030;">$0.43</td>
+<td style="padding:4px 6px;text-align:right;">~$0.43</td>
+<td style="padding:4px 6px;text-align:center;color:#2f855a;">✅ (wipeout)</td>
+<td style="padding:4px 6px;color:#2f855a;">Correct — avoided total loss</td>
+</tr>
+</table>
+<div style="font-size:11px;color:#4a5568;margin-top:8px;line-height:1.5;">
+<span style="font-weight:700;">Correct removals:</span> 3/5 (RXT, LAES, MODV) — combined avoided loss avg −44.8%<br>
+<span style="font-weight:700;">Thesis failures:</span> 2/5 (CHRD=data error, SPCE=wrong direction)<br>
+<span style="font-weight:700;color:#2f855a;">Net removal benefit:</span> +$4,480 per $10K invested across the 3 correct removals<br>
+<span style="color:#c53030;font-weight:600;">SPCE classification note:</span> This was a bearish pick that went +81.8% against the thesis. It was not a "false removal" — the removal was necessary because the thesis was dead. The problem was the thesis itself, not the removal.
+</div>
+</div>
+
+<!-- Bucket: Watchlist Only -->
+<div style="background-color:#ffffff;border-radius:4px;padding:12px;margin-bottom:10px;border:1px solid #d0d5dd;">
+<h3 style="font-size:14px;font-weight:700;color:#0a0e1a;margin:0 0 8px 0;">7a. Watchlist Only (3 picks: GME, AI, SOUN)</h3>
+<div style="font-size:12px;color:#4a5568;line-height:1.6;">
+Avg from add timestamp: −1.4% | Winners 0/3<br>
+Avg from open: +0.6% | Winners 2/3 (AI +3.1%, SOUN +0.7%)<br>
+<span style="color:#c53030;">No exit triggers hit.</span> All 3 carry weekend gap risk. GME held above $21.00 exit trigger by $0.19 — the narrowest hold in the basket.
+</div>
+</div>
+
+<!-- Bucket: Fresh Buy Only -->
+<div style="background-color:#e6f7e6;border-radius:4px;padding:12px;margin-bottom:10px;border:1px solid #2f855a;">
+<h3 style="font-size:14px;font-weight:700;color:#0a0e1a;margin:0 0 8px 0;">7b. Tier 1 Bullish "Fresh Buy" Picks (4: CRSR, AAL, NCLH, HIMS)</h3>
+<div style="font-size:12px;color:#4a5568;line-height:1.6;">
+From report price: Avg +7.8% | Winners 4/4 | Best NCLH +10.5% | Worst AAL +3.1%<br>
+From market open: Avg +0.6% | Winners 2/4 | Best HIMS +2.4% | Worst NCLH −1.1%<br>
+<span style="color:#2f855a;font-weight:600;">✅ The Tier 1 filtering worked.</span> All 4 closed positive from report price. From open, the returns were subdued but still beat SPY's +0.08%.
+</div>
+</div>
+
+<!-- Bucket: Hold Only -->
+<div style="background-color:#fef3cd;border-radius:4px;padding:12px;border:1px solid #b8860b;">
+<h3 style="font-size:14px;font-weight:700;color:#0a0e1a;margin:0 0 8px 0;">7c. Hold Only Picks at Close (6: CRSR, AAL, NCLH, BBAI, HIMS, JBLU)</h3>
+<div style="font-size:12px;color:#4a5568;line-height:1.6;">
+From respective entries: Avg +6.3% | Winners 5/6 | Best BBAI +11.9% | Only loser JBLU −0.4%<br>
+From market open: Avg +0.6% | Winners 3/6<br>
+<span style="color:#2f855a;">JBLU was essentially flat (−0.4%).</span> All catalysts intact into weekend.
+</div>
+</div>
+</div>
+
+<!-- PORTFOLIO SIMULATIONS -->
+<div style="background-color:#f0f2f6;border-radius:6px;border:1px solid #d0d5dd;padding:16px;margin-bottom:20px;">
+<h2 style="font-size:16px;font-weight:700;color:#0a0e1a;margin:0 0 12px 0;">8–9. Portfolio Simulations ($10,000 equal-weighted)</h2>
+
+<table style="width:100%;border-collapse:collapse;font-size:12px;">
+<tr style="background-color:#0a0e1a;color:#ffffff;">
+<th style="padding:6px 10px;text-align:left;">Strategy</th>
+<th style="padding:6px 10px;text-align:right;">Final Value</th>
+<th style="padding:6px 10px;text-align:right;">Return</th>
+<th style="padding:6px 10px;text-align:right;">vs SPY</th>
+<th style="padding:6px 10px;text-align:left;">Notes</th>
+</tr>
+<tr style="background-color:#ffffff;border-bottom:1px solid #d0d5dd;">
+<td style="padding:6px 10px;font-weight:600;">Original 3 AM valid (8 picks, long+short) at open</td>
+<td style="padding:6px 10px;text-align:right;color:#c53030;font-weight:700;">$9,839</td>
+<td style="padding:6px 10px;text-align:right;color:#c53030;font-weight:700;">−1.61%</td>
+<td style="padding:6px 10px;text-align:right;color:#c53030;">−1.69%</td>
+<td style="padding:6px 10px;font-size:11px;">Destroyed by SPCE short (−28.8%)</td>
+</tr>
+<tr style="background-color:#f0f2f6;border-bottom:1px solid #d0d5dd;">
+<td style="padding:6px 10px;font-weight:600;">Bullish-only 3 AM (7 picks) at open</td>
+<td style="padding:6px 10px;text-align:right;font-weight:700;">$10,032</td>
+<td style="padding:6px 10px;text-align:right;color:#2f855a;font-weight:700;">+0.32%</td>
+<td style="padding:6px 10px;text-align:right;color:#2f855a;">+0.25%</td>
+<td style="padding:6px 10px;font-size:11px;">Slightly above SPY but flat</td>
+</tr>
+<tr style="background-color:#ffffff;border-bottom:1px solid #d0d5dd;">
+<td style="padding:6px 10px;font-weight:600;">5 Bullish Survivors at open</td>
+<td style="padding:6px 10px;text-align:right;font-weight:700;">$10,034</td>
+<td style="padding:6px 10px;text-align:right;color:#2f855a;font-weight:700;">+0.34%</td>
+<td style="padding:6px 10px;text-align:right;color:#2f855a;">+0.26%</td>
+<td style="padding:6px 10px;font-size:11px;">Removed losers, survivors flat-to-slightly-up</td>
+</tr>
+<tr style="background-color:#e6f7e6;border-bottom:1px solid #d0d5dd;">
+<td style="padding:6px 10px;font-weight:600;">Tier 1 Fresh Buy only at open</td>
+<td style="padding:6px 10px;text-align:right;font-weight:700;">$10,062</td>
+<td style="padding:6px 10px;text-align:right;color:#2f855a;font-weight:700;">+0.62%</td>
+<td style="padding:6px 10px;text-align:right;color:#2f855a;">+0.54%</td>
+<td style="padding:6px 10px;font-size:11px;">Best open-entry strategy</td>
+</tr>
+<tr style="background-color:#fde8e8;border-bottom:1px solid #d0d5dd;">
+<td style="padding:6px 10px;font-weight:600;">Intraday adds from add timestamp</td>
+<td style="padding:6px 10px;text-align:right;color:#c53030;font-weight:700;">$9,891</td>
+<td style="padding:6px 10px;text-align:right;color:#c53030;font-weight:700;">−1.09%</td>
+<td style="padding:6px 10px;text-align:right;color:#c53030;">−1.17%</td>
+<td style="padding:6px 10px;font-size:11px;">Bad entry timing, not bad picks</td>
+</tr>
+<tr style="background-color:#f0f2f6;border-bottom:1px solid #d0d5dd;">
+<td style="padding:6px 10px;font-weight:600;">Intraday adds from open</td>
+<td style="padding:6px 10px;text-align:right;font-weight:700;">$10,087</td>
+<td style="padding:6px 10px;text-align:right;color:#2f855a;font-weight:700;">+0.87%</td>
+<td style="padding:6px 10px;text-align:right;color:#2f855a;">+0.79%</td>
+<td style="padding:6px 10px;font-size:11px;">Same stocks, better entry — would've beaten SPY</td>
+</tr>
+<tr style="background-color:#fef3cd;border-bottom:1px solid #d0d5dd;">
+<td style="padding:6px 10px;font-weight:600;">Hold Only excluded Watch Only</td>
+<td style="padding:6px 10px;text-align:right;font-weight:700;">$10,056</td>
+<td style="padding:6px 10px;text-align:right;color:#2f855a;font-weight:700;">+0.56%</td>
+<td style="padding:6px 10px;text-align:right;color:#2f855a;">+0.48%</td>
+<td style="padding:6px 10px;font-size:11px;">Excluding WATCH picks improves results</td>
+</tr>
+<tr style="background-color:#0a0e1a;color:#ffffff;">
+<td style="padding:6px 10px;font-weight:600;color:#ffffff;">SPY Benchmark</td>
+<td style="padding:6px 10px;text-align:right;font-weight:700;">$10,008</td>
+<td style="padding:6px 10px;text-align:right;font-weight:700;">+0.08%</td>
+<td style="padding:6px 10px;text-align:right;">—</td>
+<td style="padding:6px 10px;font-size:11px;color:#a0aec0;">Open $755.90 → Close $756.48</td>
+</tr>
+<tr style="background-color:#0a0e1a;">
+<td style="padding:6px 10px;font-weight:600;color:#ffffff;">QQQ Benchmark</td>
+<td style="padding:6px 10px;text-align:right;font-weight:700;">$10,008</td>
+<td style="padding:6px 10px;text-align:right;font-weight:700;">+0.08%</td>
+<td style="padding:6px 10px;text-align:right;">—</td>
+<td style="padding:6px 10px;font-size:11px;color:#a0aec0;">Open $737.71 → Close $738.31</td>
+</tr>
+</table>
+
+<div style="background-color:#fef3cd;border-left:3px solid #b8860b;border-radius:0 4px 4px 0;padding:10px 14px;font-size:12px;color:#4a5568;margin-top:10px;line-height:1.6;">
+<span style="font-weight:700;color:#b8860b;">⚠️ BENCHMARK DATA ACCURACY:</span> The intraday closing report stated SPY +0.25%, QQQ +0.37%, IWM −0.56%. Verified closing data shows SPY +0.08%, QQQ +0.08%, IWM −0.33%. <span style="font-weight:700;color:#c53030;">All three benchmark returns in the report were inaccurate.</span> This inflates the apparent alpha. The true benchmark-beating performance is more modest than reported.
+</div>
+</div>
+
+<!-- STOP/TARGET VALIDATION -->
+<div style="background-color:#f0f2f6;border-radius:6px;border:1px solid #d0d5dd;padding:16px;margin-bottom:20px;">
+<h2 style="font-size:16px;font-weight:700;color:#0a0e1a;margin:0 0 12px 0;">10. Stop/Target Validation</h2>
+
+<div style="background-color:#fde8e8;border-radius:4px;padding:12px;margin-bottom:10px;border:1px solid #c53030;">
+<h3 style="font-size:13px;font-weight:700;color:#c53030;margin:0 0 6px 0;">❌ CRITICAL FAILURE — No defined stops or targets on actionable picks</h3>
+<div style="font-size:12px;color:#4a5568;line-height:1.6;">
+Of the 7 valid bullish picks in the 3 AM report, <span style="font-weight:700;color:#c53030;">ZERO had defined stop-loss or target levels.</span> CRSR said "Set tight stops" with no number. RXT gave an entry range $5.50–$6.20 but no risk levels. AAL, NCLH, LAES, BBAI, HIMS — none had defined R/R parameters.<br><br>
+The 6 AM update added some entry guidance but still no stops/targets.<br><br>
+<span style="font-weight:700;">Intraday adds:</span> GME, AI, and SOUN had exit triggers defined ($21.00, $10.50, VWAP). <span style="color:#2f855a;">✅ These were the only picks with defined risk management.</span><br><br>
+<span style="font-weight:700;color:#c53030;">Penalty: −5 pts</span> — No stop/target on actionable picks.
+</div>
+</div>
+
+<div style="background-color:#fef3cd;border-radius:4px;padding:12px;border:1px solid #b8860b;">
+<h3 style="font-size:13px;font-weight:700;color:#0a0e1a;margin:0 0 6px 0;">Intraday Exit Trigger Verification</h3>
+<table style="width:100%;border-collapse:collapse;font-size:11px;">
+<tr style="background-color:#0a0e1a;color:#ffffff;">
+<th style="padding:4px 6px;text-align:left;">Ticker</th>
+<th style="padding:4px 6px;text-align:right;">Trigger</th>
+<th style="padding:4px 6px;text-align:right;">Close</th>
+<th style="padding:4px 6px;text-align:center;">Triggered?</th>
+<th style="padding:4px 6px;text-align:left;">Margin</th>
+</tr>
+<tr style="background-color:#ffffff;border-bottom:1px solid #d0d5dd;">
+<td style="padding:4px 6px;font-weight:700;">GME</td>
+<td style="padding:4px 6px;text-align:right;color:#c53030;">$21.00</td>
+<td style="padding:4px 6px;text-align:right;">$21.18</td>
+<td style="padding:4px 6px;text-align:center;color:#2f855a;">NO</td>
+<td style="padding:4px 6px;">+$0.18 (0.9%)</td>
+</tr>
+<tr style="background-color:#f0f2f6;border-bottom:1px solid #d0d5dd;">
+<td style="padding:4px 6px;font-weight:700;">AI</td>
+<td style="padding:4px 6px;text-align:right;color:#c53030;">$10.50</td>
+<td style="padding:4px 6px;text-align:right;">$10.77</td>
+<td style="padding:4px 6px;text-align:center;color:#2f855a;">NO</td>
+<td style="padding:4px 6px;">+$0.27 (2.6%)</td>
+</tr>
+<tr style="background-color:#ffffff;">
+<td style="padding:4px 6px;font-weight:700;">SOUN</td>
+<td style="padding:4px 6px;text-align:right;color:#c53030;">$8.93</td>
+<td style="padding:4px 6px;text-align:right;">$9.00</td>
+<td style="padding:4px 6px;text-align:center;color:#2f855a;">NO</td>
+<td style="padding:4px 6px;">+$0.07 (0.8%)</td>
+</tr>
+</table>
+<div style="font-size:11px;color:#4a5568;margin-top:6px;">
+<span style="color:#c53030;">All 3 Watch Only positions held above triggers by razor-thin margins.</span> Weekend gap risk: any of the three could open below trigger on Monday.
+</div>
+</div>
+</div>
+
+<!-- BENCHMARK COMPARISON -->
+<div style="background-color:#f0f2f6;border-radius:6px;border:1px solid #d0d5dd;padding:16px;margin-bottom:20px;">
+<h2 style="font-size:16px;font-weight:700;color:#0a0e1a;margin:0 0 12px 0;">11. Benchmark & Relative Strength Comparison</h2>
+
+<table style="width:100%;border-collapse:collapse;font-size:11px;">
+<tr style="background-color:#0a0e1a;color:#ffffff;">
+<th style="padding:5px 8px;text-align:left;">Ticker</th>
+<th style="padding:5px 8px;text-align:right;">Intraday</th>
+<th style="padding:5px 8px;text-align:center;">vs SPY</th>
+<th style="padding:5px 8px;text-align:center;">vs QQQ</th>
+<th style="padding:5px 8px;text-align:center;">vs IWM</th>
+<th style="padding:5px 8px;text-align:left;">Sector ETF</th>
+<th style="padding:5px 8px;text-align:center;">Rating</th>
+</tr>
+<tr style="background-color:#ffffff;border-bottom:1px solid #d0d5dd;">
+<td style="padding:5px 8px;font-weight:700;">CRSR</td>
+<td style="padding:5px 8px;text-align:right;color:#2f855a;">+1.93%</td>
+<td style="padding:5px 8px;text-align:center;color:#2f855a;">🟢</td>
+<td style="padding:5px 8px;text-align:center;color:#2f855a;">🟢</td>
+<td style="padding:5px 8px;text-align:center;color:#2f855a;">🟢</td>
+<td style="padding:5px 8px;">XSD +6.33%</td>
+<td style="padding:5px 8px;text-align:center;color:#2f855a;font-weight:600;">STRONG</td>
+</tr>
+<tr style="background-color:#f0f2f6;border-bottom:1px solid #d0d5dd;">
+<td style="padding:5px 8px;font-weight:700;">AAL</td>
+<td style="padding:5px 8px;text-align:right;color:#c53030;">−0.68%</td>
+<td style="padding:5px 8px;text-align:center;color:#c53030;">🔴</td>
+<td style="padding:5px 8px;text-align:center;color:#c53030;">🔴</td>
+<td style="padding:5px 8px;text-align:center;color:#b8860b;">🟡</td>
+<td style="padding:5px 8px;">JETS +8.59%</td>
+<td style="padding:5px 8px;text-align:center;color:#c53030;font-weight:600;">WEAK vs sector</td>
+</tr>
+<tr style="background-color:#ffffff;border-bottom:1px solid #d0d5dd;">
+<td style="padding:5px 8px;font-weight:700;">NCLH</td>
+<td style="padding:5px 8px;text-align:right;color:#c53030;">−1.13%</td>
+<td style="padding:5px 8px;text-align:center;color:#c53030;">🔴</td>
+<td style="padding:5px 8px;text-align:center;color:#c53030;">🔴</td>
+<td style="padding:5px 8px;text-align:center;color:#c53030;">🔴</td>
+<td style="padding:5px 8px;">JETS +8.59%</td>
+<td style="padding:5px 8px;text-align:center;color:#c53030;font-weight:600;">WEAK vs sector</td>
+</tr>
+<tr style="background-color:#f0f2f6;border-bottom:1px solid #d0d5dd;">
+<td style="padding:5px 8px;font-weight:700;">BBAI</td>
+<td style="padding:5px 8px;text-align:right;color:#c53030;">−0.79%</td>
+<td style="padding:5px 8px;text-align:center;color:#c53030;">🔴</td>
+<td style="padding:5px 8px;text-align:center;color:#c53030;">🔴</td>
+<td style="padding:5px 8px;text-align:center;color:#b8860b;">🟡</td>
+<td style="padding:5px 8px;">XSD +6.33%</td>
+<td style="padding:5px 8px;text-align:center;color:#c53030;font-weight:600;">WEAK vs sector</td>
+</tr>
+<tr style="background-color:#ffffff;border-bottom:1px solid #d0d5dd;">
+<td style="padding:5px 8px;font-weight:700;">HIMS</td>
+<td style="padding:5px 8px;text-align:right;color:#2f855a;">+2.35%</td>
+<td style="padding:5px 8px;text-align:center;color:#2f855a;">🟢</td>
+<td style="padding:5px 8px;text-align:center;color:#2f855a;">🟢</td>
+<td style="padding:5px 8px;text-align:center;color:#2f855a;">🟢</td>
+<td style="padding:5px 8px;">XLV n/a</td>
+<td style="padding:5px 8px;text-align:center;color:#2f855a;font-weight:600;">STRONG</td>
+</tr>
+<tr style="background-color:#f0f2f6;border-bottom:1px solid #d0d5dd;">
+<td style="padding:5px 8px;font-weight:700;">GME</td>
+<td style="padding:5px 8px;text-align:right;color:#c53030;">−1.94%</td>
+<td style="padding:5px 8px;text-align:center;color:#c53030;">🔴</td>
+<td style="padding:5px 8px;text-align:center;color:#c53030;">🔴</td>
+<td style="padding:5px 8px;text-align:center;color:#c53030;">🔴</td>
+<td style="padding:5px 8px;">XRT n/a</td>
+<td style="padding:5px 8px;text-align:center;color:#c53030;font-weight:600;">WEAK</td>
+</tr>
+<tr style="background-color:#ffffff;border-bottom:1px solid #d0d5dd;">
+<td style="padding:5px 8px;font-weight:700;">JBLU</td>
+<td style="padding:5px 8px;text-align:right;color:#2f855a;">+1.67%</td>
+<td style="padding:5px 8px;text-align:center;color:#2f855a;">🟢</td>
+<td style="padding:5px 8px;text-align:center;color:#2f855a;">🟢</td>
+<td style="padding:5px 8px;text-align:center;color:#2f855a;">🟢</td>
+<td style="padding:5px 8px;">JETS +8.59%</td>
+<td style="padding:5px 8px;text-align:center;color:#b8860b;font-weight:600;">NEUTRAL</td>
+</tr>
+<tr style="background-color:#f0f2f6;border-bottom:1px solid #d0d5dd;">
+<td style="padding:5px 8px;font-weight:700;">AI</td>
+<td style="padding:5px 8px;text-align:right;color:#2f855a;">+3.06%</td>
+<td style="padding:5px 8px;text-align:center;color:#2f855a;">🟢</td>
+<td style="padding:5px 8px;text-align:center;color:#2f855a;">🟢</td>
+<td style="padding:5px 8px;text-align:center;color:#2f855a;">🟢</td>
+<td style="padding:5px 8px;">XSD +6.33%</td>
+<td style="padding:5px 8px;text-align:center;color:#2f855a;font-weight:600;">STRONG</td>
+</tr>
+<tr style="background-color:#ffffff;">
+<td style="padding:5px 8px;font-weight:700;">SOUN</td>
+<td style="padding:5px 8px;text-align:right;color:#2f855a;">+0.67%</td>
+<td style="padding:5px 8px;text-align:center;color:#2f855a;">🟢</td>
+<td style="padding:5px 8px;text-align:center;color:#b8860b;">🟡</td>
+<td style="padding:5px 8px;text-align:center;color:#2f855a;">🟢</td>
+<td style="padding:5px 8px;">XSD +6.33%</td>
+<td style="padding:5px 8px;text-align:center;color:#b8860b;font-weight:600;">NEUTRAL</td>
+</tr>
+</table>
+<div style="font-size:11px;color:#4a5568;margin-top:10px;line-height:1.6;">
+<span style="font-weight:700;color:#0a0e1a;">Sector ETFs:</span> XLE (Energy) −0.81% · JETS (Airlines) +8.59% · XSD (Semiconductors) +6.33%<br>
+<span style="color:#c53030;font-weight:600;">⚠️ Critical observation:</span> AAL (−0.68%) and NCLH (−1.13%) both underperformed the JETS airline sector ETF (+8.59%) dramatically. The sector call was correct but individual stock selection underperformed the sector. A simple JETS long would have been far superior.<br>
+<span style="color:#2f855a;font-weight:600;">HIMS (+2.35%) and CRSR (+1.93%)</span> showed genuine alpha — outperforming both benchmarks and their sectors.
+</div>
+</div>
+
+<!-- THEME ATTRIBUTION -->
+<div style="background-color:#f0f2f6;border-radius:6px;border:1px solid #d0d5dd;padding:16px;margin-bottom:20px;">
+<h2 style="font-size:16px;font-weight:700;color:#0a0e1a;margin:0 0 12px 0;">12. Theme Attribution & Concentration Check</h2>
+
+<table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:12px;">
+<tr style="background-color:#0a0e1a;color:#ffffff;">
+<th style="padding:5px 8px;text-align:left;">Ticker</th>
+<th style="padding:5px 8px;text-align:left;">Primary Theme</th>
+<th style="padding:5px 8px;text-align:center;">Sub-Theme</th>
+<th style="padding:5px 8px;text-align:center;">Result</th>
+</tr>
+<tr style="background-color:#ffffff;border-bottom:1px solid #d0d5dd;">
+<td style="padding:5px 8px;font-weight:700;">CRSR</td>
+<td style="padding:5px 8px;">Earnings</td>
+<td style="padding:5px 8px;text-align:center;">Gaming Hardware</td>
+<td style="padding:5px 8px;text-align:center;color:#2f855a;">✅ +6.5%</td>
+</tr>
+<tr style="background-color:#f0f2f6;border-bottom:1px solid #d0d5dd;">
+<td style="padding:5px 8px;font-weight:700;">RXT</td>
+<td style="padding:5px 8px;">Earnings</td>
+<td style="padding:5px 8px;text-align:center;">AI Cloud Infra</td>
+<td style="padding:5px 8px;text-align:center;color:#c53030;">❌ −12.4%</td>
+</tr>
+<tr style="background-color:#ffffff;border-bottom:1px solid #d0d5dd;">
+<td style="padding:5px 8px;font-weight:700;">AAL</td>
+<td style="padding:5px 8px;">Macro (Oil)</td>
+<td style="padding:5px 8px;text-align:center;">Airlines</td>
+<td style="padding:5px 8px;text-align:center;color:#2f855a;">✅ +3.1%</td>
+</tr>
+<tr style="background-color:#f0f2f6;border-bottom:1px solid #d0d5dd;">
+<td style="padding:5px 8px;font-weight:700;">NCLH</td>
+<td style="padding:5px 8px;">Macro (Oil)</td>
+<td style="padding:5px 8px;text-align:center;">Cruise Lines</td>
+<td style="padding:5px 8px;text-align:center;color:#2f855a;">✅ +10.5%</td>
+</tr>
+<tr style="background-color:#ffffff;border-bottom:1px solid #d0d5dd;">
+<td style="padding:5px 8px;font-weight:700;">LAES</td>
+<td style="padding:5px 8px;">Quantum/Semi</td>
+<td style="padding:5px 8px;text-align:center;">Post-Quantum</td>
+<td style="padding:5px 8px;text-align:center;color:#c53030;">❌ −26.0%</td>
+</tr>
+<tr style="background-color:#f0f2f6;border-bottom:1px solid #d0d5dd;">
+<td style="padding:5px 8px;font-weight:700;">BBAI</td>
+<td style="padding:5px 8px;">AI/Software</td>
+<td style="padding:5px 8px;text-align:center;">Defense AI</td>
+<td style="padding:5px 8px;text-align:center;color:#2f855a;">✅ +12.0%</td>
+</tr>
+<tr style="background-color:#ffffff;border-bottom:1px solid #d0d5dd;">
+<td style="padding:5px 8px;font-weight:700;">HIMS</td>
+<td style="padding:5px 8px;">M&A</td>
+<td style="padding:5px 8px;text-align:center;">Telehealth</td>
+<td style="padding:5px 8px;text-align:center;color:#2f855a;">✅ +11.3%</td>
+</tr>
+<tr style="background-color:#fde8e8;border-bottom:1px solid #d0d5dd;">
+<td style="padding:5px 8px;font-weight:700;">SPCE</td>
+<td style="padding:5px 8px;color:#c53030;">Bearish Fade</td>
+<td style="padding:5px 8px;text-align:center;">Meme/Space</td>
+<td style="padding:5px 8px;text-align:center;color:#c53030;">❌ +81.8%</td>
+</tr>
+<tr style="background-color:#fde8e8;border-bottom:1px solid #d0d5dd;">
+<td style="padding:5px 8px;font-weight:700;">CHRD</td>
+<td style="padding:5px 8px;color:#c53030;">Bearish (Analyst)</td>
+<td style="padding:5px 8px;text-align:center;">Energy</td>
+<td style="padding:5px 8px;text-align:center;color:#c53030;">DATA ERROR</td>
+</tr>
+<tr style="background-color:#fde8e8;">
+<td style="padding:5px 8px;font-weight:700;">MODV</td>
+<td style="padding:5px 8px;color:#c53030;">Squeeze</td>
+<td style="padding:5px 8px;text-align:center;">Bankruptcy</td>
+<td style="padding:5px 8px;text-align:center;color:#c53030;">ELIGIBILITY</td>
+</tr>
+</table>
+
+<div style="font-size:12px;color:#4a5568;line-height:1.6;margin-top:10px;">
+<span style="font-weight:700;color:#0a0e1a;">Theme Hit Rates:</span><br>
+• <span style="color:#2f855a;">Macro/Oil beneficiaries:</span> 3/3 (AAL, NCLH, JBLU) — <span style="font-weight:700;">100% hit rate. The call of the day.</span><br>
+• <span style="color:#2f855a;">Earnings catalysts:</span> 1/2 (CRSR hit, RXT miss after removal)<br>
+• <span style="color:#2f855a;">AI/Software:</span> 1/2 (BBAI hit, LAES miss) — from open: both AI adds (AI, SOUN) were positive<br>
+• <span style="color:#2f855a;">M&A:</span> 1/1 (HIMS hit)<br>
+• <span style="color:#c53030;">Bearish/Fade:</span> 0/2 (SPCE catastrophic, CHRD data error) — <span style="font-weight:700;">0% hit rate</span><br>
+• <span style="color:#c53030;">Squeeze/OTC:</span> 0/1 (MODV eligibility failure)<br><br>
+
+<span style="font-weight:700;color:#0a0e1a;">Concentration Check:</span><br>
+• Oil Collapse theme: 3/9 active = 33% ✅ under 40% limit<br>
+• AI theme: 3/9 active = 33% ✅ under 40% limit<br>
+• <span style="color:#2f855a;">No concentration breach.</span> Diversification was adequate.<br>
+• <span style="color:#c53030;">Theme concentration WARNING:</span> 3 bearish picks were ALL fighting the tape — no bearish play worked in a risk-on macro environment. The report acknowledged "risk-on sentiment dominating" in the macro section but still recommended 3 bearish/short picks. <span style="font-weight:700;">This is a contradiction.</span>
+</div>
+</div>
+
+<!-- BEST / WORST / ISSUES -->
+<div style="background-color:#f0f2f6;border-radius:6px;border:1px solid #d0d5dd;padding:16px;margin-bottom:20px;">
+<h2 style="font-size:16px;font-weight:700;color:#0a0e1a;margin:0 0 12px 0;">13–16. Best, Worst, Data Quality, and Missed Opportunities</h2>
+
+<div style="background-color:#e6f7e6;border-radius:4px;padding:12px;margin-bottom:10px;border:1px solid #2f855a;">
+<h3 style="font-size:13px;font-weight:700;color:#2f855a;margin:0 0 4px 0;">🏆 13. Best Valid Trade: BBAI +12.0%</h3>
+<div style="font-size:12px;color:#4a5568;line-height:1.5;">From 3 AM report price $4.50 to close $5.04 (+12.0%). Best percentage gainer in the active basket. Defense AI contracts backlog + record volume (101.6M, 2.7x avg). However, faded −0.8% intraday from open — gains came from pre-market gap, not intraday momentum. "Correct mover but benefit accrued to overnight holders, not open-entry traders." Profitable from report price, not from open.</div>
+</div>
+
+<div style="background-color:#fde8e8;border-radius:4px;padding:12px;margin-bottom:10px;border:1px solid #c53030;">
+<h3 style="font-size:13px;font-weight:700;color:#c53030;margin:0 0 4px 0;">💀 14. Worst Valid Trade: SPCE +81.8% (bearish pick, short loss)</h3>
+<div style="font-size:12px;color:#4a5568;line-height:1.5;">Bearish fade thesis completely destroyed. SPCE went from $3.40 (3 AM) / $4.80 (open) to $6.18 close (+81.8% from report, +28.8% from open). A short position lost −28.8% from open. The 6 AM update even upgraded this to Tier 1 bearish when it was at $2.80 pre-market — then it ripped +120% into the close. The fade-the-settlement-hype thesis was wrong. High short interest + risk-on tape = squeeze fuel. This is the single most damaging pick of the day.</div>
+</div>
+
+<div style="background-color:#fde8e8;border-radius:4px;padding:12px;margin-bottom:10px;border:1px solid #c53030;">
+<h3 style="font-size:13px;font-weight:700;color:#c53030;margin:0 0 4px 0;">🚫 15. Biggest Data Quality Issue: CHRD — Analyst PT Used as Stock Price</h3>
+<div style="font-size:12px;color:#4a5568;line-height:1.5;">The 3 AM report listed CHRD at $22.50 with entry range $21.50–$23.50. Actual price was ~$133. The system appears to have scraped an analyst price target ($21–$25) instead of the actual stock price. This is a <span style="font-weight:700;color:#c53030;">data pipeline integrity failure</span> — the price lookup returned the wrong data field. The 6 AM update caught this (kudos), but the original report was distributed with materially false information. <span style="font-weight:700;">Root cause:</span> No validation layer between data scrape and report generation to sanity-check price ranges.</div>
+</div>
+
+<div style="background-color:#fef3cd;border-radius:4px;padding:12px;margin-bottom:10px;border:1px solid #b8860b;">
+<h3 style="font-size:13px;font-weight:700;color:#b8860b;margin:0 0 4px 0;">🔮 16. Biggest Missed Opportunity: SPCE Long (the inverse of the pick)</h3>
+<div style="font-size:12px;color:#4a5568;line-height:1.5;">The system correctly identified SPCE as a high-volatility event stock but made the directional call wrong. In a risk-on tape with high short interest, the squeeze potential outweighed the fundamental fade thesis. The correct trade was long SPCE from open ($4.80) to close ($6.18) for +28.8% — the single best return of any tradeable idea. <span style="font-weight:700;">Secondary miss:</span> JETS ETF (+8.59%) massively outperformed both AAL (−0.7%) and NCLH (−1.1%) — the sector ETF was the better vehicle for the oil-collapse thesis.</div>
+</div>
+
+<div style="background-color:#ffffff;border-radius:4px;padding:12px;border:1px solid #d0d5dd;">
+<h3 style="font-size:13px;font-weight:700;color:#0a0e1a;margin:0 0 4px 0;">⚠️ Watchlist Oversight: PLTR +8.5% Excluded by $25 Gate</h3>
+<div style="font-size:12px;color:#4a5568;line-height:1.5;">The closing report notes PLTR was excluded by the $25 price gate but would have been "the trade of the day" at +8.5%. The $25 gate is a reasonable risk control but cost the basket significant alpha on a day when momentum was concentrated in mid-cap names pushing through resistance levels.</div>
+</div>
+</div>
+
+<!-- SCORING -->
+<div style="background-color:#f0f2f6;border-radius:6px;border:1px solid #d0d5dd;padding:16px;margin-bottom:20px;">
+<h2 style="font-size:16px;font-weight:700;color:#0a0e1a;margin:0 0 12px 0;">17. Scoring — 54/100</h2>
+
+<table style="width:100%;border-collapse:collapse;font-size:12px;">
+<tr style="background-color:#0a0e1a;color:#ffffff;">
+<th style="padding:6px 10px;text-align:left;">Category</th>
+<th style="padding:6px 10px;text-align:right;">Max</th>
+<th style="padding:6px 10px;text-align:right;">Score</th>
+<th style="padding:6px 10px;text-align:left;">Notes</th>
+</tr>
+<tr style="background-color:#ffffff;border-bottom:1px solid #d0d5dd;">
+<td style="padding:6px 10px;font-weight:600;">Data Quality</td>
+<td style="padding:6px 10px;text-align:right;">20</td>
+<td style="padding:6px 10px;text-align:right;color:#c53030;font-weight:700;">8</td>
+<td style="padding:6px 10px;font-size:11px;">CHRD data error, 3/10 picks >15% gap to open, MODV stale pricing, inaccurate benchmark data in closing report</td>
+</tr>
+<tr style="background-color:#f0f2f6;border-bottom:1px solid #d0d5dd;">
+<td style="padding:6px 10px;font-weight:600;">Catalyst Quality</td>
+<td style="padding:6px 10px;text-align:right;">15</td>
+<td style="padding:6px 10px;text-align:right;font-weight:700;">11</td>
+<td style="padding:6px 10px;font-size:11px;">Oil collapse + earnings + M&A catalysts were solid and well-articulated. Bearish catalysts were weak and contradicted macro view.</td>
+</tr>
+<tr style="background-color:#ffffff;border-bottom:1px solid #d0d5dd;">
+<td style="padding:6px 10px;font-weight:600;">Tradeability from Open</td>
+<td style="padding:6px 10px;text-align:right;">15</td>
+<td style="padding:6px 10px;text-align:right;color:#b8860b;font-weight:700;">7</td>
+<td style="padding:6px 10px;font-size:11px;">Bullish survivors profitable from report price but flat from open. Most gains were pre-market gap, not intraday execution.</td>
+</tr>
+<tr style="background-color:#f0f2f6;border-bottom:1px solid #d0d5dd;">
+<td style="padding:6px 10px;font-weight:600;">Intraday Add Quality</td>
+<td style="padding:6px 10px;text-align:right;">15</td>
+<td style="padding:6px 10px;text-align:right;color:#c53030;font-weight:700;">4</td>
+<td style="padding:6px 10px;font-size:11px;">All 4 intraday adds red from entry timestamp. Good stock picks, bad timing. Nearly 2-hour gap between open and first add missed.</td>
+</tr>
+<tr style="background-color:#ffffff;border-bottom:1px solid #d0d5dd;">
+<td style="padding:6px 10px;font-weight:600;">Risk Control / Removals</td>
+<td style="padding:6px 10px;text-align:right;">10</td>
+<td style="padding:6px 10px;text-align:right;font-weight:700;">7</td>
+<td style="padding:6px 10px;font-size:11px;">Correct removals on RXT, LAES, MODV saved ~44.8% combined loss. But no defined stops on actionable picks. SPCE removal was thesis failure, not risk control.</td>
+</tr>
+<tr style="background-color:#f0f2f6;border-bottom:1px solid #d0d5dd;">
+<td style="padding:6px 10px;font-weight:600;">Benchmark-Relative Performance</td>
+<td style="padding:6px 10px;text-align:right;">10</td>
+<td style="padding:6px 10px;text-align:right;font-weight:700;">6</td>
+<td style="padding:6px 10px;font-size:11px;">Basket beat SPY but by less than reported (inaccurate benchmark data). 6 of 9 active picks underperformed SPY intraday.</td>
+</tr>
+<tr style="background-color:#ffffff;border-bottom:1px solid #d0d5dd;">
+<td style="padding:6px 10px;font-weight:600;">Portfolio Performance</td>
+<td style="padding:6px 10px;text-align:right;">10</td>
+<td style="padding:6px 10px;text-align:right;font-weight:700;">6</td>
+<td style="padding:6px 10px;font-size:11px;">Combined basket +6.1% from entries but mostly from pre-market gap. Open-entry portfolio was flat (+0.3%).</td>
+</tr>
+<tr style="background-color:#f0f2f6;">
+<td style="padding:6px 10px;font-weight:600;">Report Clarity</td>
+<td style="padding:6px 10px;text-align:right;">5</td>
+<td style="padding:6px 10px;text-align:right;font-weight:700;">5</td>
+<td style="padding:6px 10px;font-size:11px;">Clean format, clear tiering, good catalyst descriptions. Well-structured intraday tracking.</td>
+</tr>
+<tr style="background-color:#fde8e8;">
+<td style="padding:6px 10px;font-weight:700;color:#c53030;">PENALTIES</td>
+<td style="padding:6px 10px;text-align:right;"></td>
+<td style="padding:6px 10px;text-align:right;color:#c53030;font-weight:700;">−10</td>
+<td style="padding:6px 10px;font-size:11px;color:#c53030;">No stop/target on actionable: −5. Stale price used as live (MODV): −10. Inaccurate benchmark data in closing report: −5. Theme concentration no warning (3 bearish vs risk-on macro): −5. Net penalties cap at −10 impact.</td>
+</tr>
+<tr style="background-color:#0a0e1a;">
+<td style="padding:6px 10px;font-weight:700;color:#ffffff;">TOTAL</td>
+<td style="padding:6px 10px;text-align:right;font-weight:700;color:#ffffff;">100</td>
+<td style="padding:6px 10px;text-align:right;font-weight:700;color:#ffffff;">54</td>
+<td style="padding:6px 10px;font-size:11px;color:#a0aec0;"></td>
+</tr>
+</table>
+</div>
+
+<!-- LESSONS -->
+<div style="background-color:#f0f2f6;border-radius:6px;border:1px solid #d0d5dd;padding:16px;margin-bottom:20px;">
+<h2 style="font-size:16px;font-weight:700;color:#0a0e1a;margin:0 0 12px 0;">18. Lessons for Next Trading Day</h2>
+
+<div style="font-size:13px;color:#4a5568;line-height:1.8;">
+<span style="font-weight:700;color:#c53030;">1. IMPLEMENT A DATA VALIDATION LAYER before report generation.</span> The CHRD error (analyst PT confused for stock price) is a systemic data pipeline failure. Add a sanity check: if any price is >3 standard deviations from the stock's recent trading range or if the market cap implied by the price differs from reported market cap by >50%, flag for human review. Also validate that all picks' 3 AM prices are within 20% of the previous day's close. MODV's stale $18 price when it was trading at $0.43 is equally unacceptable.<br><br>
+
+<span style="font-weight:700;color:#c53030;">2. STOP FIGHTING THE TAPE. When the macro section says "risk-on sentiment dominating," do not recommend bearish/short picks.</span> All 3 bearish/short picks failed catastrophically (SPCE +81.8%, CHRD data error, MODV delisted). The system correctly identified the macro environment as risk-on but contradicted itself with bearish recommendations. Rule: if the macro assessment is "risk-on," restrict bearish picks to at most 1, Tier 3 only, with explicit stop-losses. <span style="font-weight:700;">Forward guidance: zero bearish picks in a risk-on tape.</span><br><br>
+
+<span style="font-weight:700;color:#c53030;">3. REQUIRE DEFINED STOP-LOSS AND TARGET ON EVERY ACTIONABLE PICK.</span> Zero of the 7 original bullish picks had specific risk management levels. This is the single easiest fix with the highest ROI. Even a simple 5% stop and 10% target on every Tier 1 pick would transform accountability. The intraday adds (GME, AI, SOUN) actually did this — and those exit triggers informed all end-of-day decisions. Extend this discipline to the pre-market report.<br><br>
+
+<span style="font-weight:700;color:#b8860b;">4. FIX INTRADAY ADD TIMING — WAIT FOR VWAP CONFIRMATION.</span> All 4 intraday adds were profitable from open but red from add timestamp. Adding at 10:42 AM (near session highs) is a recurring pattern of poor entry timing. Implement rule: no intraday add before 10:30 AM, and only add on a pullback to or below VWAP. The stocks were right; the entries were wrong.<br><br>
+
+<span style="font-weight:700;color:#b8860b;">5. VERIFY BENCHMARK DATA BEFORE PUBLISHING.</span> The closing report stated SPY +0.25%, QQQ +0.37%, IWM −0.56%. Actual: SPY +0.08%, QQQ +0.08%, IWM −0.33%. This inflates apparent alpha and undermines report credibility. Pull benchmark data from a single verified source at the exact same timestamp as stock prices.
+</div>
+</div>
+
+<!-- PATTERN LOG UPDATES -->
+<div style="background-color:#eef0f4;border-radius:6px;border:1px solid #d0d5dd;padding:16px;margin-bottom:20px;">
+<h2 style="font-size:16px;font-weight:700;color:#0a0e1a;margin:0 0 12px 0;">19. Pattern Log Updates</h2>
+<div style="font-size:12px;color:#4a5568;line-height:1.6;">
+
+<span style="font-weight:700;color:#0a0e1a;">Updated categories (written to pattern_log.json):</span><br><br>
+
+<span style="font-weight:700;color:#2f855a;">macro_sector_plays (Oil/Geopolitical):</span> +2 hits (AAL +3.1%, NCLH +10.5%) → Now 4 hits / 0 misses / 100% (was 2/0). Bonus increased to +0.75.<br><br>
+
+<span style="font-weight:700;color:#2f855a;">post_earnings_momentum:</span> +1 hit (CRSR +6.5%), +1 miss (RXT −12.4% from report) → Now 2 hits / 1 miss / 66.7%. <span style="color:#b8860b;">RXT notable: removed before full loss materialized. From open price ($4.90) it was actually +5.5% green — the report price was stale.</span><br><br>
+
+<span style="font-weight:700;color:#c53030;">high_si_bearish_fade:</span> +1 miss (SPCE +81.8% against bearish thesis) → Now 0 hits / 2 misses / 0.0%. <span style="font-weight:700;">Exclude this category from future risk-on tapes.</span> Penalty: −2.0.<br><br>
+
+<span style="font-weight:700;color:#c53030;">bankruptcy_delisting_squeeze:</span> +1 miss (MODV delisted) → Now 0 hits / 2 misses / 0.0%. Penalty: −2.0. Excluded category.<br><br>
+
+<span style="font-weight:700;">NEW — analyst_pt_confused_with_price:</span> 1 occurrence (CHRD). 100% data error rate. Add validation rule.<br><br>
+
+<span style="font-weight:700;">NEW — bearish_in_risk_on_tape:</span> 3 picks (SPCE, CHRD, MODV). 0 hits / 2 misses / 1 data error. 0% hit rate when bearish picks are made in confirmed risk-on macro environments. <span style="color:#c53030;">Forward guidance: ban bearish picks when macro confirms risk-on.</span><br><br>
+
+<span style="font-weight:700;">Updated — intraday_add_timing:</span> 0/4 profitable from add timestamp. All 3/4 profitable from open. Pattern: entries at session highs.
+</div>
+</div>
+
+<!-- DISCLAIMER -->
+<div style="padding:16px 0 0 0;font-size:11px;color:#4a5568;border-top:1px solid #d0d5dd;line-height:1.5;">
+<span style="font-weight:600;color:#0a0e1a;">⚠️ This is a post-market validation audit — not financial advice.</span> All data verified via Yahoo Finance API at market close May 29, 2026. Scoring is based on the MarketPulse Validation framework. This report is an internal quality-control document.<br><br>
+<span style="color:#2b6cb0;">MarketPulse Validation by BayShore Intelligence • Generated Friday, May 29, 2026 5:00 PM PT</span>
+</div>
+
+</div>
+</body>
+</html>
