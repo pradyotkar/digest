@@ -14,25 +14,31 @@
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
         html{scroll-behavior:smooth}
-        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#060d1a;color:#e6edf3;line-height:1.6;-webkit-font-smoothing:antialiased;padding-top:52px}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#060d1a;color:#e6edf3;line-height:1.6;-webkit-font-smoothing:antialiased;padding-top:60px}
 
-        /* ── Sticky Nav ─────────────────────────────────────── */
-        nav.sticky{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(6,13,26,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;gap:4px;padding:0 12px;height:52px;overflow-x:auto;-webkit-overflow-scrolling:touch}
-        nav.sticky a{color:#8b949e;text-decoration:none;font-size:12px;font-weight:500;padding:6px 14px;border-radius:6px;white-space:nowrap;transition:color 0.2s,background 0.2s}
-        nav.sticky a:hover{color:#00d4ff;background:rgba(0,212,255,0.08)}
-        @media(max-width:640px){nav.sticky{justify-content:flex-start;padding:0 8px;gap:2px}nav.sticky a{font-size:11px;padding:6px 10px}}
+        /* ── NavBar ──────────────────────────────────────────── */
+        nav.navbar{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(6,13,26,0.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:60px}
+        nav.navbar .nav-brand{font-size:16px;font-weight:700;color:#00d4ff;text-decoration:none;white-space:nowrap;letter-spacing:-0.3px}
+        nav.navbar .nav-links{display:flex;align-items:center;gap:2px}
+        nav.navbar a.nav-link{color:#8b949e;text-decoration:none;font-size:13px;font-weight:500;padding:8px 16px;border-radius:6px;white-space:nowrap;transition:color 0.2s,background 0.2s}
+        nav.navbar a.nav-link:hover{color:#00d4ff;background:rgba(0,212,255,0.08)}
+        nav.navbar a.nav-link.active{color:#fff;background:rgba(0,212,255,0.12)}
+        nav.navbar .nav-sections{color:#555;font-size:11px;padding:0 8px;user-select:none}
+        .nav-toggle{display:none;background:none;border:none;color:#8b949e;font-size:24px;cursor:pointer;padding:4px 8px}
+        @media(max-width:768px){
+            nav.navbar{padding:0 16px}
+            .nav-toggle{display:block}
+            nav.navbar .nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:rgba(6,13,26,0.98);flex-direction:column;padding:12px;border-bottom:1px solid rgba(255,255,255,0.06);gap:4px}
+            nav.navbar .nav-links.open{display:flex}
+            nav.navbar .nav-sections{display:none}
+        }
+        @media(max-width:640px){nav.navbar a.nav-link{font-size:12px;padding:8px 10px}}
 
         .hero{
             position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden
         }
-        .hero-bg{
-            position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;z-index:0
-        }
-        .hero-overlay{
-            position:absolute;inset:0;
-            background:linear-gradient(135deg,#060d1a 0%,transparent 50%,#060d1a 100%),
-                       linear-gradient(to bottom,transparent 60%,#060d1a 100%);z-index:1
-        }
+        .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.25;z-index:0}
+        .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,#060d1a 0%,transparent 50%,#060d1a 100%),linear-gradient(to bottom,transparent 60%,#060d1a 100%);z-index:1}
         .hero-content{position:relative;z-index:2;text-align:center;padding:40px 24px;max-width:800px}
         .logo{width:100px;height:100px;border-radius:50%;object-fit:cover;margin-bottom:24px;border:3px solid rgba(0,212,255,0.3);box-shadow:0 0 40px rgba(0,212,255,0.1)}
         .hero h1{font-size:48px;font-weight:800;letter-spacing:-1px;margin-bottom:8px;background:linear-gradient(135deg,#fff 0%,#00d4ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -44,16 +50,20 @@
         .badge.green{background:rgba(0,200,83,0.08);border-color:rgba(0,200,83,0.15);color:#00c853}
         .badge.purple{background:rgba(156,39,176,0.08);border-color:rgba(156,39,176,0.15);color:#ce93d8}
 
-        /* ── CTA Buttons ────────────────────────────────────── */
         .cta-row{text-align:center;margin-top:32px}
         .cta-btn{display:inline-block;padding:14px 36px;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;transition:all .3s;background:linear-gradient(135deg,#00d4ff,#0088aa);color:#fff;border:1px solid rgba(0,212,255,0.3)}
         .cta-btn:hover{box-shadow:0 6px 30px rgba(0,212,255,.3);transform:translateY(-2px)}
 
         .section{padding:80px 24px;max-width:1000px;margin:auto}
+        .section-sm{padding:60px 24px;max-width:800px;margin:auto}
         .section h2{font-size:28px;font-weight:700;letter-spacing:-0.5px;margin-bottom:6px}
         .section .section-sub{color:#8b949e;font-size:14px;margin-bottom:36px}
         .section-title{display:flex;align-items:center;gap:12px;margin-bottom:4px}
         .section-title .line{flex:1;height:1px;background:rgba(255,255,255,0.08)}
+
+        .page-header{text-align:center;padding:100px 24px 60px;max-width:800px;margin:auto}
+        .page-header h1{font-size:36px;font-weight:800;margin-bottom:8px;background:linear-gradient(135deg,#fff 0%,#00d4ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .page-header .sub{color:#8b949e;font-size:14px}
 
         .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin:0 0 40px}
         .stat-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:24px;text-align:center}
@@ -61,6 +71,7 @@
         .stat-card .label{font-size:11px;color:#8b949e;margin-top:4px;text-transform:uppercase;letter-spacing:1px}
 
         .bio-text{font-size:14px;color:#b0b8c4;line-height:1.7;max-width:700px}
+        .content-text{font-size:14px;color:#b0b8c4;line-height:1.8;max-width:750px;margin:0 auto}
 
         .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:24px}
         .card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:24px;transition:border-color 0.2s}
@@ -80,11 +91,8 @@
 
         .card-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
         @media(max-width:768px){.card-grid{grid-template-columns:1fr}.hero h1{font-size:32px}}
-        .digest-card{
-            background:linear-gradient(145deg,#0d1526,#0a1020);border:1px solid #1a2744;
-            border-radius:16px;padding:36px;transition:all .3s ease;position:relative;overflow:hidden
-        }
-        .digest-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:16px 16px 0 0}
+        .digest-card{background:linear-gradient(145deg,#0d1526,#0a1020);border:1px solid #1a2744;border-radius:16px;padding:36px;transition:all .3s ease;position:relative;overflow:hidden}
+        .digest-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;}
         .digest-card.ai::before{background:linear-gradient(90deg,#3b82f6,#60a5fa)}
         .digest-card.mp::before{background:linear-gradient(90deg,#00d4ff,#0088aa)}
         .digest-card:hover{border-color:#2a3a60;transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,212,255,.08)}
@@ -96,27 +104,37 @@
         .digest-card ul li::before{content:'▸ '}
         .digest-card.ai ul li::before{color:#60a5fa}
         .digest-card.mp ul li::before{color:#00d4ff}
-        .btn{
-            display:inline-block;padding:10px 24px;border-radius:8px;font-size:13px;font-weight:600;
-            text-decoration:none;transition:all .2s
-        }
+        .btn{display:inline-block;padding:10px 24px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;transition:all .2s}
         .btn-primary{background:linear-gradient(135deg,#3b82f6,#60a5fa);color:#fff}
         .btn-primary:hover{box-shadow:0 4px 20px rgba(59,130,246,.3)}
         .btn-cyan{background:linear-gradient(135deg,#00d4ff,#0088aa);color:#fff}
         .btn-cyan:hover{box-shadow:0 4px 20px rgba(0,212,255,.3)}
 
-        /* ── Photography Gallery ────────────────────────────── */
         .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}
         .photo-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;border:1px solid rgba(255,255,255,0.06)}
-        .photo-placeholder{
-            width:100%;aspect-ratio:4/3;border-radius:8px;border:1px dashed rgba(255,255,255,0.12);
-            display:flex;align-items:center;justify-content:center;flex-direction:column;
-            background:rgba(255,255,255,0.02);color:#555;font-size:13px;gap:6px;
-            transition:border-color 0.2s,background 0.2s
-        }
+        .photo-placeholder{width:100%;aspect-ratio:4/3;border-radius:8px;border:1px dashed rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;flex-direction:column;background:rgba(255,255,255,0.02);color:#555;font-size:13px;gap:6px;transition:border-color 0.2s,background 0.2s}
         .photo-placeholder:hover{border-color:rgba(0,212,255,0.2);background:rgba(0,212,255,0.03)}
         .photo-placeholder span{font-size:28px;opacity:0.4}
         @media(max-width:640px){.photo-grid{grid-template-columns:repeat(2,1fr)}}
+
+        .bayshore-section{padding:60px 24px;max-width:800px;margin:auto}
+        .bayshore-section h2{font-size:22px;font-weight:700;margin-bottom:16px;color:#e6edf3}
+        .bayshore-section p{font-size:14px;color:#b0b8c4;line-height:1.8;margin-bottom:16px}
+        .bayshore-section .highlight{color:#00d4ff;font-weight:600}
+        .stat-row{display:flex;gap:20px;flex-wrap:wrap;margin:24px 0;justify-content:center}
+        .stat-item{text-align:center;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:20px 28px;flex:1;min-width:140px}
+        .stat-item .num{font-size:28px;font-weight:800;color:#00d4ff}
+        .stat-item .lbl{font-size:11px;color:#8b949e;margin-top:4px;text-transform:uppercase;letter-spacing:0.5px}
+
+        .placeholder-card{border:1px dashed rgba(255,255,255,0.12);border-radius:12px;padding:40px 24px;text-align:center;background:rgba(255,255,255,0.02)}
+        .placeholder-card .coming-soon{display:inline-block;background:rgba(255,215,0,0.1);color:#ffd700;padding:3px 12px;border-radius:12px;font-size:11px;font-weight:600;margin-bottom:12px;letter-spacing:0.5px}
+
+        .trip-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:28px;margin-bottom:24px;transition:border-color 0.2s}
+        .trip-card:hover{border-color:rgba(0,212,255,0.2)}
+        .trip-card .trip-header{display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+        .trip-card .trip-title{font-size:18px;font-weight:700}
+        .trip-card .trip-date{font-size:12px;color:#8b949e}
+        .trip-card .trip-teaser{font-size:13px;color:#8b949e;line-height:1.6}
 
         footer{padding:40px 24px;text-align:center;border-top:1px solid rgba(255,255,255,0.06)}
         footer a{color:#8b949e;text-decoration:none;margin:0 12px;font-size:13px}
@@ -126,14 +144,23 @@
 </head>
 <body>
 
-<!-- Sticky Navigation -->
-<nav class="sticky">
-    <a href="#about">About</a>
-    <a href="#career">Career</a>
-    <a href="#what-i-build">What I Build</a>
-    <a href="#live-tools">Live Tools</a>
-    <a href="#photography">Photography</a>
-    <a href="#contact">Get in Touch</a>
+<!-- NavBar -->
+<nav class="navbar">
+    <a href="/" class="nav-brand">PK</a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle navigation">☰</button>
+    <div class="nav-links">
+        <a href="/" class="nav-link active">Home</a>
+        <span class="nav-sections">|</span>
+        <a href="/" class="nav-link">About</a>
+        <a href="/" class="nav-link">Career</a>
+        <a href="/" class="nav-link">What I Build</a>
+        <a href="/" class="nav-link">Live Tools</a>
+        <a href="/" class="nav-link">Photography</a>
+        <a href="/" class="nav-link">Contact</a>
+        <span class="nav-sections">|</span>
+        <a href="/bayshore-visa" class="nav-link">Bayshore &amp; Visa</a>
+        <a href="/travel" class="nav-link">Travel</a>
+    </div>
 </nav>
 
 <!-- Hero -->
@@ -170,10 +197,7 @@
 
 <!-- About -->
 <section class="section" id="about">
-    <div class="section-title">
-        <h2>About</h2>
-        <div class="line"></div>
-    </div>
+    <div class="section-title"><h2>About</h2><div class="line"></div></div>
     <p class="section-sub">From mainframe Assembler to AI leadership</p>
     <div class="bio-text">
         <p>Started my career writing S/390 Assembler code on Visa's mainframe. Over 24 years, rose to <strong>Senior Director</strong>, managing the core payment switching system that processes <strong>50,000 transactions per second</strong> with <strong>99.9999% availability</strong> — the beating heart of Visa's global payment infrastructure.</p>
@@ -181,6 +205,8 @@
         <p>In 2024, stepped away to found <strong>Bayshore Intelligence Solutions</strong>, a boutique AI consulting and software development firm. I help startups and enterprises build AI-powered systems — from Agentic AI to intelligent compliance automation. I also advise early-stage startups on product strategy, AI architecture, and go-to-market execution.</p>
         <br>
         <p>Outside of work, you'll find me with a camera in the mountains, exploring new cuisines, or planning the next travel adventure.</p>
+        <br>
+        <p style="margin-top:8px"><a href="/bayshore-visa" style="color:#00d4ff;text-decoration:none;font-weight:500">Deeper dive at Visa &rarr;</a></p>
     </div>
     <div class="cta-row">
         <a href="https://www.bayshoreintel.com" class="cta-btn" target="_blank" rel="noopener">Explore Bayshore Intelligence Solutions →</a>
@@ -189,36 +215,13 @@
 
 <!-- Career Timeline -->
 <section class="section" id="career">
-    <div class="section-title">
-        <h2>Career</h2>
-        <div class="line"></div>
-    </div>
+    <div class="section-title"><h2>Career</h2><div class="line"></div></div>
     <p class="section-sub">24+ years at the intersection of payments, compliance, and AI</p>
     <div class="timeline">
-        <div class="tl-item">
-            <div class="date">March 2024 — Present</div>
-            <div class="role">CEO (US)</div>
-            <div class="company">Bayshore Intelligence Solutions · San Francisco Bay Area</div>
-            <div class="desc">Boutique AI consulting &amp; software development. Agentic AI, intelligent compliance, KYC/AML automation. Advising startups on AI strategy, product architecture, and MVP development.</div>
-        </div>
-        <div class="tl-item">
-            <div class="date">Nov 2016 — March 2024</div>
-            <div class="role">Senior Director, Switching Systems Test Engineering</div>
-            <div class="company">Visa Inc. · Foster City, CA</div>
-            <div class="desc">Managed global team processing all Visa payment authorization transactions at 50K tps with 99.9999% availability. Led SOX/federal audit readiness, BCP/DR strategies, and AI-driven SDLC automation.</div>
-        </div>
-        <div class="tl-item">
-            <div class="date">Nov 2010 — Oct 2016</div>
-            <div class="role">Director, Switching Systems Test Engineering</div>
-            <div class="company">Visa Inc.</div>
-            <div class="desc">Risk-based testing for global payments compliance. Built AI-powered test automation that reduced PROD defects by 50%. Liaised with financial audit on SOX, PCI, and FFIEC.</div>
-        </div>
-        <div class="tl-item">
-            <div class="date">2000 — 2010</div>
-            <div class="role">Software Developer → Test Manager</div>
-            <div class="company">RS Software (Visa Inc. Contract)</div>
-            <div class="desc">Wrote S/390 Assembler and TPF on Visa's mainframe. Managed QA for Visa's global payments infrastructure. Where the journey began.</div>
-        </div>
+        <div class="tl-item"><div class="date">March 2024 — Present</div><div class="role">CEO (US)</div><div class="company">Bayshore Intelligence Solutions · San Francisco Bay Area</div><div class="desc">Boutique AI consulting &amp; software development. Agentic AI, intelligent compliance, KYC/AML automation. Advising startups on AI strategy, product architecture, and MVP development.</div></div>
+        <div class="tl-item"><div class="date">Nov 2016 — March 2024</div><div class="role">Senior Director, Switching Systems Test Engineering</div><div class="company">Visa Inc. · Foster City, CA</div><div class="desc">Managed global team processing all Visa payment authorization transactions at 50K tps with 99.9999% availability. Led SOX/federal audit readiness, BCP/DR strategies, and AI-driven SDLC automation.</div></div>
+        <div class="tl-item"><div class="date">Nov 2010 — Oct 2016</div><div class="role">Director, Switching Systems Test Engineering</div><div class="company">Visa Inc.</div><div class="desc">Risk-based testing for global payments compliance. Built AI-powered test automation that reduced PROD defects by 50%. Liaised with financial audit on SOX, PCI, and FFIEC.</div></div>
+        <div class="tl-item"><div class="date">2000 — 2010</div><div class="role">Software Developer → Test Manager</div><div class="company">RS Software (Visa Inc. Contract)</div><div class="desc">Wrote S/390 Assembler and TPF on Visa's mainframe. Managed QA for Visa's global payments infrastructure. Where the journey began.</div></div>
     </div>
     <div class="cta-row">
         <a href="https://www.bayshoreintel.com" class="cta-btn" target="_blank" rel="noopener">Explore Bayshore Intelligence Solutions →</a>
@@ -227,10 +230,7 @@
 
 <!-- What I Build -->
 <section class="section" id="what-i-build">
-    <div class="section-title">
-        <h2>What I Build</h2>
-        <div class="line"></div>
-    </div>
+    <div class="section-title"><h2>What I Build</h2><div class="line"></div></div>
     <p class="section-sub">AI-powered systems for Fintech, compliance, and automation</p>
     <div class="grid">
         <div class="card"><div class="icon">🤖</div><h3>Agentic AI Systems</h3><p>Autonomous AI agents for trading, lead generation, compliance monitoring, and business process automation.</p></div>
@@ -242,47 +242,19 @@
     </div>
 </section>
 
-<!-- AI Digest & MarketPulse -->
+<!-- Live Tools -->
 <section class="section" id="live-tools">
-    <div class="section-title">
-        <h2>Live Tools</h2>
-        <div class="line"></div>
-    </div>
+    <div class="section-title"><h2>Live Tools</h2><div class="line"></div></div>
     <p class="section-sub">Daily AI research and market intelligence — refreshed automatically</p>
     <div class="card-grid">
-        <div class="digest-card ai">
-            <div class="icon">🧠</div>
-            <h3>Daily AI Digest</h3>
-            <p>LLM pricing, model news, agent ecosystem updates, and notable AI applications — curated every day at noon Pacific.</p>
-            <ul>
-                <li>Pricing tables for OpenAI, Anthropic, Gemini, DeepSeek, Kimi</li>
-                <li>Latest model releases and benchmark news</li>
-                <li>AI agent ecosystem developments</li>
-                <li>Quick stats on funding and pricing changes</li>
-            </ul>
-            <a href="/daily-digest/latest" class="btn btn-primary">View Latest Digest →</a>
-        </div>
-        <div class="digest-card mp">
-            <div class="icon">📈</div>
-            <h3>MarketPulse</h3>
-            <p>Ten highest-conviction stocks ($1–$25) with catalysts for significant intraday movement. Delivered before market open.</p>
-            <ul>
-                <li>Macro pulse with overnight futures data</li>
-                <li>10 curated picks with catalyst analysis</li>
-                <li>Bullish/bearish bias on every pick</li>
-                <li>Quick reference watchlist table</li>
-            </ul>
-            <a href="/marketpulse/latest" class="btn btn-cyan">View Latest Report →</a>
-        </div>
+        <div class="digest-card ai"><div class="icon">🧠</div><h3>Daily AI Digest</h3><p>LLM pricing, model news, agent ecosystem updates, and notable AI applications — curated every day at noon Pacific.</p><ul><li>Pricing tables for OpenAI, Anthropic, Gemini, DeepSeek, Kimi</li><li>Latest model releases and benchmark news</li><li>AI agent ecosystem developments</li><li>Quick stats on funding and pricing changes</li></ul><a href="/daily-digest/latest" class="btn btn-primary">View Latest Digest →</a></div>
+        <div class="digest-card mp"><div class="icon">📈</div><h3>MarketPulse</h3><p>Ten highest-conviction stocks ($1–$25) with catalysts for significant intraday movement. Delivered before market open.</p><ul><li>Macro pulse with overnight futures data</li><li>10 curated picks with catalyst analysis</li><li>Bullish/bearish bias on every pick</li><li>Quick reference watchlist table</li></ul><a href="/marketpulse/latest" class="btn btn-cyan">View Latest Report →</a></div>
     </div>
 </section>
 
 <!-- Photography -->
 <section class="section" id="photography">
-    <div class="section-title">
-        <h2>Photography</h2>
-        <div class="line"></div>
-    </div>
+    <div class="section-title"><h2>Photography</h2><div class="line"></div></div>
     <p class="section-sub">Mountains · Travel · Street · Food</p>
     <div class="photo-grid">
         <img src="/hero.jpg" alt="Mountain landscape view from a high elevation perspective" loading="lazy">
@@ -292,15 +264,12 @@
         <div class="photo-placeholder"><span>📸</span>Photos coming soon</div>
         <div class="photo-placeholder"><span>📸</span>Photos coming soon</div>
     </div>
-    <p style="font-size:11px;color:#555;margin-top:10px">Drop images into <code>/images/photography/</code> (mountains/travel/street/food) and update the grid in index.html to activate the gallery.</p>
+    <p style="font-size:11px;color:#555;margin-top:10px">Drop images into <code>/images/photography/</code> to activate the gallery.</p>
 </section>
 
 <!-- Contact -->
 <section class="section" id="contact" style="text-align:center">
-    <div class="section-title">
-        <h2>Get in Touch</h2>
-        <div class="line"></div>
-    </div>
+    <div class="section-title"><h2>Get in Touch</h2><div class="line"></div></div>
     <p class="section-sub">Let's build something intelligent</p>
     <p style="font-size:14px;color:#8b949e;margin-bottom:12px">
         <a href="mailto:pradyotkar@gmail.com" style="color:#00d4ff;text-decoration:none">pradyotkar@gmail.com</a>
@@ -318,10 +287,25 @@
 <footer>
     <p class="copyright">© 2026 Pradyot Kar · San Francisco Bay Area</p>
     <p>
+        <a href="/">Home</a>
+        &nbsp;·&nbsp;
+        <a href="/bayshore-visa">Bayshore &amp; Visa</a>
+        &nbsp;·&nbsp;
+        <a href="/travel">Travel</a>
+        &nbsp;·&nbsp;
         <a href="https://www.bayshoreintel.com" target="_blank" rel="noopener">Bayshore Intelligence Solutions</a>
         &nbsp;·&nbsp;
         <a href="mailto:pradyotkar@gmail.com">Contact</a>
     </p>
 </footer>
+
+<script>
+// Close mobile nav on link click
+document.querySelectorAll('.nav-link').forEach(a => {
+    a.addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.remove('open');
+    });
+});
+</script>
 
 </body></html>
