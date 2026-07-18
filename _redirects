@@ -1,4 +1,7 @@
 # Cloudflare Pages
+# Preserve old URLs via redirect
+/bayshore-visa    /experience     301
+# Digest and MarketPulse
 /daily-digest/* /daily-digest/:splat 200
 /marketpulse /marketpulse/latest 302
 /marketpulse/latest  /marketpulse/latest.html 302
