@@ -4,9 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pradyot Kar — AI & Payment Infrastructure Leader</title>
+    <meta name="description" content="Pradyot Kar — CEO at Bayshore Intelligence Solutions. Former Visa Senior Director. 24+ years in payments infrastructure, AI systems, and Agentic AI. Photography, travel.">
+    <meta property="og:title" content="Pradyot Kar — AI & Payment Infrastructure Leader">
+    <meta property="og:description" content="Former Visa Senior Director, now building AI-powered systems at Bayshore Intelligence Solutions. 50K TPS payment core, Agentic AI, and fintech innovation.">
+    <meta property="og:image" content="https://pradykar.com/logo.png">
+    <meta property="og:url" content="https://pradykar.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
     <style>
         *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#060d1a;color:#e6edf3;line-height:1.6;-webkit-font-smoothing:antialiased}
+        html{scroll-behavior:smooth}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#060d1a;color:#e6edf3;line-height:1.6;-webkit-font-smoothing:antialiased;padding-top:52px}
+
+        /* ── Sticky Nav ─────────────────────────────────────── */
+        nav.sticky{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(6,13,26,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;gap:4px;padding:0 12px;height:52px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+        nav.sticky a{color:#8b949e;text-decoration:none;font-size:12px;font-weight:500;padding:6px 14px;border-radius:6px;white-space:nowrap;transition:color 0.2s,background 0.2s}
+        nav.sticky a:hover{color:#00d4ff;background:rgba(0,212,255,0.08)}
+        @media(max-width:640px){nav.sticky{justify-content:flex-start;padding:0 8px;gap:2px}nav.sticky a{font-size:11px;padding:6px 10px}}
 
         .hero{
             position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden
@@ -29,6 +43,11 @@
         .badge.gold{background:rgba(255,215,0,0.08);border-color:rgba(255,215,0,0.15);color:#ffd700}
         .badge.green{background:rgba(0,200,83,0.08);border-color:rgba(0,200,83,0.15);color:#00c853}
         .badge.purple{background:rgba(156,39,176,0.08);border-color:rgba(156,39,176,0.15);color:#ce93d8}
+
+        /* ── CTA Buttons ────────────────────────────────────── */
+        .cta-row{text-align:center;margin-top:32px}
+        .cta-btn{display:inline-block;padding:14px 36px;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;transition:all .3s;background:linear-gradient(135deg,#00d4ff,#0088aa);color:#fff;border:1px solid rgba(0,212,255,0.3)}
+        .cta-btn:hover{box-shadow:0 6px 30px rgba(0,212,255,.3);transform:translateY(-2px)}
 
         .section{padding:80px 24px;max-width:1000px;margin:auto}
         .section h2{font-size:28px;font-weight:700;letter-spacing:-0.5px;margin-bottom:6px}
@@ -86,18 +105,39 @@
         .btn-cyan{background:linear-gradient(135deg,#00d4ff,#0088aa);color:#fff}
         .btn-cyan:hover{box-shadow:0 4px 20px rgba(0,212,255,.3)}
 
+        /* ── Photography Gallery ────────────────────────────── */
         .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}
         .photo-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;border:1px solid rgba(255,255,255,0.06)}
+        .photo-placeholder{
+            width:100%;aspect-ratio:4/3;border-radius:8px;border:1px dashed rgba(255,255,255,0.12);
+            display:flex;align-items:center;justify-content:center;flex-direction:column;
+            background:rgba(255,255,255,0.02);color:#555;font-size:13px;gap:6px;
+            transition:border-color 0.2s,background 0.2s
+        }
+        .photo-placeholder:hover{border-color:rgba(0,212,255,0.2);background:rgba(0,212,255,0.03)}
+        .photo-placeholder span{font-size:28px;opacity:0.4}
+        @media(max-width:640px){.photo-grid{grid-template-columns:repeat(2,1fr)}}
 
         footer{padding:40px 24px;text-align:center;border-top:1px solid rgba(255,255,255,0.06)}
         footer a{color:#8b949e;text-decoration:none;margin:0 12px;font-size:13px}
         footer a:hover{color:#00d4ff}
+        footer .copyright{color:#444;font-size:11px;margin-bottom:12px}
     </style>
 </head>
 <body>
 
+<!-- Sticky Navigation -->
+<nav class="sticky">
+    <a href="#about">About</a>
+    <a href="#career">Career</a>
+    <a href="#what-i-build">What I Build</a>
+    <a href="#live-tools">Live Tools</a>
+    <a href="#photography">Photography</a>
+    <a href="#contact">Get in Touch</a>
+</nav>
+
 <!-- Hero -->
-<section class="hero">
+<section class="hero" id="top">
     <img src="/hero.jpg" alt="" class="hero-bg">
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -110,7 +150,7 @@
             <span class="badge">Ex-Visa Senior Director</span>
             <span class="badge gold">50K TPS Payment Core</span>
             <span class="badge">AI / Agentic AI</span>
-            <span class="badge green"></span>
+            <span class="badge green">Fintech</span>
             <span class="badge purple">Startup Advisor</span>
             <span class="badge">Photography</span>
             <span class="badge">Travel</span>
@@ -129,7 +169,7 @@
 </div>
 
 <!-- About -->
-<section class="section">
+<section class="section" id="about">
     <div class="section-title">
         <h2>About</h2>
         <div class="line"></div>
@@ -138,14 +178,17 @@
     <div class="bio-text">
         <p>Started my career writing S/390 Assembler code on Visa's mainframe. Over 24 years, rose to <strong>Senior Director</strong>, managing the core payment switching system that processes <strong>50,000 transactions per second</strong> with <strong>99.9999% availability</strong> — the beating heart of Visa's global payment infrastructure.</p>
         <br>
-        <p>In 2024, stepped away to found <strong>Bayshore Intelligence Solutions</strong>, a boutique AI consulting and software development firm. I help startups and enterprises build AI-powered systems — from Agentic AI and  to intelligent compliance automation. I also advise early-stage startups on product strategy, AI architecture, and go-to-market execution.</p>
+        <p>In 2024, stepped away to found <strong>Bayshore Intelligence Solutions</strong>, a boutique AI consulting and software development firm. I help startups and enterprises build AI-powered systems — from Agentic AI to intelligent compliance automation. I also advise early-stage startups on product strategy, AI architecture, and go-to-market execution.</p>
         <br>
         <p>Outside of work, you'll find me with a camera in the mountains, exploring new cuisines, or planning the next travel adventure.</p>
+    </div>
+    <div class="cta-row">
+        <a href="https://www.bayshoreintel.com" class="cta-btn" target="_blank" rel="noopener">Explore Bayshore Intelligence Solutions →</a>
     </div>
 </section>
 
 <!-- Career Timeline -->
-<section class="section">
+<section class="section" id="career">
     <div class="section-title">
         <h2>Career</h2>
         <div class="line"></div>
@@ -177,10 +220,13 @@
             <div class="desc">Wrote S/390 Assembler and TPF on Visa's mainframe. Managed QA for Visa's global payments infrastructure. Where the journey began.</div>
         </div>
     </div>
+    <div class="cta-row">
+        <a href="https://www.bayshoreintel.com" class="cta-btn" target="_blank" rel="noopener">Explore Bayshore Intelligence Solutions →</a>
+    </div>
 </section>
 
 <!-- What I Build -->
-<section class="section">
+<section class="section" id="what-i-build">
     <div class="section-title">
         <h2>What I Build</h2>
         <div class="line"></div>
@@ -188,7 +234,7 @@
     <p class="section-sub">AI-powered systems for Fintech, compliance, and automation</p>
     <div class="grid">
         <div class="card"><div class="icon">🤖</div><h3>Agentic AI Systems</h3><p>Autonomous AI agents for trading, lead generation, compliance monitoring, and business process automation.</p></div>
-        <div class="card"><div class="icon">🏗️</div><h3></h3><p>Real-time predictive analytics and operational optimization for complex systems.</p></div>
+        <div class="card"><div class="icon">🏗️</div><h3>Predictive Analytics</h3><p>Real-time predictive analytics and operational optimization for complex systems.</p></div>
         <div class="card"><div class="icon">🔐</div><h3>KYC / AML / Fraud Detection</h3><p>AI-powered identity verification, transaction monitoring, and regulatory compliance automation.</p></div>
         <div class="card"><div class="icon">💳</div><h3>Payment Infrastructure</h3><p>High-volume transaction processing consulting — ISO 8583, ISO 20022, real-time payment architecture.</p></div>
         <div class="card"><div class="icon">📊</div><h3>Automated Trading</h3><p>Multi-agent trading infrastructure with real-time market scanning, risk management, and execution.</p></div>
@@ -197,7 +243,7 @@
 </section>
 
 <!-- AI Digest & MarketPulse -->
-<section class="section">
+<section class="section" id="live-tools">
     <div class="section-title">
         <h2>Live Tools</h2>
         <div class="line"></div>
@@ -232,24 +278,25 @@
 </section>
 
 <!-- Photography -->
-<section class="section">
+<section class="section" id="photography">
     <div class="section-title">
         <h2>Photography</h2>
         <div class="line"></div>
     </div>
     <p class="section-sub">Mountains · Travel · Street · Food</p>
     <div class="photo-grid">
-        <img src="/hero.jpg" alt="Mountain landscape">
-        <img src="/placeholder.svg" alt="Photo placeholder">
-        <img src="/placeholder.svg" alt="Photo placeholder">
-        <img src="/placeholder.svg" alt="Photo placeholder">
-        <img src="/placeholder.svg" alt="Photo placeholder">
-        <img src="/placeholder.svg" alt="Photo placeholder">
+        <img src="/hero.jpg" alt="Mountain landscape view from a high elevation perspective" loading="lazy">
+        <div class="photo-placeholder"><span>📸</span>Photos coming soon</div>
+        <div class="photo-placeholder"><span>📸</span>Photos coming soon</div>
+        <div class="photo-placeholder"><span>📸</span>Photos coming soon</div>
+        <div class="photo-placeholder"><span>📸</span>Photos coming soon</div>
+        <div class="photo-placeholder"><span>📸</span>Photos coming soon</div>
     </div>
+    <p style="font-size:11px;color:#555;margin-top:10px">Drop images into <code>/images/photography/</code> (mountains/travel/street/food) and update the grid in index.html to activate the gallery.</p>
 </section>
 
 <!-- Contact -->
-<section class="section" style="text-align:center">
+<section class="section" id="contact" style="text-align:center">
     <div class="section-title">
         <h2>Get in Touch</h2>
         <div class="line"></div>
@@ -258,7 +305,9 @@
     <p style="font-size:14px;color:#8b949e;margin-bottom:12px">
         <a href="mailto:pradyotkar@gmail.com" style="color:#00d4ff;text-decoration:none">pradyotkar@gmail.com</a>
         &nbsp;·&nbsp;
-        <a href="https://linkedin.com/in/p-kar" style="color:#00d4ff;text-decoration:none">LinkedIn</a>
+        <a href="https://linkedin.com/in/p-kar" style="color:#00d4ff;text-decoration:none" target="_blank" rel="noopener">LinkedIn</a>
+        &nbsp;·&nbsp;
+        <a href="https://www.bayshoreintel.com" style="color:#00d4ff;text-decoration:none" target="_blank" rel="noopener">Bayshore Intelligence Solutions</a>
     </p>
     <div class="badges" style="justify-content:center">
         <span class="badge gold">pradykar.com</span>
@@ -267,9 +316,9 @@
 </section>
 
 <footer>
-    <p style="color:#555;font-size:12px">© 2026 Pradyot Kar · San Francisco Bay Area</p>
-    <p style="color:#444;font-size:11px;margin-top:4px">
-        <a href="https://bayshoreintel.com">Bayshore Intelligence Solutions</a>
+    <p class="copyright">© 2026 Pradyot Kar · San Francisco Bay Area</p>
+    <p>
+        <a href="https://www.bayshoreintel.com" target="_blank" rel="noopener">Bayshore Intelligence Solutions</a>
         &nbsp;·&nbsp;
         <a href="mailto:pradyotkar@gmail.com">Contact</a>
     </p>
