@@ -100,7 +100,7 @@ FOOTER_SHARED = """<footer>
             <a href="/experience">Experience</a>
             <a href="/labs">Labs</a>
             <a href="/about">About</a>
-            <a href="/travel">Travel</a>
+
             <a href="https://www.bayshoreintel.com" target="_blank" rel="noopener">Bayshore Intelligence</a>
         </div>
         <span class="copy">© 2026 Pradyot Kar</span>
