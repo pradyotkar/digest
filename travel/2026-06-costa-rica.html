@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Costa Rica — Travel · Pradyot Kar</title>
+    <meta name="description" content="Costa Rica — trip writeup and photos by Pradyot Kar.">
+    <meta property="og:title" content="Costa Rica — Pradyot Kar">
+    <meta property="og:description" content="Trip writeup and photos.">
+    <meta property="og:image" content="/images/travel/2026-06-Costa-Rica/IMG_3030.jpeg">
+    <meta property="og:url" content="https://pradykar.com/travel/2026-06-costa-rica">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap" rel="stylesheet">
+    <style>
+        :root{--ink:#0b1220;--slate:#5f6b7a;--muted:#7b8796;--border:#dfe5ec;--surface:#f5f7fa;--white:#ffffff;--max-width:1200px;--radius:8px;--blue:#245eea;--shadow-md:0 4px 12px rgba(0,0,0,0.08);--shadow-lg:0 8px 30px rgba(0,0,0,0.15)}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter',sans-serif;background:var(--white);color:var(--ink);font-size:16px;line-height:1.6;padding-top:64px}
+        a{color:var(--blue);text-decoration:none}
+        .navbar{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);height:64px}
+        .navbar .inner{max-width:var(--max-width);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:100%}
+        .navbar .logo{font-weight:700;font-size:18px;color:var(--ink)}
+        .nav-links{display:flex;align-items:center;gap:2px}
+        .nav-links a{color:var(--slate);font-size:14px;font-weight:500;padding:8px 14px;border-radius:var(--radius);transition:all .15s}
+        .nav-links a:hover{color:var(--ink);background:var(--surface)}
+        .nav-links a.active{color:var(--ink);font-weight:600}
+        .nav-cta{background:var(--blue);color:var(--white)!important;padding:8px 20px!important;border-radius:var(--radius);font-weight:600}
+        .nav-toggle{display:none;background:none;border:none;font-size:22px;color:var(--ink);cursor:pointer;padding:4px}
+        @media(max-width:768px){.nav-toggle{display:block}.nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--white);flex-direction:column;padding:12px 24px 20px;border-bottom:1px solid var(--border);box-shadow:var(--shadow-md)}.nav-links.open{display:flex}.nav-links a{padding:10px 8px;font-size:15px}.nav-cta{margin-top:8px;text-align:center}}
+        .page-header{padding:100px 24px 0;max-width:700px;margin:0 auto}
+        .page-header a{font-size:14px;font-weight:500;color:var(--slate);display:inline-block;margin-bottom:16px}
+        .page-header a:hover{color:var(--blue)}
+        .page-header h1{font-size:32px;font-weight:800;margin-bottom:4px;letter-spacing:-0.5px}
+        .page-header .trip-dates{font-size:14px;color:var(--blue);font-weight:600;margin-bottom:24px}
+        .trip-body{padding:0 24px 40px;max-width:700px;margin:0 auto}
+        .trip-body .writeup{font-family:'Source Serif 4',Georgia,serif;font-size:17px;line-height:1.8;color:var(--slate);margin-bottom:40px}
+        .photo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:0 24px 80px;max-width:900px;margin:0 auto}
+        .photo-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius);cursor:pointer;transition:opacity .15s}
+        .photo-grid img:hover{opacity:0.85}
+        @media(max-width:640px){.photo-grid{grid-template-columns:repeat(2,1fr)}.page-header h1{font-size:26px}}
+        /* Lightbox */
+        .lightbox{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:1000;background:rgba(0,0,0,0.92);justify-content:center;align-items:center}
+        .lightbox img{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:4px}
+        .lb-close{position:absolute;top:20px;right:24px;color:#fff;font-size:28px;cursor:pointer;background:none;border:none;z-index:1001}
+        .lb-nav{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:36px;cursor:pointer;background:rgba(255,255,255,0.08);border:none;padding:16px 12px;border-radius:8px;transition:background .15s;z-index:1001}
+        .lb-nav:hover{background:rgba(255,255,255,0.15)}
+        .lb-prev{left:16px}
+        .lb-next{right:16px}
+        .lb-counter{position:absolute;bottom:20px;color:rgba(255,255,255,0.6);font-size:13px;z-index:1001}
+        footer{padding:48px 0;border-top:1px solid var(--border)}
+        footer .inner{max-width:var(--max-width);margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+        footer .links{display:flex;gap:20px;flex-wrap:wrap}
+        footer a{color:var(--slate);font-size:14px}
+        footer a:hover{color:var(--ink)}
+        footer .copy{color:var(--muted);font-size:13px}
+        @media(max-width:640px){footer .inner{flex-direction:column;text-align:center}}
+        @media(prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important}}
+    </style>
+</head>
+<body>
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="inner">
+        <a href="/" class="logo">Pradyot Kar</a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle navigation">☰</button>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/experience">Experience</a>
+            <a href="/labs">Labs</a>
+            <a href="/about">About</a>
+            <a href="/travel" class="active">Travel</a>
+            <a href="/contact" class="nav-cta">Discuss a Project</a>
+        </div>
+    </div>
+</nav>
+<div class="page-header">
+    <a href="/travel">← Back to Travel</a>
+    <h1>Costa Rica</h1>
+    <div class="trip-dates">June 2026</div>
+</div>
+<div class="trip-body">
+    <div class="writeup">Costa Rica trip photos and writeup being prepared.</div>
+</div>
+<div class="photo-grid">
+    <img src="/images/travel/2026-06-Costa-Rica/IMG_3030.jpeg" alt="Costa Rica" onclick="openLightbox(this)" class="gallery-img" loading="lazy">
+            <img src="/images/travel/2026-06-Costa-Rica/IMG_3031.jpeg" alt="Costa Rica" onclick="openLightbox(this)" class="gallery-img" loading="lazy">
+            <img src="/images/travel/2026-06-Costa-Rica/IMG_3032.jpeg" alt="Costa Rica" onclick="openLightbox(this)" class="gallery-img" loading="lazy">
+            <img src="/images/travel/2026-06-Costa-Rica/IMG_3033.jpeg" alt="Costa Rica" onclick="openLightbox(this)" class="gallery-img" loading="lazy">
+            <img src="/images/travel/2026-06-Costa-Rica/IMG_3034.jpeg" alt="Costa Rica" onclick="openLightbox(this)" class="gallery-img" loading="lazy">
+            <img src="/images/travel/2026-06-Costa-Rica/IMG_3035.jpeg" alt="Costa Rica" onclick="openLightbox(this)" class="gallery-img" loading="lazy">
+            <img src="/images/travel/2026-06-Costa-Rica/IMG_3036.jpeg" alt="Costa Rica" onclick="openLightbox(this)" class="gallery-img" loading="lazy">
+            <img src="/images/travel/2026-06-Costa-Rica/IMG_3037.jpeg" alt="Costa Rica" onclick="openLightbox(this)" class="gallery-img" loading="lazy">
+            <img src="/images/travel/2026-06-Costa-Rica/IMG_3038.jpeg" alt="Costa Rica" onclick="openLightbox(this)" class="gallery-img" loading="lazy">
+            <img src="/images/travel/2026-06-Costa-Rica/IMG_3039.jpeg" alt="Costa Rica" onclick="openLightbox(this)" class="gallery-img" loading="lazy">
+            <img src="/images/travel/2026-06-Costa-Rica/IMG_3040.jpeg" alt="Costa Rica" onclick="openLightbox(this)" class="gallery-img" loading="lazy">
+            <img src="/images/travel/2026-06-Costa-Rica/IMG_3041.jpeg" alt="Costa Rica" onclick="openLightbox(this)" class="gallery-img" loading="lazy">
+            <img src="/images/travel/2026-06-Costa-Rica/IMG_3042.jpeg" alt="Costa Rica" onclick="openLightbox(this)" class="gallery-img" loading="lazy">
+            <img src="/images/travel/2026-06-Costa-Rica/IMG_3043.jpeg" alt="Costa Rica" onclick="openLightbox(this)" class="gallery-img" loading="lazy">
+            <img src="/images/travel/2026-06-Costa-Rica/IMG_3044.jpeg" alt="Costa Rica" onclick="openLightbox(this)" class="gallery-img" loading="lazy">
+            <img src="/images/travel/2026-06-Costa-Rica/IMG_3045.jpeg" alt="Costa Rica" onclick="openLightbox(this)" class="gallery-img" loading="lazy">
+            <img src="/images/travel/2026-06-Costa-Rica/IMG_3046.jpeg" alt="Costa Rica" onclick="openLightbox(this)" class="gallery-img" loading="lazy">
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()" role="dialog" aria-modal="true">
+    <button class="lb-close" onclick="closeLightbox()" aria-label="Close">✕</button>
+    <button class="lb-nav lb-prev" onclick="event.stopPropagation();changeImage(-1)" aria-label="Previous">‹</button>
+    <button class="lb-nav lb-next" onclick="event.stopPropagation();changeImage(1)" aria-label="Next">›</button>
+    <img src="" alt="" onclick="event.stopPropagation()">
+    <div class="lb-counter" id="lb-counter"></div>
+</div>
+
+<footer>
+    <div class="inner">
+        <div class="links">
+            <a href="/">Home</a>
+            <a href="/experience">Experience</a>
+            <a href="/labs">Labs</a>
+            <a href="/about">About</a>
+            <a href="/travel">Travel</a>
+            <a href="https://www.bayshoreintel.com" target="_blank" rel="noopener">Bayshore Intelligence</a>
+        </div>
+        <span class="copy">© 2026 Pradyot Kar</span>
+    </div>
+</footer>
+
+<script>
+let lightboxImages = [];
+let lightboxIndex = 0;
+
+function openLightbox(imgEl) {
+    const gallery = imgEl.closest('.photo-grid') || imgEl.closest('.trip-detail');
+    if (!gallery) return;
+    const all = gallery.querySelectorAll('.photo-grid img, .gallery-img');
+    lightboxImages = Array.from(all).map(im => im.src);
+    lightboxIndex = lightboxImages.indexOf(imgEl.src);
+    if (lightboxIndex === -1) lightboxIndex = 0;
+    showLightbox();
+}
+
+function showLightbox() {
+    const lb = document.getElementById('lightbox');
+    if (!lb) return;
+    lb.querySelector('img').src = lightboxImages[lightboxIndex];
+    lb.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    updateNav();
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+    document.body.style.overflow = '';
+}
+
+function changeImage(d) {
+    lightboxIndex = (lightboxIndex + d + lightboxImages.length) % lightboxImages.length;
+    showLightbox();
+}
+
+function updateNav() {
+    const prev = document.querySelector('.lb-prev');
+    const next = document.querySelector('.lb-next');
+    if (prev) prev.style.display = lightboxImages.length > 1 ? 'flex' : 'none';
+    if (next) next.style.display = lightboxImages.length > 1 ? 'flex' : 'none';
+}
+
+document.addEventListener('keydown', function(e) {
+    const lb = document.getElementById('lightbox');
+    if (!lb || lb.style.display !== 'flex') return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') changeImage(-1);
+    if (e.key === 'ArrowRight') changeImage(1);
+});
+</script>
+<script>
+document.querySelectorAll('.nav-toggle').forEach(b=>{b.addEventListener('click',()=>document.querySelector('.nav-links').classList.toggle('open'))})
+document.addEventListener('click',function(e){var n=document.querySelector('.nav-links'),t=document.querySelector('.nav-toggle');t&&!t.contains(e.target)&&!n.contains(e.target)&&n.classList.remove('open')})
+
+// Lightbox: update counter
+const origShow = showLightbox;
+showLightbox = function() {
+    origShow();
+    const c = document.getElementById('lb-counter');
+    if (c) c.textContent = (lightboxIndex + 1) + ' / ' + lightboxImages.length;
+};
+</script>
+</body>
+</html>
