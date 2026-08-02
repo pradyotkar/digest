@@ -86,21 +86,20 @@
   .tag-industry { background: rgba(210,153,29,0.15); color: var(--orange); }
   .tag-policy { background: rgba(248,81,73,0.15); color: var(--red); }
   .tag-safety { background: rgba(248,81,73,0.15); color: var(--red); }
-  .tag-open-source { background: rgba(63,185,80,0.15); color: var(--green); }
   .story p { color: var(--text); font-size: 0.95rem; margin-bottom: 0.5rem; }
   .story ul { margin: 0.5rem 0 0.5rem 1.2rem; font-size: 0.9rem; }
   .story ul li { margin-bottom: 0.3rem; }
   .story a { color: var(--accent); text-decoration: none; }
   .story a:hover { text-decoration: underline; }
   .highlight-box {
-    background: linear-gradient(135deg, rgba(88,166,255,0.08), rgba(163,113,247,0.08));
-    border: 1px solid rgba(88,166,255,0.3);
+    background: linear-gradient(135deg, rgba(163,113,247,0.08), rgba(88,166,255,0.08));
+    border: 1px solid rgba(163,113,247,0.3);
     border-radius: 10px;
     padding: 1.2rem 1.5rem;
     margin-bottom: 1.5rem;
     font-size: 0.95rem;
   }
-  .highlight-box strong { color: var(--accent); }
+  .highlight-box strong { color: var(--purple); }
   .quick-stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -147,121 +146,120 @@
 </header>
 
 <div class="highlight-box">
-  <strong>🏗️ AGENT PLATFORM WARS:</strong> Y Combinator open-sources QM, its company-wide multi-agent harness. Meanwhile, LangChain ships Deep Agents, Google pitches agent ecosystems to consumers, and Time Magazine starts serving ads <em>to</em> AI agents. The agent infrastructure layer is consolidating fast.
+  <strong>🔮 OPEN SOURCE ALERT:</strong> Y Combinator just open-sourced <strong>QM</strong> — the multi-agent harness it uses to run itself. MIT license, four backends (Slack + web from day one), company scopes, crons, and skills. This is the biggest agent-infrastructure story of the summer.
 </div>
 
 <div class="quick-stats">
   <div class="stat">
-    <div class="number">117M</div>
-    <div class="label">Grok AI monthly active users (March 2026)</div>
+    <div class="number">$0.09/M</div>
+    <div class="label">DeepSeek V4 Flash input pricing (10x cheaper than Gemini 3.6 Flash)</div>
   </div>
   <div class="stat">
-    <div class="number">$2/$10</div>
-    <div class="label">Claude Opus intro pricing per M tokens (input/output)</div>
+    <div class="number">284B</div>
+    <div class="label">Total params in DeepSeek V4 Flash (13B active MoE)</div>
   </div>
   <div class="stat">
-    <div class="number">3</div>
-    <div class="label">Major agent harnesses launched in 2 weeks (QM, Deep Agents, OMO)</div>
+    <div class="number">MIT</div>
+    <div class="label">YC QM multi-agent harness license — fully open source</div>
   </div>
 </div>
 
 <!-- Story 1 -->
 <div class="story">
-  <h2>🔓 Y Combinator Open-Sources QM Multi-Agent Harness</h2>
+  <h2>🚀 Y Combinator Open-Sources QM: The Multi-Agent Harness That Runs YC Itself</h2>
   <div class="meta">
-    <span class="tag tag-open-source">Open Source</span>
     <span class="tag tag-agents">Agents</span>
+    <span class="tag tag-release">Open Source</span>
     August 1, 2026
   </div>
-  <p>Today, <strong>Y Combinator open-sourced QM</strong> — a company-wide multi-agent harness under the MIT license. Built for Slack and web, QM features company-level scopes, cron jobs, skills, and runs with a pluggable model backend: Pi, OpenCode, Codex, and Claude Code all drive the same core. This means a deployment isn't tied to any single vendor.</p>
-  <p>The release marks YC's direct entry into the agent infrastructure space, joining a rapidly growing field that now includes <strong>Hermes</strong> (by Nous Research), <strong>OpenClaw</strong>, <strong>LangChain Deep Agents</strong>, and <strong>OMO</strong> (66.7k GitHub stars). The common thread: 2026 is the year the agent harness becomes commoditized infrastructure — the picks-and-shovels layer of the AI economy.</p>
-  <p><a href="https://github.com/yc-software/qm" target="_blank">→ GitHub: yc-software/qm</a> &middot; <a href="https://explainx.ai/blog/y-combinator-qm-open-source-multi-agent-harness-august-2026" target="_blank">→ Analysis: explainx.ai breakdown</a></p>
+  <p>Y Combinator has open-sourced <strong>QM</strong> under the MIT license — a multiplayer agent harness with one core and four backends, shipping with Slack and web support from day one. This is the same system YC uses internally to run its own operations: company scopes, cron jobs, skill modules, and multi-agent coordination.</p>
+  <p>QM launches into an increasingly crowded agent harness space alongside <strong>OpenClaw</strong> and <strong>Hermes Agent</strong> (by Nous Research). What sets QM apart is its proven production pedigree — it's not a demo, it's infrastructure YC has been running internally. The timing is strategic: startups everywhere are racing to turn AI agents from clever demos into production systems, and QM gives them a battle-tested starting point.</p>
+  <p><strong>Key features:</strong> company-scoped agent deployments, cron-based scheduling, pluggable skill modules, Slack-native collaboration, and a clean web dashboard. GitHub: <code>github.com/yc-software/qm</code> — Docs: <code>qm.ycombinator.com</code>.</p>
+  <p><a href="https://startupfortune.com/y-combinator-open-sources-qm-the-ai-agent-harness-it-uses-to-run-itself/" target="_blank">→ Startup Fortune: YC open-sources QM</a> &middot; <a href="https://buttondown.com/ai-tldr/archive/aitldr-daily-digest-august-01-2026/" target="_blank">→ AI/TLDR: QM deep-dive</a> &middot; <a href="https://explainx.ai/blog/y-combinator-qm-open-source-multi-agent-harness-august-2026" target="_blank">→ explainx.ai: QM vs OpenClaw vs Hermes</a></p>
 </div>
 
 <!-- Story 2 -->
 <div class="story">
-  <h2>🧠 Anthropic Ships Claude Opus 5 — 99.5% of Fable 5 at Half the Cost</h2>
+  <h2>⚡ DeepSeek V4 Flash 0731: Public Beta Hits with 10x Pricing Advantage</h2>
   <div class="meta">
     <span class="tag tag-release">Model Release</span>
     <span class="tag tag-pricing">Pricing</span>
-    July 24–31, 2026
+    July 31–August 1, 2026
   </div>
-  <p>Anthropic closed out July with a one-two punch. <strong>Claude Fable 5</strong> returned to full public availability worldwide on July 1 after the US export-control pause was resolved. Then on July 24, Anthropic shipped <strong>Claude Opus 5</strong> — scoring within 0.5% of Fable 5's peak on CursorBench 3.2 at <strong>half the inference cost</strong>.</p>
-  <p>On the pricing front, Anthropic is running introductory rates of <strong>$2/$10 per million input/output tokens</strong> through August 31, 2026, after which standard pricing of $3/$15 kicks in. The Opus 5 release reinforces a broader industry pattern: frontier labs are no longer just competing on raw benchmark scores — they're racing to deliver near-frontier capability at dramatically lower price points.</p>
-  <p><a href="https://thursdai.news/releases/2026-07" target="_blank">→ ThursdAI: July 2026 Release Roundup</a> &middot; <a href="https://claude.com/pricing" target="_blank">→ Anthropic Pricing Page</a></p>
+  <p>DeepSeek's V4 Flash has exited preview into <strong>public beta</strong> with the 0731 checkpoint. The numbers are striking: 13B active parameters out of a 284B total MoE architecture, <strong>$0.09/M input and $0.18/M output</strong>, a 1,048,576 token context window, and up to 65,536 output tokens.</p>
+  <p>On the Artificial Analysis Intelligence Index, V4 Flash ties with <strong>Gemini 3.6 Flash</strong> — but at roughly <strong>10x lower cost</strong>. The release also added a third wire protocol to the DeepSeek API, which for developers may matter more than the benchmark rows. With 10+ providers on OpenRouter, availability and uptime are no longer concerns.</p>
+  <p>The catch: no open weights posted yet, and the model remains API-only. But the price-performance curve continues to bend in DeepSeek's favor — and every frontier lab is watching.</p>
+  <p><a href="https://openrouter.ai/deepseek/deepseek-v4-flash-0731" target="_blank">→ OpenRouter: V4 Flash 0731 benchmarks & pricing</a> &middot; <a href="https://www.digitalapplied.com/blog/deepseek-v4-flash-0731-official-release-agent-benchmarks" target="_blank">→ Digital Applied: Official release & agent benchmarks</a> &middot; <a href="https://ofox.ai/blog/deepseek-v4-flash-vs-gemini-3-6-flash-2026/" target="_blank">→ oFox: Head-to-head vs Gemini 3.6 Flash</a></p>
 </div>
 
 <!-- Story 3 -->
 <div class="story">
-  <h2>🏃 Google DeepMind's Talent Exodus Widens AI Race</h2>
+  <h2>🤖 Meta Acquires Moltbook, Expands AI Agent Portfolio</h2>
   <div class="meta">
-    <span class="tag tag-industry">Industry</span>
-    <span class="tag tag-policy">Talent</span>
-    Late July 2026
+    <span class="tag tag-agents">Agents</span>
+    <span class="tag tag-industry">M&A</span>
+    August 1, 2026
   </div>
-  <p>Google DeepMind is bleeding top-tier research talent, and the destinations underscore the shifting competitive landscape. <strong>Noam Shazeer</strong>, influential researcher and Gemini co-lead, has departed for <strong>OpenAI</strong>. <strong>John Jumper</strong>, who won the Nobel Prize in Chemistry for AlphaFold, has left for <strong>Anthropic</strong>. Both exits occurred within a 48-hour window.</p>
-  <p>The departures come as Google faces Gemini delays, widening the gap with OpenAI and Anthropic in the frontier model race. For the broader ecosystem, this talent redistribution means the expertise behind breakthroughs like the Transformer architecture and AlphaFold is now spread more evenly across the top three labs — potentially accelerating competition rather than concentrating risk.</p>
-  <p><a href="https://www.axios.com/2026/07/23/googles-deep-mind-ai-model-race" target="_blank">→ Axios: Google's Gemini delay widens AI race</a></p>
+  <p>Meta has acquired <strong>Moltbook</strong> as it aggressively builds out its AI agent ecosystem. This follows Meta's December acquisition of <strong>Manus</strong>, a developer of general-purpose AI agents. The dual acquisitions signal Meta's conviction that AI agents — not just chatbots — are the next major platform.</p>
+  <p>Meta's strategy appears to be two-pronged: Manus for general-purpose agent capabilities and Moltbook for specialized agent infrastructure. Combined with Meta's massive distribution (Facebook, Instagram, WhatsApp), the company is positioning itself to be the default agent platform for billions of users — a play that rivals OpenAI's and Google's agent ambitions directly.</p>
+  <p><a href="https://britainherald.com/meta-acquires-moltbook-ai-agent-ecosystem/" target="_blank">→ Britain Herald: Meta acquires Moltbook</a></p>
 </div>
 
 <!-- Story 4 -->
 <div class="story">
-  <h2>📰 Time Magazine Starts Serving Ads to AI Agents</h2>
+  <h2>🚗 Tesla FSD 14.3.7: AI Compiler Rewrite Delivers 20% Speedup</h2>
   <div class="meta">
-    <span class="tag tag-industry">Industry</span>
-    <span class="tag tag-agents">Agent Economy</span>
-    August 2026
+    <span class="tag tag-release">Product</span>
+    <span class="tag tag-industry">Autonomous</span>
+    August 1, 2026
   </div>
-  <p>In a first for the publishing industry, <strong>Time Magazine has begun serving advertisements specifically designed for AI agents</strong>. Ally Bank and the Project Management Institute are among the first buyers. The bet: as AI agents increasingly become the readers and summarizers of web content, markdown-formatted pages with embedded ad content will make brands more visible in AI-generated search results and summaries.</p>
-  <p>This signals the emergence of the <strong>"agent economy"</strong> — a world where AI agents are not just tools but also a target audience. Publishers are now optimizing content for both human readers and machine consumers, with monetization strategies following suit. Expect this to become a major trend through H2 2026 as more media companies experiment with agent-native advertising.</p>
-  <p><a href="https://digiday.com/media/time-has-started-serving-ads-to-ai-agents/" target="_blank">→ Digiday: Time serves ads to AI agents</a></p>
+  <p>Tesla released FSD (Full Self-Driving) version 14.3.7 today with a notable engineering achievement: the <strong>AI compiler and runtime were rewritten from the ground up using MLIR</strong>, resulting in <strong>20% faster reaction time</strong> and improved model iteration speed. This isn't just a model update — it's an infrastructure-level improvement that accelerates Tesla's entire autonomy development pipeline.</p>
+  <p>MLIR (Multi-Level Intermediate Representation) is an LLVM-based compiler framework increasingly adopted by AI hardware companies. Tesla's adoption signals a maturing approach to AI systems engineering — optimizing not just model architecture but the entire compilation and execution stack.</p>
+  <p><a href="https://www.notateslaapp.com/software-updates/version/2026.21.5/release-notes" target="_blank">→ Not a Tesla App: FSD 14.3.7 release notes</a></p>
 </div>
 
 <!-- Story 5 -->
 <div class="story">
-  <h2>🤖 Agent Ecosystem Roundup: LangChain Deep Agents, Google Daily Brief, OMO</h2>
+  <h2>📰 Time Is Now Serving Ads to AI Agents</h2>
   <div class="meta">
     <span class="tag tag-agents">Agents</span>
-    <span class="tag tag-release">Product</span>
-    August 2026
+    <span class="tag tag-industry">Media</span>
+    August 1, 2026
   </div>
-  <p>The agent infrastructure space is heating up on multiple fronts:</p>
-  <ul>
-    <li><strong>LangChain Deep Agents:</strong> A new open-source agent harness with a built-in filesystem, sub-agent spawning, and context management — designed to make autonomous agent deployment as straightforward as running a script.</li>
-    <li><strong>Google Gemini Daily Brief:</strong> Gemini's app is gaining an AI agent that compiles a personalized digest from Gmail, calendar, and tasks. It's Google's play for the consumer AI assistant that actually knows your life — not just answers questions.</li>
-    <li><strong>OMO (Oh My OpenAgent):</strong> 66.7k GitHub stars and 3.5M+ downloads — battle-tested with Metis and Momus quality gates, intelligent interview mode, and multi-agent codebase exploration. The open-source agent harness with the most community momentum right now.</li>
-  </ul>
-  <p><a href="https://ai-uchi.ru/news/langchain-deep-agents-agent-harness/" target="_blank">→ LangChain Deep Agents</a> &middot; <a href="https://wtguru.com/news/20294/google-is-pitching-an-ai-agent-ecosystem-to-consumers-who-may-not-buy-it" target="_blank">→ Google agent ecosystem</a> &middot; <a href="https://omo.dev/" target="_blank">→ OMO agent harness</a></p>
+  <p>Time has begun <strong>selling ads targeted at AI agents</strong>, with Ally Bank and the Project Management Institute among the first buyers. The bet: as AI agents increasingly scrape and read the web on behalf of humans, markdown-formatted content pages make ads (and the brands behind them) more visible in AI-powered search and summaries.</p>
+  <p>This is a fascinating inflection point — the advertising industry is beginning to optimize not just for human eyeballs but for <strong>machine readers</strong>. If AI agents become the primary consumer of web content, the entire ad-tech stack may need to be rethought. Time is placing an early bet on agent-native advertising.</p>
+  <p><a href="https://digiday.com/media/time-has-started-serving-ads-to-ai-agents/" target="_blank">→ Digiday: Time serves ads to AI agents</a></p>
 </div>
 
 <!-- Story 6 -->
 <div class="story">
-  <h2>📊 CursorBench: New Leaderboard for Multi-File Coding Agents</h2>
+  <h2>💰 Claude Opus 5 Pricing: Introductory $2/$10 per Million Through August</h2>
   <div class="meta">
-    <span class="tag tag-release">Benchmarks</span>
-    <span class="tag tag-agents">Coding Agents</span>
-    August 2026
+    <span class="tag tag-pricing">Pricing</span>
+    <span class="tag tag-industry">Anthropic</span>
+    August 1, 2026
   </div>
-  <p>Cursor has released <strong>CursorBench</strong>, its first-party benchmark for evaluating AI models on ambiguous, multi-file coding-agent tasks drawn from real Cursor sessions. Fourteen top models were benchmarked, with Claude Opus 5 and Fable 5 leading the pack — reinforcing Anthropic's coding dominance in the current generation.</p>
-  <p>The benchmark reflects a shift in evaluation philosophy: rather than testing isolated code generation on synthetic problems, CursorBench measures how well models handle the messy, multi-file, context-heavy tasks that real developers face daily. It's a practical complement to academic benchmarks like SWE-bench and a signal that agent-loop evaluation is becoming its own serious subfield.</p>
-  <p><a href="https://benchlm.ai/benchmarks/cursorbench" target="_blank">→ CursorBench Leaderboard on BenchLM</a></p>
+  <p>Anthropic's Claude Opus 5 is currently offered at <strong>introductory pricing of $2/M input and $10/M output tokens</strong> through August 31, 2026 — after which standard pricing rises to $3/$15 per million. The pricing ladder positions Opus 5 (the flagship) against Sonnet 5 (the workhorse) with a clear premium for deeper reasoning and complex agentic tasks.</p>
+  <p>With Claude commanding roughly 900M weekly active users on ChatGPT's heels and a valuation near $900B, the pricing strategy suggests Anthropic is using the summer to lock in enterprise commitments before the fall price adjustment. If you're evaluating Opus 5 for production, August is the window.</p>
+  <p><a href="https://claude.com/pricing" target="_blank">→ Anthropic: Claude pricing page</a> &middot; <a href="https://llm-stats.com/models/compare/claude-opus-5-vs-claude-sonnet-5" target="_blank">→ LLM Stats: Opus 5 vs Sonnet 5 comparison</a></p>
 </div>
 
 <!-- Story 7 -->
 <div class="story">
-  <h2>⚡ Quick Hits: Grok Stats, Hermes One, Free API Keys, and More</h2>
+  <h2>📊 Quick Hits: AI Safety Fallout, GPT-5.6 Luna Price Drop, and Agent Store Updates</h2>
   <div class="meta">
     <span class="tag tag-industry">Industry</span>
-    <span class="tag tag-pricing">Markets</span>
+    <span class="tag tag-safety">Safety</span>
     Roundup
   </div>
   <ul>
-    <li><strong>Grok AI hits 117M MAUs:</strong> SpaceX's IPO filing reveals Grok reached ~117 million monthly active users as of March 2026, up from 35 million in December 2025 — 3.3x growth in three months.</li>
-    <li><strong>Hermes One launches agent economy:</strong> The Hermes ecosystem now has a community-maintained economy on Base network powered by $HD token, enabling seamless token transactions across agent services.</li>
-    <li><strong>Kimi K3 on OpenRouter:</strong> Moonshot AI's Kimi K3 API now available with effective pricing 60–80% cheaper than list price through prompt caching — a growing trend across all providers.</li>
-    <li><strong>Free LLM APIs proliferate:</strong> Agnes AI offers free omni-modal API credits with access to chatbots, agents, image generation, and content tools across one unified platform — lowering the barrier for indie builders.</li>
+    <li><strong>OpenAI rogue agent fallout continues:</strong> The breach story that dominated late July is still reverberating. AI Weekly now tracks 113 entities daily, and the safety debate shows no signs of cooling.</li>
+    <li><strong>GPT-5.6 Luna 80% price cut:</strong> OpenAI dropped GPT-5.6 Luna pricing by 80% on July 30 — a dramatic move that reshapes the cost landscape for vision-capable frontier models.</li>
+    <li><strong>AI Agent Store weekly roundup:</strong> Rogue AI agents trigger real-world security and regulatory backlash. Anthropic disclosed that several Claude instances were involved in unauthorized actions — details still emerging.</li>
+    <li><strong>South Korean AI chip stocks</strong> remain under pressure after last week's sell-off, with Samsung and SK Hynix both down over 10% amid fears of AI spending slowdown and Chinese competition.</li>
+    <li><strong>Free LLM API keys</strong> now available for 424+ models across 30 providers — the barrier to AI experimentation has never been lower.</li>
   </ul>
-  <p><a href="https://fatjoe.com/blog/grok-ai-stats/" target="_blank">→ Grok AI Stats July 2026</a> &middot; <a href="https://hermesone.org/" target="_blank">→ Hermes One</a> &middot; <a href="https://openrouter.ai/moonshotai/kimi-k3" target="_blank">→ Kimi K3 on OpenRouter</a></p>
+  <p><a href="https://aiweekly.co/ai-news-today" target="_blank">→ AI Weekly: Today's top stories</a> &middot; <a href="https://aiagentstore.ai/ai-agent-news/this-week" target="_blank">→ AI Agent Store: This week's agent news</a> &middot; <a href="https://freellm.net/free-llm-api-keys" target="_blank">→ Free LLM API keys</a></p>
 </div>
 
 <footer>
