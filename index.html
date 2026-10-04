@@ -10,10 +10,11 @@
     <meta property="og:image" content="/logo.png">
     <meta property="og:url" content="https://pradykar.com">
     <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://pradykar.com/">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
     <style>
         :root {
             --ink: #0b1220;
@@ -21,6 +22,7 @@
             --blue: #245eea;
             --blue-dark: #1744b5;
             --gold: #c59a45;
+            --gold-dark: #a87f33;
             --slate: #5f6b7a;
             --muted: #7b8796;
             --border: #dfe5ec;
@@ -28,9 +30,10 @@
             --white: #ffffff;
             --max-width: 1200px;
             --radius: 8px;
-            --radius-lg: 12px;
+            --radius-lg: 14px;
             --shadow: 0 1px 3px rgba(0,0,0,0.06);
             --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-lg: 0 12px 32px rgba(11,18,32,0.12);
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
         }
@@ -43,18 +46,23 @@
         img{max-width:100%;height:auto}
         .container{max-width:var(--max-width);margin:0 auto;padding:0 24px}
         @media(min-width:768px){.container{padding:0 40px}}
+        :focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px}
+
+        /* ── Scroll reveal ─────────────────────── */
+        .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+        .reveal.visible{opacity:1;transform:none}
 
         /* ── Navbar ─────────────────────────────── */
-        .navbar{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);height:64px}
+        .navbar{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);height:64px}
         .navbar .inner{max-width:var(--max-width);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:100%}
-        .navbar .logo{font-weight:700;font-size:18px;color:var(--ink);letter-spacing:-0.3px}
+        .navbar .logo{font-family:var(--font-serif);font-weight:700;font-size:20px;color:var(--ink);letter-spacing:-0.3px}
         .navbar .logo:hover{color:var(--blue)}
         .nav-links{display:flex;align-items:center;gap:2px}
         .nav-links a{color:var(--slate);font-size:14px;font-weight:500;padding:8px 14px;border-radius:var(--radius);transition:all 0.15s}
         .nav-links a:hover{color:var(--ink);background:var(--surface)}
         .nav-links a.active{color:var(--ink);font-weight:600}
-        .nav-cta{background:var(--blue);color:var(--white)!important;padding:8px 20px!important;border-radius:var(--radius);font-weight:600}
-        .nav-cta:hover{background:var(--blue-dark)!important;color:var(--white)!important}
+        .nav-cta{background:var(--navy);color:var(--white)!important;padding:8px 20px!important;border-radius:var(--radius);font-weight:600;box-shadow:0 2px 8px rgba(19,35,58,.25)}
+        .nav-cta:hover{background:var(--blue)!important;color:var(--white)!important}
         .nav-toggle{display:none;background:none;border:none;font-size:22px;color:var(--ink);cursor:pointer;padding:4px}
         @media(max-width:768px){
             .nav-toggle{display:block}
@@ -65,97 +73,120 @@
         }
 
         /* ── Hero ──────────────────────────────── */
-        .hero{padding:140px 0 80px;background:linear-gradient(180deg,#f0f4ff 0%,var(--white) 100%)}
-        .hero .container{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-        .hero-content h1{font-size:44px;font-weight:800;line-height:1.2;letter-spacing:-1px;margin-bottom:16px;color:var(--ink)}
-        .hero-content .eyebrow{font-size:13px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px}
-        .hero-content p{font-size:18px;color:var(--slate);line-height:1.7;margin-bottom:32px;max-width:540px}
+        .hero{position:relative;padding:150px 0 90px;background:
+            radial-gradient(900px 480px at 85% -10%, rgba(36,94,234,0.10), transparent 60%),
+            radial-gradient(700px 420px at -10% 30%, rgba(197,154,69,0.10), transparent 55%),
+            linear-gradient(180deg,#eef2fb 0%,var(--white) 100%);
+            overflow:hidden}
+        .hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(19,35,58,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(19,35,58,.035) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(700px 500px at 70% 20%,black,transparent 75%);-webkit-mask-image:radial-gradient(700px 500px at 70% 20%,black,transparent 75%);pointer-events:none}
+        .hero .container{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+        .hero-content .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:18px;background:rgba(36,94,234,.07);border:1px solid rgba(36,94,234,.18);padding:6px 14px;border-radius:100px}
+        .hero-content .eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold)}
+        .hero-content h1{font-family:var(--font-serif);font-size:48px;font-weight:600;line-height:1.15;letter-spacing:-0.5px;margin-bottom:18px;color:var(--ink)}
+        .hero-content h1 .accent{background:linear-gradient(transparent 62%, rgba(197,154,69,.35) 62%, rgba(197,154,69,.35) 92%, transparent 92%)}
+        .hero-content p{font-size:18px;color:var(--slate);line-height:1.7;margin-bottom:34px;max-width:540px}
         .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-        .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:var(--radius);font-size:15px;font-weight:600;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer}
-        .btn-primary{background:var(--blue);color:var(--white)}
-        .btn-primary:hover{background:var(--blue-dark);box-shadow:var(--shadow-md)}
-        .btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--border)}
-        .btn-outline:hover{border-color:var(--ink)}
-        .hero-image{display:flex;justify-content:center;align-items:center}
-        .hero-image img{width:320px;height:320px;border-radius:50%;object-fit:cover;box-shadow:0 20px 60px rgba(0,0,0,0.1)}
+        .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:var(--radius);font-size:15px;font-weight:600;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer}
+        .btn-primary{background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:var(--white);box-shadow:0 4px 14px rgba(36,94,234,.3)}
+        .btn-primary:hover{color:var(--white);box-shadow:0 8px 22px rgba(36,94,234,.38);transform:translateY(-1px)}
+        .btn-outline{background:rgba(255,255,255,.7);color:var(--ink);border:1.5px solid var(--border);backdrop-filter:blur(4px)}
+        .btn-outline:hover{border-color:var(--ink);color:var(--ink)}
+        .hero-image{display:flex;justify-content:center;align-items:center;position:relative}
+        .portrait-ring{position:relative;padding:10px;border-radius:50%;background:conic-gradient(from 210deg, var(--blue), var(--gold), var(--blue));box-shadow:0 24px 64px rgba(11,18,32,.18)}
+        .portrait-ring img{width:300px;height:300px;border-radius:50%;object-fit:cover;display:block;border:5px solid var(--white)}
+        .portrait-chip{position:absolute;bottom:6px;left:50%;transform:translateX(-50%);background:var(--white);border:1px solid var(--border);border-radius:100px;padding:7px 18px;font-size:12.5px;font-weight:600;color:var(--navy);box-shadow:var(--shadow-md);white-space:nowrap}
+        .portrait-chip span{color:var(--gold-dark)}
         @media(max-width:768px){
             .hero{padding:120px 0 60px}
-            .hero .container{grid-template-columns:1fr;gap:40px;text-align:center}
+            .hero .container{grid-template-columns:1fr;gap:44px;text-align:center}
             .hero-content p{margin:0 auto 32px}
             .hero-actions{justify-content:center}
-            .hero-content h1{font-size:32px}
+            .hero-content h1{font-size:34px}
             .hero-image{order:-1}
-            .hero-image img{width:200px;height:200px}
+            .portrait-ring img{width:200px;height:200px}
         }
 
         /* ── Sections ──────────────────────────── */
-        section{padding:80px 0}
+        section{padding:84px 0}
         @media(max-width:768px){section{padding:60px 0}}
-        .section-header{text-align:center;margin-bottom:48px}
-        .section-header h2{font-size:32px;font-weight:700;margin-bottom:10px;letter-spacing:-0.5px}
-        .section-header p{color:var(--slate);font-size:17px;max-width:600px;margin:0 auto}
-        .section-header .eyebrow{font-size:13px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
+        .section-header{text-align:center;margin-bottom:52px}
+        .section-header .eyebrow{display:inline-block;font-size:12px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:1.8px;margin-bottom:10px}
+        .section-header h2{font-family:var(--font-serif);font-size:34px;font-weight:600;margin-bottom:10px;letter-spacing:-0.5px}
+        .section-header .rule{width:48px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--gold),var(--gold-dark));margin:14px auto 16px}
+        .section-header p{color:var(--slate);font-size:17px;max-width:620px;margin:0 auto}
 
         /* ── Credibility Strip ──────────────────── */
-        .cred-strip{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:40px 0}
-        .cred-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;text-align:center}
-        .cred-item{padding:16px}
-        .cred-item .num{font-size:28px;font-weight:800;color:var(--ink);line-height:1.2}
-        .cred-item .label{font-size:13px;color:var(--slate);margin-top:4px;line-height:1.4}
-        .cred-item .context{font-size:11px;color:var(--muted);margin-top:2px}
+        .cred-strip{background:var(--navy);padding:46px 0;position:relative;overflow:hidden}
+        .cred-strip::before{content:'';position:absolute;inset:0;background:radial-gradient(600px 200px at 20% 0%, rgba(36,94,234,.25), transparent 60%),radial-gradient(500px 200px at 85% 100%, rgba(197,154,69,.14), transparent 55%)}
+        .cred-grid{position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;text-align:center}
+        .cred-item{padding:16px;position:relative}
+        .cred-item + .cred-item::before{content:'';position:absolute;left:0;top:22%;bottom:22%;width:1px;background:rgba(255,255,255,.12)}
+        .cred-item .num{font-family:var(--font-serif);font-size:34px;font-weight:700;color:var(--white);line-height:1.15;letter-spacing:-0.5px}
+        .cred-item .num em{font-style:normal;color:var(--gold)}
+        .cred-item .label{font-size:13px;color:#b9c4d4;margin-top:6px;line-height:1.4;font-weight:500}
+        .cred-item .context{font-size:11px;color:#7d8aa0;margin-top:3px}
+        @media(max-width:640px){.cred-item + .cred-item::before{display:none}}
 
         /* ── Content Grids ──────────────────────── */
         .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
         .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
         @media(max-width:768px){.grid-3,.grid-2{grid-template-columns:1fr}}
 
-        .card{border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;transition:all 0.2s;background:var(--white)}
-        .card:hover{box-shadow:var(--shadow-md);border-color:#c8d0d8}
-        .card .icon{font-size:32px;margin-bottom:16px}
-        .card h3{font-size:18px;font-weight:700;margin-bottom:8px}
-        .card p{font-size:14px;color:var(--slate);line-height:1.6}
+        .card{border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;transition:all 0.25s ease;background:var(--white);position:relative}
+        .card:hover{box-shadow:var(--shadow-lg);border-color:#c3cdd9;transform:translateY(-3px)}
+        .card .icon{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,#eaf0fe,#dde7fc);display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:18px;border:1px solid rgba(36,94,234,.12)}
+        .card h3{font-size:18px;font-weight:700;margin-bottom:8px;letter-spacing:-0.2px}
+        .card p{font-size:14px;color:var(--slate);line-height:1.65}
         .card .tag{display:inline-block;font-size:12px;color:var(--muted);margin-top:8px}
 
-        .expertise-card{border-left:3px solid var(--blue);padding-left:24px;margin-bottom:28px}
-        .expertise-card h3{font-size:18px;font-weight:700;margin-bottom:4px}
-        .expertise-card p{font-size:14px;color:var(--slate);line-height:1.6}
-
         /* ── Timeline ───────────────────────────── */
-        .timeline{position:relative;padding-left:32px;max-width:700px;margin:0 auto}
-        .timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--border)}
-        .tl-item{position:relative;margin-bottom:36px;padding-left:24px}
-        .tl-item::before{content:'';position:absolute;left:-28px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--blue);border:3px solid var(--white);box-shadow:0 0 0 2px var(--border)}
-        .tl-item .date{font-size:12px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:2px}
-        .tl-item h3{font-size:18px;font-weight:700;margin-bottom:2px}
-        .tl-item .company{font-size:14px;color:var(--slate);margin-bottom:6px}
-        .tl-item p{font-size:14px;color:var(--muted);line-height:1.6}
+        .timeline{position:relative;padding-left:32px;max-width:760px;margin:0 auto}
+        .timeline::before{content:'';position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--gold),var(--border) 22%,var(--border))}
+        .tl-item{position:relative;margin-bottom:20px;padding:22px 26px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);transition:all .25s ease}
+        .tl-item:hover{box-shadow:var(--shadow-md);border-color:#c3cdd9}
+        .tl-item::before{content:'';position:absolute;left:-30px;top:28px;width:14px;height:14px;border-radius:50%;background:var(--blue);border:3px solid var(--white);box-shadow:0 0 0 2px var(--border)}
+        .tl-item.current::before{background:var(--gold);box-shadow:0 0 0 2px rgba(197,154,69,.4)}
+        .tl-item .date{font-size:12px;font-weight:600;color:var(--blue);text-transform:uppercase;letter-spacing:0.8px;margin-bottom:4px}
+        .tl-item.current .date{color:var(--gold-dark)}
+        .tl-item h3{font-family:var(--font-serif);font-size:19px;font-weight:600;margin-bottom:2px;letter-spacing:-0.2px}
+        .tl-item .company{font-size:14px;color:var(--slate);font-weight:500;margin-bottom:8px}
+        .tl-item p{font-size:14px;color:var(--muted);line-height:1.65}
 
         /* ── Selected Work ──────────────────────── */
-        .case-card{border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;margin-bottom:20px}
-        .case-card .meta{font-size:12px;color:var(--muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px}
-        .case-card h3{font-size:17px;font-weight:700;margin-bottom:8px}
-        .case-card p{font-size:14px;color:var(--slate);line-height:1.6;margin-bottom:6px}
-        .case-card .conf{font-size:12px;color:var(--gold);font-style:italic}
+        .case-card{border:1px solid var(--border);border-left:3px solid var(--blue);border-radius:var(--radius-lg);padding:32px;margin-bottom:20px;background:var(--white);transition:all .25s ease;position:relative}
+        .case-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px);border-left-color:var(--gold)}
+        .case-card .meta{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.8px;font-weight:600}
+        .case-card .meta::before{content:attr(data-num);font-family:var(--font-serif);font-size:15px;color:var(--gold-dark);letter-spacing:0}
+        .case-card h3{font-family:var(--font-serif);font-size:20px;font-weight:600;margin-bottom:10px;letter-spacing:-0.2px}
+        .case-card p{font-size:14.5px;color:var(--slate);line-height:1.7;margin-bottom:6px}
+        .case-card .conf{font-size:12px;color:var(--gold-dark);font-style:italic;margin-top:8px}
+
+        /* ── Labs / Insights ───────────────────── */
+        .live-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#2fbf71;margin-right:6px;animation:pulse 2.4s ease infinite}
+        @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(47,191,113,.45)}50%{box-shadow:0 0 0 6px rgba(47,191,113,0)}}
+        .pause-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--muted);margin-right:6px}
 
         /* ── Footer / CTA ───────────────────────── */
-        .cta-section{background:var(--ink);color:var(--white);text-align:center;padding:80px 0}
-        .cta-section h2{font-size:32px;font-weight:700;margin-bottom:12px}
-        .cta-section p{color:#8b96a3;font-size:17px;margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto}
+        .cta-section{position:relative;background:linear-gradient(160deg,var(--ink) 0%,var(--navy) 60%,#1a2f52 100%);color:var(--white);text-align:center;padding:90px 0;overflow:hidden}
+        .cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(700px 300px at 50% 120%, rgba(197,154,69,.18), transparent 60%)}
+        .cta-section .container{position:relative}
+        .cta-section h2{font-family:var(--font-serif);font-size:34px;font-weight:600;margin-bottom:14px;letter-spacing:-0.5px}
+        .cta-section p{color:#9aa7b8;font-size:17px;margin-bottom:34px;max-width:520px;margin-left:auto;margin-right:auto}
         .cta-section .btn-white{background:var(--white);color:var(--ink)}
-        .cta-section .btn-white:hover{box-shadow:0 4px 20px rgba(255,255,255,0.15)}
+        .cta-section .btn-white:hover{color:var(--ink);box-shadow:0 8px 28px rgba(255,255,255,0.2);transform:translateY(-1px)}
         .cta-section .btn-outline-white{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,0.3)}
-        .cta-section .btn-outline-white:hover{border-color:var(--white)}
+        .cta-section .btn-outline-white:hover{border-color:var(--white);color:var(--white)}
 
         footer{padding:48px 0;border-top:1px solid var(--border)}
         footer .inner{max-width:var(--max-width);margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
         footer .links{display:flex;gap:20px;flex-wrap:wrap}
         footer a{color:var(--slate);font-size:14px}
-        footer a:hover{color:var(--ink)}
+        footer a:hover{color:var(--gold-dark)}
         footer .copy{color:var(--muted);font-size:13px}
         @media(max-width:640px){footer .inner{flex-direction:column;text-align:center}}
 
         .visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
-        @media(prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}}
+        @media(prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;transition-duration:0.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
     </style>
 </head>
 <body>
@@ -180,7 +211,7 @@
     <div class="container">
         <div class="hero-content">
             <div class="eyebrow">Enterprise AI · Payments · Infrastructure Reliability</div>
-            <h1>Building reliable AI and payment systems for enterprises and startups</h1>
+            <h1>Building <span class="accent">reliable</span> AI and payment systems for enterprises and startups</h1>
             <p>Former Visa Senior Director with 24 years in global payment infrastructure. Today, I help organizations design and deploy agentic AI, compliance automation, and high-reliability financial platforms.</p>
             <div class="hero-actions">
                 <a href="/contact" class="btn btn-primary">Discuss a Project</a>
@@ -188,7 +219,10 @@
             </div>
         </div>
         <div class="hero-image">
-            <img src="/logo.png" alt="Pradyot Kar" width="320" height="320">
+            <div class="portrait-ring">
+                <img src="/logo.png" alt="Pradyot Kar" width="300" height="300">
+                <div class="portrait-chip">24 years in payments <span>·</span> now building AI</div>
+            </div>
         </div>
     </div>
 </section>
@@ -197,10 +231,10 @@
 <div class="cred-strip" aria-label="Key metrics">
     <div class="container">
         <div class="cred-grid">
-            <div class="cred-item"><div class="num">24</div><div class="label">Years in Payments &amp; Technology</div><div class="context">Visa infrastructure and AI consulting</div></div>
-            <div class="cred-item"><div class="num">13+</div><div class="label">Years at Visa Inc.</div><div class="context">Director → Senior Director</div></div>
-            <div class="cred-item"><div class="num">~50K</div><div class="label">Platform Transaction Scale</div><div class="context">Authorizations per second</div></div>
-            <div class="cred-item"><div class="num">99.9999%</div><div class="label">High-Availability Operating Environment</div><div class="context">Core payment platform uptime</div></div>
+            <div class="cred-item reveal"><div class="num">24</div><div class="label">Years in Payments &amp; Technology</div><div class="context">Visa infrastructure and AI consulting</div></div>
+            <div class="cred-item reveal"><div class="num">13<em>+</em></div><div class="label">Years at Visa Inc.</div><div class="context">Director → Senior Director</div></div>
+            <div class="cred-item reveal"><div class="num"><em>~</em>50K</div><div class="label">Platform Transaction Scale</div><div class="context">Authorizations per second</div></div>
+            <div class="cred-item reveal"><div class="num">99.9999<em>%</em></div><div class="label">High-Availability Operating Environment</div><div class="context">Core payment platform uptime</div></div>
         </div>
     </div>
 </div>
@@ -208,18 +242,19 @@
 <!-- Expertise -->
 <section id="expertise">
     <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
             <div class="eyebrow">What I Do</div>
             <h2>Expertise</h2>
+            <div class="rule"></div>
             <p>Enterprise-grade engineering discipline applied to AI, payments, and compliance.</p>
         </div>
         <div class="grid-3">
-            <div class="card"><div class="icon">🤖</div><h3>Enterprise AI &amp; Agentic Systems</h3><p>Autonomous AI agents, multi-agent orchestration, and LLM-powered automation for trading, compliance monitoring, and business process optimization. Built with circuit breakers, audit trails, and human oversight.</p></div>
-            <div class="card"><div class="icon">💳</div><h3>Payment Infrastructure</h3><p>High-volume transaction processing architecture — ISO 8583, ISO 20022, real-time payment rails, authorization switching, and settlement systems. Proven at global scale.</p></div>
-            <div class="card"><div class="icon">🔐</div><h3>Compliance Automation</h3><p>AI-powered KYC/AML, transaction monitoring, and regulatory compliance systems. SOX, PCI DSS, and FFIEC-ready architecture built by someone who led federal audits at Visa.</p></div>
-            <div class="card"><div class="icon">🚀</div><h3>AI Product &amp; Startup Advisory</h3><p>Product strategy, AI architecture, MVP development, and go-to-market execution for early-stage startups in fintech, compliance, and enterprise AI.</p></div>
-            <div class="card"><div class="icon">🏗️</div><h3>Reliability &amp; Operational Readiness</h3><p>Infrastructure-grade engineering practices — risk-based testing, capacity planning, disaster recovery, and observability for systems where failure is not an option.</p></div>
-            <div class="card"><div class="icon">📊</div><h3>Automated Trading Infrastructure</h3><p>Multi-agent trading systems with real-time market data, risk management, and execution. Same operational rigor as payments infrastructure — circuit breakers, stops, and full audit trails.</p></div>
+            <div class="card reveal"><div class="icon">🤖</div><h3>Enterprise AI &amp; Agentic Systems</h3><p>Autonomous AI agents, multi-agent orchestration, and LLM-powered automation for trading, compliance monitoring, and business process optimization. Built with circuit breakers, audit trails, and human oversight.</p></div>
+            <div class="card reveal"><div class="icon">💳</div><h3>Payment Infrastructure</h3><p>High-volume transaction processing architecture — ISO 8583, ISO 20022, real-time payment rails, authorization switching, and settlement systems. Proven at global scale.</p></div>
+            <div class="card reveal"><div class="icon">🔐</div><h3>Compliance Automation</h3><p>AI-powered KYC/AML, transaction monitoring, and regulatory compliance systems. SOX, PCI DSS, and FFIEC-ready architecture built by someone who led federal audits at Visa.</p></div>
+            <div class="card reveal"><div class="icon">🚀</div><h3>AI Product &amp; Startup Advisory</h3><p>Product strategy, AI architecture, MVP development, and go-to-market execution for early-stage startups in fintech, compliance, and enterprise AI.</p></div>
+            <div class="card reveal"><div class="icon">🏗️</div><h3>Reliability &amp; Operational Readiness</h3><p>Infrastructure-grade engineering practices — risk-based testing, capacity planning, disaster recovery, and observability for systems where failure is not an option.</p></div>
+            <div class="card reveal"><div class="icon">📊</div><h3>Automated Trading Infrastructure</h3><p>Multi-agent trading systems with real-time market data, risk management, and execution. Same operational rigor as payments infrastructure — circuit breakers, stops, and full audit trails.</p></div>
         </div>
     </div>
 </section>
@@ -227,18 +262,19 @@
 <!-- Experience Preview -->
 <section style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
     <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
             <div class="eyebrow">Career</div>
             <h2>Experience</h2>
+            <div class="rule"></div>
             <p>24 years building and leading infrastructure that processes billions of transactions.</p>
         </div>
         <div class="timeline">
-            <div class="tl-item"><div class="date">March 2024 — Present</div><h3>CEO (US)</h3><div class="company">Bayshore Intelligence Solutions</div><p>Boutique AI consulting and software development. Agentic AI, intelligent compliance automation, KYC/AML systems, and startup advisory.</p></div>
-            <div class="tl-item"><div class="date">Nov 2016 — March 2024</div><h3>Senior Director, Switching Systems Test Engineering</h3><div class="company">Visa Inc.</div><p>Led testing, reliability, and release certification for Visa's core global payment authorization platform. Managed 100+ engineers across geographies. Directed SOX/federal audit readiness, BCP/DR strategies, and AI-driven SDLC automation.</p></div>
-            <div class="tl-item"><div class="date">Nov 2010 — Oct 2016</div><h3>Director, Switching Systems Test Engineering</h3><div class="company">Visa Inc.</div><p>Risk-based testing for global payments compliance. Built AI-powered test automation reducing production defects by 50% in our domain. Liaised with financial audit on SOX, PCI DSS, and FFIEC.</p></div>
-            <div class="tl-item"><div class="date">2000 — 2010</div><h3>Software Developer → Test Manager</h3><div class="company">RS Software, supporting Visa Inc.</div><p>Developed on Visa's mainframe (S/390 Assembler, TPF). Managed QA for Visa's global payments infrastructure.</p></div>
+            <div class="tl-item current reveal"><div class="date">March 2024 — Present</div><h3>CEO (US)</h3><div class="company">Bayshore Intelligence Solutions</div><p>Boutique AI consulting and software development. Agentic AI, intelligent compliance automation, KYC/AML systems, and startup advisory.</p></div>
+            <div class="tl-item reveal"><div class="date">Nov 2016 — March 2024</div><h3>Senior Director, Switching Systems Test Engineering</h3><div class="company">Visa Inc.</div><p>Led testing, reliability, and release certification for Visa's core global payment authorization platform. Managed 100+ engineers across geographies. Directed SOX/federal audit readiness, BCP/DR strategies, and AI-driven SDLC automation.</p></div>
+            <div class="tl-item reveal"><div class="date">Nov 2010 — Oct 2016</div><h3>Director, Switching Systems Test Engineering</h3><div class="company">Visa Inc.</div><p>Risk-based testing for global payments compliance. Built AI-powered test automation reducing production defects by 50% in our domain. Liaised with financial audit on SOX, PCI DSS, and FFIEC.</p></div>
+            <div class="tl-item reveal"><div class="date">2000 — 2010</div><h3>Software Developer → Test Manager</h3><div class="company">RS Software, supporting Visa Inc.</div><p>Developed on Visa's mainframe (S/390 Assembler, TPF). Managed QA for Visa's global payments infrastructure.</p></div>
         </div>
-        <div style="text-align:center;margin-top:40px">
+        <div style="text-align:center;margin-top:44px" class="reveal">
             <a href="/experience" class="btn btn-primary">Full Experience →</a>
         </div>
     </div>
@@ -247,23 +283,24 @@
 <!-- Selected Work -->
 <section>
     <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
             <div class="eyebrow">Selected Work</div>
             <h2>Case Studies &amp; Engagements</h2>
+            <div class="rule"></div>
         </div>
-        <div class="case-card">
-            <div class="meta">Payment Infrastructure</div>
+        <div class="case-card reveal">
+            <div class="meta" data-num="01">Payment Infrastructure</div>
             <h3>Global Payment Platform Reliability Leadership</h3>
             <p>Led testing, certification, and release engineering for Visa's core authorization platform — the system processing billions of transactions annually across 200+ countries. Established risk-based testing frameworks mapped to SOX, PCI DSS, and FFIEC requirements. Drove AI-driven SDLC automation that cut production defects by half while maintaining 99.9999% availability.</p>
             <div class="conf">Client confidentiality applies. Details available under NDA.</div>
         </div>
-        <div class="case-card">
-            <div class="meta">Enterprise AI</div>
+        <div class="case-card reveal">
+            <div class="meta" data-num="02">Enterprise AI</div>
             <h3>Multi-Agent Trading and Intelligence Infrastructure</h3>
             <p>Architected and deployed a multi-agent AI system combining real-time market data processing, sentiment analysis, automated risk management, and trade execution. System operates 24x7 with circuit breakers, audit trails, and human-in-the-loop overrides — applying the same operational rigor as payments infrastructure to AI agent orchestration.</p>
         </div>
-        <div class="case-card">
-            <div class="meta">Compliance &amp; Product Advisory</div>
+        <div class="case-card reveal">
+            <div class="meta" data-num="03">Compliance &amp; Product Advisory</div>
             <h3>KYC/AML Automation and Startup Advisory</h3>
             <p>Advising on AI-powered identity verification and regulatory compliance automation. Providing product strategy and AI architecture guidance to early-stage fintech and compliance startups, drawing on 13+ years of direct experience with financial audit and regulatory requirements at Visa.</p>
             <div class="conf">Client confidentiality applies.</div>
@@ -274,25 +311,26 @@
 <!-- Labs / Insights -->
 <section style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
     <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
             <div class="eyebrow">Automated Research &amp; Experiments</div>
             <h2>Insights &amp; Labs</h2>
+            <div class="rule"></div>
             <p>AI-curated daily research and experimental trading systems — clearly separated from professional services.</p>
         </div>
         <div class="grid-2">
-            <div class="card">
+            <div class="card reveal">
                 <div class="icon">🧠</div>
                 <h3>Daily AI Digest</h3>
-                <p>Curated daily research on LLM pricing, model releases, and AI agent ecosystem developments. Generated automatically at noon Pacific from verified sources.</p>
-                <div class="tag">Automated · Updated daily</div>
+                <p>Curated daily research on LLM pricing, model releases, and AI agent ecosystem developments. Generated automatically at 5 AM Pacific from verified sources.</p>
+                <div class="tag"><span class="live-dot" aria-hidden="true"></span>Automated · Updated daily at 5 AM PT</div>
                 <br>
                 <a href="/daily-digest/latest" style="font-size:14px;font-weight:600">View Latest Digest →</a>
             </div>
-            <div class="card">
+            <div class="card reveal">
                 <div class="icon">📈</div>
                 <h3>MarketPulse <span style="font-size:12px;color:#7b8796;font-weight:400">(Paused)</span></h3>
                 <p>Automated pre-market stock scanning system. Currently paused — historical reports available.</p>
-                <div class="tag">Experimental · Not financial advice</div>
+                <div class="tag"><span class="pause-dot" aria-hidden="true"></span>Experimental · Not financial advice</div>
                 <br>
                 <a href="/marketpulse/latest" style="font-size:14px;font-weight:600">View Reports →</a>
             </div>
@@ -302,7 +340,7 @@
 
 <!-- Final CTA -->
 <section class="cta-section">
-    <div class="container">
+    <div class="container reveal">
         <h2>Have a complex AI, payments, or infrastructure challenge?</h2>
         <p>I work with enterprise teams and startups to design, build, and deploy reliable AI-powered systems.</p>
         <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
@@ -335,6 +373,21 @@ document.addEventListener('click', function(e) {
         nav.classList.remove('open');
     }
 });
+(function(){
+    if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('visible'); });
+        return;
+    }
+    var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(en){
+            if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(function(el, i){
+        el.style.transitionDelay = (Math.min(i % 4, 3) * 70) + 'ms';
+        io.observe(el);
+    });
+})();
 </script>
 
 </body></html>

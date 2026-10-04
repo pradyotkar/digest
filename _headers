@@ -1,0 +1,14 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+/images/*
+  Cache-Control: public, max-age=2592000
+
+/logo.png
+  Cache-Control: public, max-age=2592000
+
+/hero.jpg
+  Cache-Control: public, max-age=2592000
