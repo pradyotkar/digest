@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily AI Digest — October 25, 2026</title>
+<meta name="description" content="Daily AI news for October 25, 2026: AI-assisted PHP vulnerability discovery, safer agent authentication, embodied robotics, clinical notes and Pentagon AI oversight.">
+<meta property="og:title" content="Daily AI Digest — October 25, 2026">
+<meta property="og:description" content="AI moves deeper into security, credentials, healthcare and robotics while questions about human oversight persist.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pradykar.com/daily-digest/latest.html">
+<meta property="og:image" content="https://pradykar.com/logo.png">
+<link rel="canonical" href="https://pradykar.com/daily-digest/latest.html">
+<style>
+  :root { --bg:#0d1117; --card-bg:#161b22; --border:#30363d; --text:#c9d1d9; --muted:#8b949e; --accent:#58a6ff; --accent-green:#3fb950; --accent-orange:#d2991d; --accent-purple:#bc8cff; --accent-red:#f85149; --tag-bg:#1c2128; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; padding:2rem 1rem; }
+  .container { max-width:800px; margin:0 auto; }
+  header { text-align:center; margin-bottom:2.5rem; padding-bottom:1.5rem; border-bottom:2px solid var(--border); }
+  header h1 { font-size:2.2rem; font-weight:800; background:linear-gradient(135deg,var(--accent),var(--accent-purple)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:.5rem; }
+  header .date { font-size:1rem; color:var(--muted); font-weight:500; }
+  header .subtitle { font-size:.9rem; color:var(--muted); margin-top:.3rem; }
+  .back-link { display:inline-block; margin-bottom:1.2rem; font-size:.85rem; color:var(--accent); text-decoration:none; }
+  .summary-bar { background:var(--card-bg); border:1px solid var(--border); border-radius:12px; padding:1.25rem 1.5rem; margin-bottom:2.5rem; display:flex; flex-wrap:wrap; gap:.75rem 2rem; align-items:center; justify-content:center; }
+  .summary-stat { display:flex; align-items:center; gap:.4rem; font-size:.9rem; color:var(--muted); }
+  .summary-stat strong { color:var(--text); font-size:1.15rem; }
+  .summary-stat .emoji { font-size:1.1rem; }
+  .story { background:var(--card-bg); border:1px solid var(--border); border-radius:12px; padding:1.5rem; margin-bottom:1.25rem; transition:border-color .2s; }
+  .story:hover { border-color:var(--accent); }
+  .story-header { display:flex; align-items:flex-start; gap:.75rem; margin-bottom:.75rem; }
+  .story-number { background:var(--accent); color:#fff; font-weight:700; font-size:.8rem; width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; }
+  .story h2 { font-size:1.25rem; font-weight:700; color:var(--text); line-height:1.35; }
+  .story .meta { display:flex; gap:.6rem; flex-wrap:wrap; margin-bottom:.75rem; margin-left:2.4rem; }
+  .tag { font-size:.72rem; font-weight:600; padding:2px 10px; border-radius:20px; background:var(--tag-bg); border:1px solid var(--border); color:var(--accent); }
+  .tag.pricing { color:var(--accent-orange); border-color:var(--accent-orange); }
+  .tag.release { color:var(--accent-green); border-color:var(--accent-green); }
+  .tag.agents { color:var(--accent-purple); border-color:var(--accent-purple); }
+  .tag.policy { color:var(--accent-red); border-color:var(--accent-red); }
+  .tag.hot { background:var(--accent-red); border-color:var(--accent-red); color:#fff; }
+  .story p { color:var(--muted); font-size:.95rem; line-height:1.65; margin-left:2.4rem; }
+  .story p + p { margin-top:.6rem; }
+  .story .highlight { color:var(--accent-green); font-weight:600; }
+  .story a { color:var(--accent); text-decoration:none; border-bottom:1px dotted var(--accent); }
+  .cite { margin-left:2.4rem; margin-top:.8rem; padding-top:.7rem; border-top:1px dashed var(--border); font-size:.75rem; color:#6e7681; line-height:1.5; }
+  .cite a { color:var(--accent); text-decoration:none; }
+  .key-numbers { background:linear-gradient(135deg,rgba(88,166,255,.08),rgba(188,140,255,.08)); border:1px solid var(--border); border-radius:12px; padding:1.25rem 1.5rem; margin:2rem 0; }
+  .key-numbers h3 { font-size:.85rem; text-transform:uppercase; letter-spacing:.06em; color:var(--accent); margin-bottom:.75rem; }
+  .key-numbers .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:.75rem; }
+  .key-numbers .item { background:var(--card-bg); border-radius:8px; padding:.75rem 1rem; text-align:center; }
+  .key-numbers .item .num { font-size:1.4rem; font-weight:800; color:var(--accent-green); }
+  .key-numbers .item .label { font-size:.78rem; color:var(--muted); margin-top:.2rem; }
+  .trends { margin:2rem 0; }
+  .trends h3 { font-size:1.1rem; margin-bottom:1rem; color:var(--text); }
+  .trends .trend-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:.75rem; }
+  .trend-item { background:var(--card-bg); border:1px solid var(--border); border-radius:8px; padding:1rem; font-size:.9rem; }
+  .trend-item .arrow { color:var(--accent-green); font-weight:700; margin-right:.3rem; }
+  .trend-item .sub { color:var(--muted); font-size:.82rem; }
+  footer { text-align:center; margin-top:3rem; padding-top:1.5rem; border-top:1px solid var(--border); color:var(--muted); font-size:.8rem; }
+  footer a { color:var(--accent); text-decoration:none; }
+  @media (max-width:600px) { body { padding:1rem .5rem; } header h1 { font-size:1.6rem; } .story h2 { font-size:1.1rem; } .story p,.story .meta,.cite { margin-left:0; } .story-number { display:none; } }
+</style>
+</head>
+<body><div class="container">
+<a class="back-link" href="https://pradykar.com/">← pradykar.com</a>
+<header><h1>🤖 Daily AI Digest</h1><div class="date">Sunday, October 25, 2026</div><div class="subtitle">Curated AI news for pradykar.com — model releases, pricing, agents &amp; policy</div></header>
+<div class="summary-bar"><div class="summary-stat"><span class="emoji">📰</span> <strong>5</strong> stories</div><div class="summary-stat"><span class="emoji">🔐</span> <strong>Credentials</strong> become an agent-control layer</div><div class="summary-stat"><span class="emoji">🛡️</span> AI finds flaws—and raises stakes for patching</div><div class="summary-stat"><span class="emoji">🤖</span> Robotics pushes toward real-world deployment</div></div>
+<!-- STORY 1 -->
+<div class="story"><div class="story-header"><div class="story-number">1</div><h2>AI-assisted research helps uncover critical PHP vulnerabilities affecting a huge share of the web</h2></div><div class="meta"><span class="tag hot">TOP STORY</span><span class="tag">Cybersecurity</span><span class="tag">Applications</span></div><p>PHP maintainers issued urgent fixes after vulnerabilities were identified with help from AI tools, according to Reuters. The flaws, dubbed php2shell in coverage, prompted warnings to update; separate researchers also contributed to discovery. This is a concrete defensive use of AI, but the same ability to find exploitable bugs raises the premium on rapid disclosure, patching and defensive monitoring.</p><p>The report underscores that AI-assisted vulnerability discovery is already operational—not just a forecast. Organizations running PHP should follow the project’s security advisories and apply the relevant fixes.</p><div class="cite">Source: <a href="https://www.reuters.com/world/asia-pacific/eu-agency-warns-websites-may-need-be-taken-offline-php-prepares-patches-2026-10-21/">Reuters — “Government websites go dark after AI-discovered flaw sparks security …”</a> (published October 21, 2026). Retrieved October 25, 2026.</div></div>
+<!-- STORY 2 -->
+<div class="story"><div class="story-header"><div class="story-number">2</div><h2>1Password introduces a way for AI agents to sign in without seeing users’ passwords</h2></div><div class="meta"><span class="tag agents">Agents</span><span class="tag">Identity &amp; Access</span></div><p>1Password announced a product that lets personal AI agents request access to logins while keeping the underlying credentials out of the agent’s view. The approach aims to let users authorize tasks without handing an agent reusable passwords or secrets.</p><p>Credential brokering could become an important trust boundary as agents operate across more personal and enterprise services. Its effectiveness will depend on the granularity of permissions, visibility into actions and the ability to revoke access cleanly.</p><div class="cite">Source: <a href="https://techcrunch.com/2026/10/22/1password-launches-a-way-for-ai-agents-to-log-in-on-your-behalf-without-seeing-your-password/">TechCrunch — “1Password launches a way for AI agents to log in on your behalf without seeing your password”</a> (published October 22, 2026). Retrieved October 25, 2026.</div></div>
+<!-- STORY 3 -->
+<div class="story"><div class="story-header"><div class="story-number">3</div><h2>DEEP Robotics details five research advances aimed at more capable real-world robots</h2></div><div class="meta"><span class="tag release">Research</span><span class="tag">Embodied AI</span></div><p>DEEP Robotics announced five research advances spanning world models, vision-language-action systems, reinforcement learning, predictive memory and robot benchmarks. The company says the work supports its embodied-intelligence architecture for real-world operation.</p><p>One reported navigation evaluation on its LYNX M20 wheel-legged robot improved success from 25% to 65%. These are company-reported results, not an independent benchmark; still, the focus on physical environments highlights the gap between capable models and dependable robotics in messy, safety-critical settings.</p><div class="cite">Source: <a href="https://www.globenewswire.com/news-release/2026/10/24/3387678/0/en/deep-robotics-unveils-five-research-advances-in-embodied-ai.html">GlobeNewswire / DEEP Robotics — “DEEP Robotics Unveils Five Research Advances in Embodied AI”</a> (published October 24, 2026). Retrieved October 25, 2026.</div></div>
+<!-- STORY 4 -->
+<div class="story"><div class="story-header"><div class="story-number">4</div><h2>Zoom Clinical Notes brings AI-generated documentation into clinical conversations</h2></div><div class="meta"><span class="tag">Healthcare</span><span class="tag">Applications</span></div><p>Zoom Video Communications introduced Zoom Clinical Notes, an AI tool that turns clinical dialogue into structured notes. Brief’s October 24 roundup describes the product as integrated into Zoom’s platform and highlights data governance as part of its positioning.</p><p>Clinical documentation is a high-volume application with a clear workflow benefit, but adoption depends on accuracy, privacy safeguards and clinician review. The tool’s real-world value will be determined by how reliably it captures context without adding correction burden.</p><div class="cite">Source: <a href="https://www.brief.news/ai/2026/10/24/zooms-ai-clinician-notes?briefFormat=TopStories&amp;categories=Science&amp;categories=World&amp;categories=US&amp;categories=AI">Brief — “Zoom’s AI Clinician Notes”</a> (published October 24, 2026). Retrieved October 25, 2026.</div></div>
+<!-- STORY 5 -->
+<div class="story"><div class="story-header"><div class="story-number">5</div><h2>Watchdog report finds gaps between Pentagon AI principles and practice</h2></div><div class="meta"><span class="tag policy">Policy &amp; Safety</span><span class="tag">Defense</span></div><p>A Government Accountability Office report found that some Pentagon AI projects do not consistently follow the department’s responsible-AI guidelines, according to OPB. The systems covered include tools for battlefield target identification, surveillance processing and tactical decision support.</p><p>The GAO recommended clarifying oversight responsibilities and addressing staffing constraints. The finding illustrates a broader governance challenge: publishing principles is only a first step; agencies also need clear accountability, sufficient expertise and ongoing verification.</p><div class="cite">Source: <a href="https://opb.org/article/2026/10/24/the-pentagons-guidelines-for-responsible-ai-arent-always-followed-report-shows">OPB — “The Pentagon’s guidelines for responsible AI aren’t always followed, report shows”</a> (published October 24, 2026). Retrieved October 25, 2026.</div></div>
+<div class="key-numbers"><h3>📊 Key Numbers</h3><div class="grid"><div class="item"><div class="num">+40 pp</div><div class="label">Reported gain in robot navigation success</div></div><div class="item"><div class="num">25% → 65%</div><div class="label">Reported robot navigation success in DEEP Robotics test</div></div><div class="item"><div class="num">5</div><div class="label">Research advances announced for embodied AI</div></div><div class="item"><div class="num">10</div><div class="label">Pentagon AI projects reviewed in the watchdog survey</div></div></div></div>
+<div class="trends"><h3>🔭 Trends to Watch</h3><div class="trend-list"><div class="trend-item"><span class="arrow">↑</span> <strong>AI becomes a security research tool</strong><br><span class="sub">Faster discovery makes coordinated disclosure and timely patching more urgent.</span></div><div class="trend-item"><span class="arrow">↑</span> <strong>Agent identity is a product layer</strong><br><span class="sub">Credential brokers aim to constrain what agents can access and expose.</span></div><div class="trend-item"><span class="arrow">↑</span> <strong>Embodied AI targets real environments</strong><br><span class="sub">Research is increasingly measured against physical tasks and field conditions.</span></div><div class="trend-item"><span class="arrow">→</span> <strong>Oversight must be resourced</strong><br><span class="sub">Responsible-AI principles need owners, technical capacity and real verification.</span></div></div></div>
+<footer><p>Daily AI Digest — Curated by <a href="https://pradykar.com">pradykar.com</a> | October 25, 2026</p><p style="margin-top:.3rem;">Generated automatically at 5 AM PT. Claims linked to publisher sources above; retrieved October 25, 2026.</p><p style="margin-top:.6rem;font-size:.75rem;"><a href="https://pradykar.com/daily-digest/">Browse past digests</a> · <a href="https://pradykar.com/labs">Labs</a></p></footer>
+</div></body></html>
