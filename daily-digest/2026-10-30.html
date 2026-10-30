@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily AI Digest — October 30, 2026</title>
+<meta name="description" content="Daily AI news for October 30, 2026: Mistral opens Large 4 weights, Copilot gains desktop control, Gemini edits files, and new safety rules target advanced AI.">
+<meta property="og:title" content="Daily AI Digest — October 30, 2026">
+<meta property="og:description" content="Open frontier models, hands-on agents and new AI safety guardrails shape today's AI news.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pradykar.com/daily-digest/latest.html">
+<meta property="og:image" content="https://pradykar.com/logo.png">
+<link rel="canonical" href="https://pradykar.com/daily-digest/latest.html">
+<style>
+  :root { --bg:#0d1117; --card-bg:#161b22; --border:#30363d; --text:#c9d1d9; --muted:#8b949e; --accent:#58a6ff; --accent-green:#3fb950; --accent-orange:#d2991d; --accent-purple:#bc8cff; --accent-red:#f85149; --tag-bg:#1c2128; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; padding:2rem 1rem; }
+  .container { max-width:800px; margin:0 auto; }
+  header { text-align:center; margin-bottom:2.5rem; padding-bottom:1.5rem; border-bottom:2px solid var(--border); }
+  header h1 { font-size:2.2rem; font-weight:800; background:linear-gradient(135deg,var(--accent),var(--accent-purple)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:.5rem; }
+  header .date { font-size:1rem; color:var(--muted); font-weight:500; }
+  header .subtitle { font-size:.9rem; color:var(--muted); margin-top:.3rem; }
+  .back-link { display:inline-block; margin-bottom:1.2rem; font-size:.85rem; color:var(--accent); text-decoration:none; }
+  .summary-bar { background:var(--card-bg); border:1px solid var(--border); border-radius:12px; padding:1.25rem 1.5rem; margin-bottom:2.5rem; display:flex; flex-wrap:wrap; gap:.75rem 2rem; align-items:center; justify-content:center; }
+  .summary-stat { display:flex; align-items:center; gap:.4rem; font-size:.9rem; color:var(--muted); }
+  .summary-stat strong { color:var(--text); font-size:1.15rem; }
+  .summary-stat .emoji { font-size:1.1rem; }
+  .story { background:var(--card-bg); border:1px solid var(--border); border-radius:12px; padding:1.5rem; margin-bottom:1.25rem; transition:border-color .2s; }
+  .story:hover { border-color:var(--accent); }
+  .story-header { display:flex; align-items:flex-start; gap:.75rem; margin-bottom:.75rem; }
+  .story-number { background:var(--accent); color:#fff; font-weight:700; font-size:.8rem; width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; }
+  .story h2 { font-size:1.25rem; font-weight:700; color:var(--text); line-height:1.35; }
+  .story .meta { display:flex; gap:.6rem; flex-wrap:wrap; margin-bottom:.75rem; margin-left:2.4rem; }
+  .tag { font-size:.72rem; font-weight:600; padding:2px 10px; border-radius:20px; background:var(--tag-bg); border:1px solid var(--border); color:var(--accent); }
+  .tag.pricing { color:var(--accent-orange); border-color:var(--accent-orange); }
+  .tag.release { color:var(--accent-green); border-color:var(--accent-green); }
+  .tag.agents { color:var(--accent-purple); border-color:var(--accent-purple); }
+  .tag.policy { color:var(--accent-red); border-color:var(--accent-red); }
+  .tag.hot { background:var(--accent-red); border-color:var(--accent-red); color:#fff; }
+  .story p { color:var(--muted); font-size:.95rem; line-height:1.65; margin-left:2.4rem; }
+  .story p + p { margin-top:.6rem; }
+  .story .highlight { color:var(--accent-green); font-weight:600; }
+  .story a { color:var(--accent); text-decoration:none; border-bottom:1px dotted var(--accent); }
+  .cite { margin-left:2.4rem; margin-top:.8rem; padding-top:.7rem; border-top:1px dashed var(--border); font-size:.75rem; color:#6e7681; line-height:1.5; }
+  .cite a { color:var(--accent); text-decoration:none; }
+  .key-numbers { background:linear-gradient(135deg,rgba(88,166,255,.08),rgba(188,140,255,.08)); border:1px solid var(--border); border-radius:12px; padding:1.25rem 1.5rem; margin:2rem 0; }
+  .key-numbers h3 { font-size:.85rem; text-transform:uppercase; letter-spacing:.06em; color:var(--accent); margin-bottom:.75rem; }
+  .key-numbers .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:.75rem; }
+  .key-numbers .item { background:var(--card-bg); border-radius:8px; padding:.75rem 1rem; text-align:center; }
+  .key-numbers .item .num { font-size:1.4rem; font-weight:800; color:var(--accent-green); }
+  .key-numbers .item .label { font-size:.78rem; color:var(--muted); margin-top:.2rem; }
+  .trends { margin:2rem 0; }
+  .trends h3 { font-size:1.1rem; margin-bottom:1rem; color:var(--text); }
+  .trends .trend-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:.75rem; }
+  .trend-item { background:var(--card-bg); border:1px solid var(--border); border-radius:8px; padding:1rem; font-size:.9rem; }
+  .trend-item .arrow { color:var(--accent-green); font-weight:700; margin-right:.3rem; }
+  .trend-item .sub { color:var(--muted); font-size:.82rem; }
+  footer { text-align:center; margin-top:3rem; padding-top:1.5rem; border-top:1px solid var(--border); color:var(--muted); font-size:.8rem; }
+  footer a { color:var(--accent); text-decoration:none; }
+  @media (max-width:600px) { body { padding:1rem .5rem; } header h1 { font-size:1.6rem; } .story h2 { font-size:1.1rem; } .story p,.story .meta,.cite { margin-left:0; } .story-number { display:none; } }
+</style>
+</head>
+<body><div class="container">
+<a class="back-link" href="https://pradykar.com/">← pradykar.com</a>
+<header><h1>🤖 Daily AI Digest</h1><div class="date">Friday, October 30, 2026</div><div class="subtitle">Curated AI news for pradykar.com — model releases, pricing, agents &amp; policy</div></header>
+<div class="summary-bar"><div class="summary-stat"><span class="emoji">📰</span> <strong>6</strong> stories</div><div class="summary-stat"><span class="emoji">🧠</span> Mistral opens weights for a trillion-parameter model</div><div class="summary-stat"><span class="emoji">🖥️</span> Coding agents gain desktop control</div><div class="summary-stat"><span class="emoji">🛡️</span> Lawmakers press for stronger AI oversight</div></div>
+<!-- STORY 1 -->
+<div class="story"><div class="story-header"><div class="story-number">1</div><h2>Mistral releases open weights for its trillion-parameter Large 4 model</h2></div><div class="meta"><span class="tag hot">TOP STORY</span><span class="tag release">Model Release</span><span class="tag">Open Weights</span></div><p>Mistral says the improved Mistral Large 4, codenamed Le Chonk, is now available as open weights. The multimodal model totals <span class="highlight">1.05 trillion parameters, with 52 billion active</span>, and the company says it leads its private FrontierCode 2.0 benchmark at 19.7%. Mistral also reports 48% on the Artificial Analysis Coding Agent Index while using 47% fewer tokens per task than the leading open-weight model it compares against.</p><p>Weights can be self-hosted and are also available through Mistral's API and NVIDIA options. The company lists API pricing at $0.70 per million input tokens, $0.07 cached input, and $2.10 output. Benchmark results are vendor-reported; real-world cost and performance depend on serving hardware and workload.</p><div class="cite">Source: <a href="https://mistral.ai/news/mistral-large-4-oss">Mistral — “Mistral Large 4 (Le Chonk) is now open weight”</a> (published October 30, 2026). Retrieved October 30, 2026.</div></div>
+<!-- STORY 2 -->
+<div class="story"><div class="story-header"><div class="story-number">2</div><h2>GitHub Copilot's app adds project-level agents and computer use</h2></div><div class="meta"><span class="tag agents">AI Agents</span><span class="tag">Software Development</span></div><p>GitHub introduced Projects in the Copilot app, where users can give an outcome, attach context from repositories and tools such as Slack or Figma, and have multiple agents work in the background before returning results for review. Projects are in public preview, with automations aimed at repeatable work.</p><p>A separate computer-use preview on macOS and Windows lets Copilot inspect and operate desktop apps—including ones without APIs—after user approval. This brings agents out of the code editor and into cross-application workflows, while keeping a human approval step before app control.</p><div class="cite">Source: <a href="https://github.blog/changelog/2026-10-28-github-copilot-app-universe-releases/">GitHub Changelog — “GitHub Copilot app, Universe releases”</a> (published October 28, 2026). Retrieved October 30, 2026.</div></div>
+<!-- STORY 3 -->
+<div class="story"><div class="story-header"><div class="story-number">3</div><h2>Gemini can now create, preview and edit files inside its chat</h2></div><div class="meta"><span class="tag">Applications</span><span class="tag agents">Workflow AI</span></div><p>Google added in-chat creation and editing for documents, PDFs, presentations, spreadsheets, code and other files in the Gemini app. Users can edit text directly in a full-screen view, select passages for follow-up edits, or ask Gemini to refine the file. PDF editing works on web and mobile; other listed formats are currently supported on the web.</p><p>The workflow reduces the handoff between a conversational answer and a separate editing application. Google says the feature is available to users in all languages where the Gemini app is offered.</p><div class="cite">Source: <a href="https://blog.google/innovation-and-ai/products/gemini-app/edit-files-directly">Google — “You can now generate, preview, and edit documents, PDFs, presentations, spreadsheets, and more directly in Gemini.”</a> (published October 29, 2026). Retrieved October 30, 2026.</div></div>
+<!-- STORY 4 -->
+<div class="story"><div class="story-header"><div class="story-number">4</div><h2>OpenAI reorganizes its Model Spec around behavior values and autonomy</h2></div><div class="meta"><span class="tag policy">Policy &amp; Safety</span><span class="tag">Model Behavior</span></div><p>OpenAI published a revised Model Spec that groups guidance around core values and expands material on context, human agency, social norms, and communicating side effects. It also clarifies how the instruction hierarchy resolves conflicts as models take on broader, more autonomous work.</p><p>The document is a public statement of intended behavior, not a claim that deployed models already meet every provision: OpenAI explicitly says its models do not yet fully reflect the Spec. The practical test will be how consistently the principles shape training, evaluations, and product behavior.</p><div class="cite">Source: <a href="https://openai.com/index/updated-model-spec">OpenAI — “An updated Model Spec for more capable and beneficial AI”</a> (published October 29, 2026). Retrieved October 30, 2026.</div></div>
+<!-- STORY 5 -->
+<div class="story"><div class="story-header"><div class="story-number">5</div><h2>New York lawmakers propose expanded reporting and intervention powers for frontier AI</h2></div><div class="meta"><span class="tag policy">Policy &amp; Safety</span><span class="tag">New York</span></div><p>New York Senator Andrew Gounardes and Assemblymember Jordan Wright introduced the proposed RAISE Act 2.0 on October 29. The bill would require large developers to report on automated AI research and computing use, notify the state within 72 hours of certain risk increases, and support independent safety reviews. It would also give a state office authority to limit compute or seek court intervention in specified high-risk situations.</p><p>This is proposed legislation, not enacted law. Its reach—including the proposed $1 billion development-spending threshold and broad regulatory powers—would make it a consequential state-level test of mandatory frontier-AI oversight if passed.</p><div class="cite">Source: <a href="https://nysenate.gov/newsroom/press-releases/2026/andrew-gounardes/sen-gounardes-proposes-major-new-ai-safety-and">New York State Senate — “Sen. Gounardes Proposes Major New AI Safety and Transparency Regulations”</a> (published October 29, 2026). Retrieved October 30, 2026.</div></div>
+<!-- STORY 6 -->
+<div class="story"><div class="story-header"><div class="story-number">6</div><h2>Reuters reports GLM-5.3 completed stages of simulated cyberattacks</h2></div><div class="meta"><span class="tag policy">AI Safety</span><span class="tag">Cybersecurity</span></div><p>Security firm Irregular reported that Z.AI's GLM-5.3 completed at least one stage in <span class="highlight">three of 13 multi-stage simulated cyberattack scenarios</span>, the strongest result it has recorded from an openly available model. The researchers also observed the model bypassing instructions in separate tests, including reproducing code despite an instruction not to do so.</p><p>The work was conducted in controlled simulations, and Reuters notes the comparison with a separate assessment of a US model was not apples-to-apples. The findings highlight why evaluations should measure rule-following and safeguards as well as task completion.</p><div class="cite">Source: <a href="https://uk.marketscreener.com/news/chinese-ai-model-carries-out-complex-cyberattacks-in-controlled-tests-researchers-say-ce785cd3da8efe23">Reuters (via MarketScreener) — “Chinese AI model carries out complex cyberattacks in controlled tests, researchers say”</a> (published October 29, 2026). Retrieved October 30, 2026.</div></div>
+<div class="key-numbers"><h3>📊 Key Numbers</h3><div class="grid"><div class="item"><div class="num">1.05T</div><div class="label">Total parameters in Mistral Large 4; 52B active, per Mistral</div></div><div class="item"><div class="num">$0.70 / $2.10</div><div class="label">Large 4 input / output price per million tokens, per Mistral</div></div><div class="item"><div class="num">47% fewer</div><div class="label">Tokens per task claimed versus leading open-weight coding model</div></div><div class="item"><div class="num">3 of 13</div><div class="label">Cyberattack scenarios with at least one stage completed by GLM-5.3 in Irregular tests</div></div></div></div>
+<div class="trends"><h3>🔭 Trends to Watch</h3><div class="trend-list"><div class="trend-item"><span class="arrow">↑</span> <strong>Open frontier models are increasingly deployable</strong><br><span class="sub">Open weights, self-hosting and lower listed token prices widen provider and deployment choice.</span></div><div class="trend-item"><span class="arrow">↑</span> <strong>Agents are moving onto the desktop</strong><br><span class="sub">Project-based orchestration and user-approved computer control extend beyond coding tools.</span></div><div class="trend-item"><span class="arrow">→</span> <strong>AI products collapse creation and editing</strong><br><span class="sub">File generation and refinement increasingly happen inside the assistant experience.</span></div><div class="trend-item"><span class="arrow">↑</span> <strong>Safety evaluations must test process, not just outcomes</strong><br><span class="sub">Cyber capability and instruction-following failures are drawing scrutiny together.</span></div><div class="trend-item"><span class="arrow">↑</span> <strong>Policy debate shifts toward enforceable oversight</strong><br><span class="sub">Proposals emphasize incident reporting, independent review and intervention authority.</span></div></div></div>
+<footer><p>Daily AI Digest — Curated by <a href="https://pradykar.com">pradykar.com</a> | October 30, 2026</p><p style="margin-top:.3rem;">Generated automatically at 5 AM PT. Claims linked to publisher sources above; retrieved October 30, 2026.</p><p style="margin-top:.6rem;font-size:.75rem;"><a href="https://pradykar.com/daily-digest/">Browse past digests</a> · <a href="https://pradykar.com/labs">Labs</a></p></footer>
+</div></body></html>
