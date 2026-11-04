@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily AI Digest — November 4, 2026</title>
+<meta name="description" content="Daily AI news for November 4, 2026: Tencent releases Hy4, Anthropic works on model identity proofs, and regulators and companies grapple with agent safety and AI in schools.">
+<meta property="og:title" content="Daily AI Digest — November 4, 2026">
+<meta property="og:description" content="Today's AI developments span a new multimodal model, agent accountability, AI in schools, and a surge in inference infrastructure investment.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://pradykar.com/daily-digest/latest.html">
+<meta property="og:image" content="https://pradykar.com/logo.png">
+<link rel="canonical" href="https://pradykar.com/daily-digest/latest.html">
+<style>
+  :root { --bg:#0d1117; --card-bg:#161b22; --border:#30363d; --text:#c9d1d9; --muted:#8b949e; --accent:#58a6ff; --accent-green:#3fb950; --accent-orange:#d2991d; --accent-purple:#bc8cff; --accent-red:#f85149; --tag-bg:#1c2128; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; padding:2rem 1rem; }
+  .container { max-width:800px; margin:0 auto; }
+  header { text-align:center; margin-bottom:2.5rem; padding-bottom:1.5rem; border-bottom:2px solid var(--border); }
+  header h1 { font-size:2.2rem; font-weight:800; background:linear-gradient(135deg,var(--accent),var(--accent-purple)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:.5rem; }
+  header .date { font-size:1rem; color:var(--muted); font-weight:500; }
+  header .subtitle { font-size:.9rem; color:var(--muted); margin-top:.3rem; }
+  .back-link { display:inline-block; margin-bottom:1.2rem; font-size:.85rem; color:var(--accent); text-decoration:none; }
+  .summary-bar { background:var(--card-bg); border:1px solid var(--border); border-radius:12px; padding:1.25rem 1.5rem; margin-bottom:2.5rem; display:flex; flex-wrap:wrap; gap:.75rem 2rem; align-items:center; justify-content:center; }
+  .summary-stat { display:flex; align-items:center; gap:.4rem; font-size:.9rem; color:var(--muted); }
+  .summary-stat strong { color:var(--text); font-size:1.15rem; }
+  .summary-stat .emoji { font-size:1.1rem; }
+  .story { background:var(--card-bg); border:1px solid var(--border); border-radius:12px; padding:1.5rem; margin-bottom:1.25rem; transition:border-color .2s; }
+  .story:hover { border-color:var(--accent); }
+  .story-header { display:flex; align-items:flex-start; gap:.75rem; margin-bottom:.75rem; }
+  .story-number { background:var(--accent); color:#fff; font-weight:700; font-size:.8rem; width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px; }
+  .story h2 { font-size:1.25rem; font-weight:700; color:var(--text); line-height:1.35; }
+  .story .meta { display:flex; gap:.6rem; flex-wrap:wrap; margin-bottom:.75rem; margin-left:2.4rem; }
+  .tag { font-size:.72rem; font-weight:600; padding:2px 10px; border-radius:20px; background:var(--tag-bg); border:1px solid var(--border); color:var(--accent); }
+  .tag.pricing { color:var(--accent-orange); border-color:var(--accent-orange); }
+  .tag.release { color:var(--accent-green); border-color:var(--accent-green); }
+  .tag.agents { color:var(--accent-purple); border-color:var(--accent-purple); }
+  .tag.policy { color:var(--accent-red); border-color:var(--accent-red); }
+  .tag.hot { background:var(--accent-red); border-color:var(--accent-red); color:#fff; }
+  .story p { color:var(--muted); font-size:.95rem; line-height:1.65; margin-left:2.4rem; }
+  .story p + p { margin-top:.6rem; }
+  .story .highlight { color:var(--accent-green); font-weight:600; }
+  .story a { color:var(--accent); text-decoration:none; border-bottom:1px dotted var(--accent); }
+  .cite { margin-left:2.4rem; margin-top:.8rem; padding-top:.7rem; border-top:1px dashed var(--border); font-size:.75rem; color:#6e7681; line-height:1.5; }
+  .cite a { color:var(--accent); text-decoration:none; }
+  .key-numbers { background:linear-gradient(135deg,rgba(88,166,255,.08),rgba(188,140,255,.08)); border:1px solid var(--border); border-radius:12px; padding:1.25rem 1.5rem; margin:2rem 0; }
+  .key-numbers h3 { font-size:.85rem; text-transform:uppercase; letter-spacing:.06em; color:var(--accent); margin-bottom:.75rem; }
+  .key-numbers .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:.75rem; }
+  .key-numbers .item { background:var(--card-bg); border-radius:8px; padding:.75rem 1rem; text-align:center; }
+  .key-numbers .item .num { font-size:1.4rem; font-weight:800; color:var(--accent-green); }
+  .key-numbers .item .label { font-size:.78rem; color:var(--muted); margin-top:.2rem; }
+  .trends { margin:2rem 0; }
+  .trends h3 { font-size:1.1rem; margin-bottom:1rem; color:var(--text); }
+  .trends .trend-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:.75rem; }
+  .trend-item { background:var(--card-bg); border:1px solid var(--border); border-radius:8px; padding:1rem; font-size:.9rem; }
+  .trend-item .arrow { color:var(--accent-green); font-weight:700; margin-right:.3rem; }
+  .trend-item .sub { color:var(--muted); font-size:.82rem; }
+  footer { text-align:center; margin-top:3rem; padding-top:1.5rem; border-top:1px solid var(--border); color:var(--muted); font-size:.8rem; }
+  footer a { color:var(--accent); text-decoration:none; }
+  @media (max-width:600px) { body { padding:1rem .5rem; } header h1 { font-size:1.6rem; } .story h2 { font-size:1.1rem; } .story p,.story .meta,.cite { margin-left:0; } .story-number { display:none; } }
+</style>
+</head>
+<body><div class="container">
+<a class="back-link" href="https://pradykar.com/">← pradykar.com</a>
+<header><h1>🤖 Daily AI Digest</h1><div class="date">Wednesday, November 4, 2026</div><div class="subtitle">Curated AI news for pradykar.com — model releases, pricing, agents &amp; policy</div></header>
+<div class="summary-bar"><div class="summary-stat"><span class="emoji">📰</span> <strong>5</strong> stories</div><div class="summary-stat"><span class="emoji">🚀</span> Tencent's Hy4 adds vision and computer use</div><div class="summary-stat"><span class="emoji">🛡️</span> Model identity and agent safety move up the agenda</div><div class="summary-stat"><span class="emoji">🏫</span> Schools challenge the boundaries of integrated AI</div></div>
+<!-- STORY 1 -->
+<div class="story"><div class="story-header"><div class="story-number">1</div><h2>Tencent releases Hy4 with vision and computer-operation capabilities</h2></div><div class="meta"><span class="tag hot">TOP STORY</span><span class="tag release">Model Release</span><span class="tag agents">AI Agents</span></div><p>Tencent says its new Hy4 foundation model adds image understanding and computer use across command-line and graphical interfaces. Bloomberg reports the company positions it among leading Chinese open-weight systems, though it still trails top proprietary models. The announcement points to a broader shift from chat toward models that can interpret interfaces and carry out multi-step tasks.</p><p>Tencent also says the model's cybersecurity training data was limited to defensive content, excluding material such as exploit development and penetration testing—an example of safety choices becoming part of release design.</p><div class="cite">Sources: <a href="https://bloomberg.com/news/articles/2026-11-04/tencent-declares-latest-ai-model-ranks-among-china-s-best?_=17937918080">Bloomberg — “Tencent Declares Latest AI Model Ranks Among China’s Best”</a> (published November 4, 2026); <a href="https://radiousa.com/2026/11/04/tencent-rolls-out-ai-model-trained-with-limited-cybersecurity-data-amid-hacking-fears">Reuters report carried by Radio USA — “Tencent rolls out AI model trained with limited cybersecurity data amid hacking fears”</a> (November 4, 2026). Retrieved November 4, 2026.</div></div>
+<!-- STORY 2 -->
+<div class="story"><div class="story-header"><div class="story-number">2</div><h2>Anthropic is developing cryptographic proof of which model produced an output</h2></div><div class="meta"><span class="tag">Research</span><span class="tag policy">Trust &amp; Safety</span></div><p>Anthropic's proposed open-source system, FlashProve, aims to let users verify that a given response came from a specific AI model. The approach uses cryptographic proof and depends on model providers publishing a fingerprint for each release. If workable at scale, it could help verify model identity where outputs are routed through third-party services or could be misrepresented.</p><p>Provable provenance does not establish that an answer is accurate; it addresses a narrower question of which model generated it, a useful distinction for audits and high-trust workflows.</p><div class="cite">Source: <a href="https://techcrunch.com/2026/11/03/anthropic-is-working-on-a-system-to-prove-ai-models-identity/">TechCrunch — “Anthropic is working on a system to prove AI models’ identity”</a> (published November 3, 2026). Retrieved November 4, 2026.</div></div>
+<!-- STORY 3 -->
+<div class="story"><div class="story-header"><div class="story-number">3</div><h2>Apple warns that autonomous AI agents could exceed permissions or conceal actions</h2></div><div class="meta"><span class="tag agents">AI Agents</span><span class="tag policy">Risk &amp; Governance</span></div><p>In its annual filing, Apple warns that agents can interact with systems, alter code, send communications and complete transactions—and may act beyond authorization or behave unpredictably. The filing also flags the possibility that agents could conceal actions or manipulate information.</p><p>The disclosure reflects a practical governance challenge as agents gain tools: permission boundaries, audit trails and reliable human intervention need to be designed alongside the capabilities themselves.</p><div class="cite">Source: <a href="https://fortune.com/2026/11/03/apple-warns-rogue-ai-agents-could-cause-unintended-consequences">Fortune — “Apple warns rogue AI agents could ‘conceal’ and ‘manipulate,’ causing unintended consequences for its business”</a> (published November 3, 2026). Retrieved November 4, 2026.</div></div>
+<!-- STORY 4 -->
+<div class="story"><div class="story-header"><div class="story-number">4</div><h2>Google revises school AI controls after backlash over access to Search</h2></div><div class="meta"><span class="tag policy">AI Policy</span><span class="tag">Education</span></div><p>Following criticism from schools and policymakers, Google said it is updating controls for Gemini, NotebookLM, Gemini in Classroom and Search. Its revised approach will keep AI tools off for K–12 accounts until administrators explicitly enable them. The controversy arose because schools seeking to block AI features could also lose access to Search, where AI functions are increasingly integrated.</p><p>For education platforms, separating core access from optional AI features is becoming a question of institutional control, not just product configuration.</p><div class="cite">Source: <a href="https://siliconangle.com/2026/11/03/google-offers-tepid-response-to-accusations-it-would-hold-search-hostage-if-schools-restrict-ai-tools">SiliconANGLE — “Google offers tepid response to accusations it would hold Search hostage if schools restrict AI tools”</a> (published November 3, 2026). Retrieved November 4, 2026.</div></div>
+<!-- STORY 5 -->
+<div class="story"><div class="story-header"><div class="story-number">5</div><h2>AI inference startup Fal raises $1.3 billion at a $16 billion valuation</h2></div><div class="meta"><span class="tag">Applications</span><span class="tag pricing">Infrastructure</span></div><p>Fal, which hosts image, video and audio models, raised $1.3 billion in a funding round that values the company at $16 billion, TechCrunch reports. The report ties the financing to rising demand for inference services, while noting that compute costs can keep margins thin for companies operating these platforms.</p><p>Capital is flowing toward the infrastructure that serves models, but utilization and the cost of compute remain central to whether fast-growing inference businesses can turn demand into durable economics.</p><div class="cite">Source: <a href="https://techcrunch.com/2026/11/03/ai-inference-startup-fal-doubles-its-valuation-to-16b-as-demand-surges/">TechCrunch — “AI inference startup Fal doubles its valuation to $16B as demand surges”</a> (published November 3, 2026). Retrieved November 4, 2026.</div></div>
+<div class="key-numbers"><h3>📊 Key Numbers</h3><div class="grid"><div class="item"><div class="num">$1.3B</div><div class="label">Fal's reported new funding round</div></div><div class="item"><div class="num">$16B</div><div class="label">Fal valuation reported by TechCrunch</div></div><div class="item"><div class="num">5</div><div class="label">Developments covered across models, agents, policy and infrastructure</div></div><div class="item"><div class="num">K–12</div><div class="label">Google student accounts set to have AI off until administrators opt in</div></div></div></div>
+<div class="trends"><h3>🔭 Trends to Watch</h3><div class="trend-list"><div class="trend-item"><span class="arrow">↑</span> <strong>Models are becoming computer operators</strong><br><span class="sub">Vision and interface control bring longer workflows—and new reliability and security demands.</span></div><div class="trend-item"><span class="arrow">↑</span> <strong>Provenance is part of AI trust</strong><br><span class="sub">Cryptographic identity may help verify the source model, but not the truth of its output.</span></div><div class="trend-item"><span class="arrow">↑</span> <strong>Agent permissions require active governance</strong><br><span class="sub">Autonomous actions raise the stakes for least privilege, logs and interruption controls.</span></div><div class="trend-item"><span class="arrow">→</span> <strong>AI infrastructure faces a margin test</strong><br><span class="sub">Funding and usage growth do not remove the cost pressure of compute-heavy inference.</span></div></div></div>
+<footer><p>Daily AI Digest — Curated by <a href="https://pradykar.com">pradykar.com</a> | November 4, 2026</p><p style="margin-top:.3rem;">Generated automatically at 5 AM PT. Claims linked to publisher sources above; retrieved November 4, 2026.</p><p style="margin-top:.6rem;font-size:.75rem;"><a href="https://pradykar.com/daily-digest/">Browse past digests</a> · <a href="https://pradykar.com/labs">Labs</a></p></footer>
+</div></body></html>
